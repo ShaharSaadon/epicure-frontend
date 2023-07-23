@@ -14,13 +14,6 @@ $breakpoints: (
   }
 }
 
-
-@mixin for-wide-layout {
-  @media (min-width: calc($normal-breakpoint + 40px)) {
-    @content;
-  }
-}
-
 // Mixin for removing hover effects on iphone screen
 @mixin hover-supported {
   @media not all and (pointer: coarse) {
