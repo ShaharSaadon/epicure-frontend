@@ -1,0 +1,73 @@
+/* Breakpoint mixins */
+
+@use 'sass:map';
+
+$breakpoints: (
+  mobile-breakpoint: em(480px),
+);
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+
+@mixin for-wide-layout {
+  @media (min-width: calc($normal-breakpoint + 40px)) {
+    @content;
+  }
+}
+
+// Mixin for removing hover effects on iphone screen
+@mixin hover-supported {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Dekstop Mixin
+@mixin H1Dekstop(){
+  font-family: HelveticaT;
+  font-size: em(32px);
+  color: $primary-color1;
+}
+@mixin H2Dekstop(){
+  font-family: HelveticaT;
+  font-size: em(30px);
+  color: $primary-color1;
+}
+@mixin H3Dekstop(){
+  font-family: HelveticaT;
+  font-size: em(40px);
+  color: $primary-color1;
+  font-weight: 700;
+}
+// Mobile Mixin
+@mixin H1DMobile(){
+  font-family: HelveticaT;
+  font-size: em(24px);
+  color: $primary-color1;
+}
+@mixin H2DMobile(){
+  font-family: HelveticaT;
+  font-size: em(16px);
+  color: $primary-color1;
+}
+@mixin H3DMobile(){
+  font-family: HelveticaT;
+  font-size: em(18px);
+  color: $primary-color1;
+  font-weight: 700;
+}
+
+@mixin button(){
+background-color: $primary-color1;
+color:$secondary-color3;
+font-size: em(16px);
+
+}
