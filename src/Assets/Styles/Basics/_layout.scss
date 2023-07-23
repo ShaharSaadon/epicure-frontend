@@ -1,0 +1,18 @@
+.main-container {
+  display: grid;
+  grid-template-columns: $mobile-padding 1fr $mobile-padding;
+
+  > * {
+    grid-column: 2;
+
+    &.full {
+      grid-column: 1 /-1;
+    }
+  }
+
+  // bigger than 480px
+  @include mq(mobile-breakpoint) {
+    grid-template-columns: em($normal-padding) 1fr em($normal-padding);
+  }
+
+}
