@@ -11,9 +11,8 @@ interface DynamicCarouselProps {
 
 export const DynamicCarousel = ({ title, data }: DynamicCarouselProps) => {
     return (
-        <div>
+        <div className="dynamic-carousel">
             <h1 className="title">{title}</h1>
-
             <Swiper
                 spaceBetween={24}
                 slidesPerView={1.5}

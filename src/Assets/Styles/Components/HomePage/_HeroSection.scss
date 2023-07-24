@@ -1,5 +1,6 @@
 .hero-section {
     position: relative;
+    margin-block-end: 48px;
     .box {
         position: absolute;
         padding: $medium-space;
@@ -11,7 +12,7 @@
         gap: $xLarge-space;
 
         .text {
-            line-height: 32px;
+            @include h1Mobile();
         }
         .search {
             border: 1px black solid;
@@ -22,6 +23,10 @@
                 background-color: inherit;
                 border: none;
                 width: 100%;
+
+                &::placeholder {
+                    @include placeHolderMobile();
+                }
             }
             .search-icon {
                 width: $xLarge-space;

@@ -24,42 +24,50 @@ $breakpoints: (
 }
 
 // Dekstop Mixin
-@mixin H1Dekstop() {
+@mixin h1Dekstop() {
     font-family: HelveticaT;
-    font-size: em(32px);
+    font-size: 32px;
     color: $primary-color1;
 }
-@mixin H2Dekstop() {
+@mixin h2Dekstop() {
     font-family: HelveticaT;
-    font-size: em(30px);
+    font-size: 30px;
     color: $primary-color1;
 }
-@mixin H3Dekstop() {
+@mixin h3Dekstop() {
     font-family: HelveticaT;
-    font-size: em(40px);
+    font-size: 40px;
     color: $primary-color1;
     font-weight: 700;
 }
 // Mobile Mixin
-@mixin H1DMobile() {
-    font-family: HelveticaT;
-    font-size: em(24px);
+@mixin h1Mobile() {
+    font-family: HelveticaR;
+    font-size: 24px;
+    color: $primary-color1;
+    font-weight: 200;
+    line-height: 32px;
+}
+@mixin h2Mobile() {
+    font-family: HelveticaR;
+    font-size: 16px;
     color: $primary-color1;
 }
-@mixin H2DMobile() {
-    font-family: HelveticaT;
-    font-size: em(16px);
+@mixin h3Mobile() {
+    font-family: HelveticaR;
+    font-size: 18px;
     color: $primary-color1;
+    font-weight: 200;
+    line-height: 24px;
 }
-@mixin H3DMobile() {
-    font-family: HelveticaT;
-    font-size: em(18px);
-    color: $primary-color1;
-    font-weight: 700;
-}
-
 @mixin button() {
     background-color: $primary-color1;
     color: $secondary-color3;
     font-size: em(16px);
+}
+
+@mixin placeHolderMobile() {
+    font-size: 12px;
+    letter-spacing: 1.3px;
+    color: $primary-color1;
 }

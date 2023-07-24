@@ -1,16 +1,15 @@
-.app-header{
-    background-color: gray;
+.app-header {
     height: app-header-height;
-    padding: 8px 20px ;
-    .right-nav{
+    padding: $small-space $xLarge-space;
+    .right-nav {
         position: absolute;
-        right: 20px;
-        gap:20px;
+        right: $xLarge-space;
+        gap: $xLarge-space;
     }
-    .logo{
+    .logo {
         width: 32px;
     }
-    .hamburger{
-        width: 20px;
+    .hamburger {
+        width: $xxLarge-space;
     }
 }

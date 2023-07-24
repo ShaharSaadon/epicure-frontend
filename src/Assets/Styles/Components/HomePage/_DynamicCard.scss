@@ -5,5 +5,17 @@
         background-color: $secondary-color1;
         padding: $large-space;
         gap: $medium-space;
+        .card-content {
+            gap: 16px;
+            width: 200px;
+            .card-title {
+                @include h3Mobile();
+                font-weight: 700;
+            }
+            .ingredients {
+                letter-spacing: 2px;
+                line-height: 20px;
+            }
+        }
     }
 }
