@@ -1,16 +1,19 @@
 // SETUP
 
-@import 'Setup/mixins';
-@import 'Setup/functions';
-@import 'Setup/variables';
+@import "Setup/mixins";
+@import "Setup/functions";
+@import "Setup/variables";
 
 // BASE
 
-@import 'Basics/typography';
-@import 'Basics/base';
-@import 'Basics/helpers';
+@import "Basics/typography";
+@import "Basics/base";
+@import "Basics/helpers";
 
 // COMPONENTS
-@import 'Components/AppHeader';
-@import 'Components/AppFooter';
-@import 'Components/HomePage/HeroSection'
+@import "Components/AppHeader";
+@import "Components/AppFooter";
+@import "Components/HomePage/HeroSection";
+@import "Components/HomePage/DishCard";
+@import "Components/HomePage/CarouselDishes";
+@import "Components/HomePage/SignatureDishOf";

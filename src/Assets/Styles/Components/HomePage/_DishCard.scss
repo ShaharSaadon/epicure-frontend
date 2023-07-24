@@ -1,0 +1,9 @@
+.dish-card {
+    max-width: $dish-card-height;
+
+    .dish-info {
+        background-color: $secondary-color1;
+        padding: $large-space;
+        gap: $medium-space;
+    }
+}

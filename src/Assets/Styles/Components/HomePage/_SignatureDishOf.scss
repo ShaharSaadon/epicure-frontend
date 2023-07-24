@@ -1,0 +1,19 @@
+.signature-dish {
+    background-color: $secondary-color3;
+    gap: 56px;
+    .dish-type {
+        gap: 32px;
+    }
+    .spicy {
+        width: 46px;
+        height: 35px;
+    }
+    .vegitarian {
+        width: 77px;
+        height: 60px;
+    }
+    .vegan {
+        width: 77px;
+        height: 60px;
+    }
+}
