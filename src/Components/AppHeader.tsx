@@ -15,6 +15,8 @@ export const AppHeader = () => {
         <img src={Bag} alt="Bug" />
       </div>
 
+      <div className=""></div>
+
     </div>
   )
 }

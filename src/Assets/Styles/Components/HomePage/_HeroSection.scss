@@ -1,31 +1,30 @@
-.hero-section{
-position: relative;
-.box{
-        padding: 8px;
-        // @include H2Mobile()
-        // font-weight: 200;
+.hero-section {
+    position: relative;
+    .box {
         position: absolute;
-        top: 50%; 
+        padding: $medium-space;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); 
-        background-color: rgba($color:$secondary-color3, $alpha: .8);   
+        transform: translate(-50%, -50%);
+        background-color: rgba($color: $secondary-color3, $alpha: 0.8);
         width: 90%;
-        .text{
+        gap: $xLarge-space;
+
+        .text {
             line-height: 32px;
         }
-        .search{
-            border:1px black solid;
+        .search {
+            border: 1px black solid;
             width: 100%;
-            padding: 6px 12px;
-            margin-block-start: 18px;
-            border-radius: 4px;
-            .search-input{
+            padding: $min-space $medium-space;
+            border-radius: $min-space;
+            .search-input {
                 background-color: inherit;
                 border: none;
                 width: 100%;
             }
-            .search-icon{
-                width: 20px;
+            .search-icon {
+                width: $xLarge-space;
             }
         }
     }
