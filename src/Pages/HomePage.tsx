@@ -1,13 +1,19 @@
 import { HeroSection } from "../Components/HomePage/HeroSection";
-import { CarouselDishes } from "../Components/HomePage/CarouselDishes";
-import { SignatureDishOf } from "../Components/HomePage/SignatureDishOf";
+import { DynamicCarousel } from "../Components/HomePage/DynamicCarousel.tsx";
+import { OurIcons } from "../Components/HomePage/OurIcons";
+import { ChefOfTheWeek } from "../Components/HomePage/ChefOfTheWeek";
+import { popularRestaurants, bestDishes } from "../Assets/data.ts";
 export const HomePage = () => {
     return (
         <div>
             <HeroSection />
-            <CarouselDishes title="POPULAR RESTAURANT IN EPICURE:" />
-            <CarouselDishes title="SIGNATURE DISH OF:" />
-            <SignatureDishOf />
+            <DynamicCarousel
+                title="POPULAR RESTAURANT IN EPICURE:"
+                data={popularRestaurants}
+            />
+            <DynamicCarousel title="SIGNATURE DISH OF:" data={bestDishes} />
+            <OurIcons />
+            <ChefOfTheWeek />
         </div>
     );
 };
