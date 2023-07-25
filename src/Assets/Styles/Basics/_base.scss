@@ -20,6 +20,7 @@ body {
 
 img {
     max-width: 100%;
+    max-width: 100%;
 }
 
 h1,
@@ -31,6 +32,8 @@ h6,
 p {
     margin: 0;
     line-height: 1;
+    margin: 0;
+    line-height: 1;
 }
 
 a {
@@ -39,7 +42,15 @@ a {
     &:hover {
         text-decoration: none;
     }
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
 
+    &.active {
+        color: darkred;
+    }
     &.active {
         color: darkred;
     }
@@ -52,11 +63,18 @@ button {
     * {
         pointer-events: none;
     }
+    * {
+        pointer-events: none;
+    }
 }
+img {
+    width: 100%;
 img {
     width: 100%;
 }
 input {
+    font-family: inherit;
+    text-align: inherit;
     font-family: inherit;
     text-align: inherit;
 }
