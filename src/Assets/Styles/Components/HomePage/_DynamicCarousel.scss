@@ -1,0 +1,22 @@
+.dynamic-carousel {
+    margin-inline-start: $xLarge-space;
+    .title {
+        @include h3Mobile();
+        margin-block-end: $small-space;
+    }
+    .all-restaurants {
+        gap: $medium-space;
+        margin-block-start: 18px;
+        margin-block-end: 48px;
+        .arrow-icon {
+            width: $xxLarge-space;
+        }
+    }
+
+    .dekstop-carousel {
+        text-align: center;
+        .cards-container {
+            gap: $xxLarge-space;
+        }
+    }
+}

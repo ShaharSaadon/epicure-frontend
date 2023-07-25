@@ -1,0 +1,33 @@
+.dynamic-card {
+    max-width: $dynamic-card-width;
+    .card-info {
+        background-color: $secondary-color1;
+        padding: $large-space;
+        gap: $medium-space;
+        position: relative;
+        .card-content {
+            gap: $large-space;
+            width: 200px;
+            .ingredients {
+                letter-spacing: 2px;
+                line-height: $xLarge-space;
+            }
+            .shekel {
+                font-weight: 100;
+                font-family: HelveticaT;
+            }
+            .price {
+                font-weight: 900;
+                position: absolute;
+                bottom: $large-space;
+            }
+        }
+        .card-title {
+            @include h3Mobile();
+            font-weight: 700;
+        }
+    }
+    .dish {
+        height: $dynamic-card-height;
+    }
+}

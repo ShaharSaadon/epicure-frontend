@@ -1,66 +1,76 @@
 /* Breakpoint mixins */
 
-@use 'sass:map';
+@use "sass:map";
 
 $breakpoints: (
-  mobile-breakpoint: em(480px),
+    mobile-breakpoint: 480px,
 );
 
 @mixin mq($key) {
-  $size: map.get($breakpoints, $key);
+    $size: map.get($breakpoints, $key);
 
-  @media (min-width: $size) {
-    @content;
-  }
+    @media (min-width: $size) {
+        @content;
+    }
 }
 
 // Mixin for removing hover effects on iphone screen
 @mixin hover-supported {
-  @media not all and (pointer: coarse) {
-    &:hover {
-      @content;
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
     }
-  }
 }
 
 // Dekstop Mixin
-@mixin H1Dekstop(){
-  font-family: HelveticaT;
-  font-size: em(32px);
-  color: $primary-color1;
+@mixin h1Dekstop() {
+    font-family: HelveticaT;
+    font-size: 32px;
+    color: $primary-color1;
+    line-height: 40px;
+    letter-spacing: 2px;
 }
-@mixin H2Dekstop(){
-  font-family: HelveticaT;
-  font-size: em(30px);
-  color: $primary-color1;
+@mixin h2Dekstop() {
+    font-family: HelveticaT;
+    font-size: 30px;
+    color: $primary-color1;
 }
-@mixin H3Dekstop(){
-  font-family: HelveticaT;
-  font-size: em(40px);
-  color: $primary-color1;
-  font-weight: 700;
+@mixin h3Dekstop() {
+    font-family: HelveticaT;
+    font-size: 40px;
+    color: $primary-color1;
+    font-weight: 700;
 }
 // Mobile Mixin
-@mixin H1DMobile(){
-  font-family: HelveticaT;
-  font-size: em(24px);
-  color: $primary-color1;
+@mixin h1Mobile() {
+    font-family: HelveticaR;
+    font-size: $xxLarge-space;
+    color: $primary-color1;
+    font-weight: 200;
+    line-height: 32px;
 }
-@mixin H2DMobile(){
-  font-family: HelveticaT;
-  font-size: em(16px);
-  color: $primary-color1;
+@mixin h2Mobile() {
+    font-family: HelveticaR;
+    font-size: $large-space;
+    color: $primary-color1;
 }
-@mixin H3DMobile(){
-  font-family: HelveticaT;
-  font-size: em(18px);
-  color: $primary-color1;
-  font-weight: 700;
+@mixin h3Mobile() {
+    font-family: HelveticaR;
+    font-size: 18px;
+    color: $primary-color1;
+    font-weight: 200;
+    line-height: $xxLarge-space;
+    letter-spacing: 1.25px;
+}
+@mixin button() {
+    background-color: $primary-color1;
+    color: $secondary-color3;
+    font-size: em($large-space);
 }
 
-@mixin button(){
-background-color: $primary-color1;
-color:$secondary-color3;
-font-size: em(16px);
-
+@mixin placeHolderMobile() {
+    font-size: $medium-space;
+    letter-spacing: 1.3px;
+    color: $primary-color1;
 }

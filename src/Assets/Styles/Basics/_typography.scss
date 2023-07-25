@@ -1,10 +1,9 @@
 @font-face {
-    src: url('../../Fonts/Helvetica\ Neue\ Regular.otf');
-    font-family: HelveticaR;
-  }
-  
-@font-face {
-    src: url('../../Fonts/HelveticaNeue\ Thin.ttf');
+    src: url("../Fonts/HelveticaNeue.ttf");
     font-family: HelveticaT;
-  }
+}
 
+@font-face {
+    src: url("../Fonts/HelveticaNeue Thin.ttf");
+    font-family: HelveticaR;
+}
