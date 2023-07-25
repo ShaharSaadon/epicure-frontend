@@ -33,4 +33,18 @@
             }
         }
     }
+    .hero-image {
+        height: 700px;
+    }
+    @include mq(mobile-breakpoint) {
+        .box {
+            .text {
+                @include h1Dekstop();
+                width: 50%;
+            }
+            .search {
+                width: 60%;
+            }
+        }
+    }
 }
