@@ -2,7 +2,7 @@
     margin-inline-start: $xLarge-space;
     .title {
         @include h3Mobile();
-        margin-block-end: $small-space;
+        margin-block-end: 40px;
     }
     .all-restaurants {
         gap: $medium-space;
@@ -14,9 +14,27 @@
     }
 
     .dekstop-carousel {
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        ); /* Adjust the minmax values as needed */
+        gap: $xxLarge-space;
+        justify-items: center;
+        .carousel-item {
+            max-width: 380px; /* Set the maximum width for the carousel items */
+        }
+    }
+
+    @include mq(mobile-breakpoint) {
+        margin-inline: $normal-padding;
         text-align: center;
-        .cards-container {
-            gap: $xxLarge-space;
+        .all-restaurants {
+            justify-content: flex-end;
+        }
+        .title {
+            text-align: start;
+            margin-block: 42px;
         }
     }
 }

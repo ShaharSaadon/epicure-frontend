@@ -1,5 +1,6 @@
 import { DynamicCard } from "./DynamicCard.tsx";
 import { Restaurant, Dish } from "../../Assets/data.ts";
+import doubleArrowSvg from "../../Assets/Images/HomePage/icons/double-arrow.svg";
 
 interface DekstopCarouselProps {
     data: (Dish | Restaurant)[];
@@ -7,9 +8,9 @@ interface DekstopCarouselProps {
 
 export const DekstopCarousel = ({ data }: DekstopCarouselProps) => {
     return (
-        <div className="dekstop-carousel flex justify-center text-center">
+        <div className="dekstop-carousel ">
             {data.map((item, index) => (
-                <div key={index}>
+                <div key={index} className="carousel-item">
                     <DynamicCard data={item} />
                 </div>
             ))}

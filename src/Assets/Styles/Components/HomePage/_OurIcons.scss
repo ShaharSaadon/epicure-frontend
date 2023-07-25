@@ -1,4 +1,4 @@
-.our-icons {
+.icons-container {
     background-color: $secondary-color3;
     gap: 56px;
     padding: $xxLarge-space 0;
@@ -7,20 +7,22 @@
     .icon-title {
         line-height: 35px;
         @include h3Mobile();
+        margin-block-end: 32px;
     }
     .icon-type {
         gap: 32px;
     }
-    .spicy {
-        width: 46px;
-        height: 35px;
-    }
-    .vegitarian {
+    .icon {
         width: 77px;
         height: 60px;
+        margin-block-start: 16px;
     }
-    .vegan {
-        width: 77px;
-        height: 60px;
+
+    @include mq(mobile-breakpoint) {
+        .our-icons {
+            flex-direction: row;
+            justify-content: center;
+            gap: 40px;
+        }
     }
 }
