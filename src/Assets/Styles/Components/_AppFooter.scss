@@ -3,7 +3,7 @@ footer {
         background-color: $secondary-color3;
         padding: $xxLarge-space $xLarge-space 48px $xLarge-space;
         .logo {
-            width: 100px;
+            width: $logo-width;
             margin-block-end: 32px;
         }
         .download-box {
@@ -25,7 +25,6 @@ footer {
             margin-block-start: 48px;
             .about-title {
                 @include h3Mobile();
-
                 margin-block-end: $large-space;
             }
             .about-text {

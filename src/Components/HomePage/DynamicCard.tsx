@@ -6,31 +6,23 @@ interface DynamicCardProps {
 }
 
 export const DynamicCard = ({ data }: DynamicCardProps) => {
-    const getContent = () => {
-        if (data.type === "dish") {
-            return (
-                <div className="card-content flex flex-column dish">
-                    <p className="ingredients"> {data.ingredients}</p>
-                    <p>{data.special}</p>
-                    <p className="price">₪ {data.price}</p>
-                </div>
-            );
-        } else if (data.type === "restaurant") {
-            return (
-                <div className="card-content flex flex-column restaurant">
-                    <p> {data.chef}</p>
-                    {/* <p>Stars: {data.stars}</p> */}
-                </div>
-            );
-        }
-    };
-
     return (
         <section className="dynamic-card flex flex-column">
             <img src={imageMap[data.name]} alt={data.name} className="claro" />
             <div className="card-info flex flex-column">
                 <h1 className="card-title">{data.name}</h1>
-                {getContent()}
+                {data.type === "dish" ? (
+                    <div className="card-content flex flex-column dish">
+                        <p className="ingredients"> {data.ingredients}</p>
+                        <p>{data.special}</p>
+                        <p className="price">₪ {data.price}</p>
+                    </div>
+                ) : (
+                    <div className="card-content flex flex-column restaurant">
+                        <p> {data.chef}</p>
+                        {/* <p>Stars: {data.stars}</p> */}
+                    </div>
+                )}
             </div>
         </section>
     );
