@@ -1,0 +1,57 @@
+.chef-of-the-week {
+    margin-block-start: 48px;
+    margin-inline: $mobile-padding;
+    .chef-title {
+        @include h3Mobile();
+        margin-block-end: $large-space;
+        grid-area: title;
+    }
+    .chef-box {
+        grid-area: box;
+        position: relative;
+        .chef-name {
+            @include h3Mobile();
+            position: absolute;
+            font-weight: 900;
+            width: 100%;
+            padding: $medium-space;
+            letter-spacing: 2.5px;
+            background-color: rgba($color: $secondary-color3, $alpha: 0.8);
+            bottom: 0;
+        }
+    }
+    .chef-description {
+        font-size: 18px;
+        letter-spacing: 1.25px;
+        line-height: 28px;
+        text-align: justify;
+        margin-block-end: 32px;
+    }
+
+    @include mq(mobile-breakpoint) {
+        display: grid;
+        column-gap: 64px;
+        grid-template-areas:
+            "title title"
+            "box description"
+            "carousel carousel";
+    }
+
+    .chef-title {
+        text-align: center;
+    }
+
+    @include mq(mobile-breakpoint) {
+        margin-inline: $normal-padding;
+        .chef-description {
+            text-align: justify;
+        }
+        .chef-image {
+            max-width: 480px;
+        }
+        .dynamic-carousel {
+            text-align: start;
+            background-color: gray;
+        }
+    }
+}
