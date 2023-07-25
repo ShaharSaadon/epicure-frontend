@@ -1,6 +1,13 @@
 .our-icons {
     background-color: $secondary-color3;
     gap: 56px;
+    padding: 24px 0;
+    @include h3Mobile();
+
+    .icon-title {
+        line-height: 35px;
+        @include h3Mobile();
+    }
     .icon-type {
         gap: 32px;
     }

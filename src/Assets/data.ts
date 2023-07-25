@@ -11,7 +11,7 @@ export interface Dish {
     special?: string;
     ingredients: string;
     price?: number;
-    restaurant: string;
+    restaurant?: string;
 }
 
 export const chefOfTheWeekRestaurants: Restaurant[] = [
@@ -56,21 +56,20 @@ export const bestDishes: Dish[] = [
         ingredients:
             "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         special: "spicy",
-        restaurant: "claro",
+        price: 88,
     },
     {
         type: "dish",
         name: "Garbanzo Frito",
         ingredients:
             "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
-        price: 98,
-        restaurant: "Lumina",
+        price: 78,
     },
     {
         type: "dish",
         name: "Smoked Pizza",
         ingredients: 'Basil dough, cashew "butter", demi-glace, bison & radish',
         special: "vegan",
-        restaurant: "Tiger Lilly",
+        price: 98,
     },
 ];

@@ -7,7 +7,7 @@ $secondary-color3: #fafafa;
 // Breakpoints
 $mobile-breakpoint: 480px;
 
-// Spacing
+// SPACING
 
 $min-space: 4px;
 $small-space: 8px;
@@ -16,11 +16,14 @@ $large-space: 16px;
 $xLarge-space: 20px;
 $xxLarge-space: 24px;
 
-//layout
+//LAYOUT
 
 $mobile-padding: 32px;
 $normal-padding: 120px;
 
-//Height
+//HEIGHT
 $app-header-height: 46px;
-$dynamic-card-height: 245px;
+$dynamic-card-height: 160px;
+
+//WIDTH
+$dynamic-card-width: 245px;
