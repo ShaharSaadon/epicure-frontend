@@ -3,12 +3,12 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: $large-space;
     scroll-behavior: smooth;
 }
 
 body {
-    font-size: rem(16px);
+    font-size: rem($large-space);
     min-height: 100vh;
     color: $primary-color1;
     font-family: HelveticaR;
@@ -63,7 +63,7 @@ input {
 
 // MAC like scrollbar
 ::-webkit-scrollbar {
-    width: 8px;
+    width: $small-space;
     background-color: rgba(0, 0, 0, 0);
     -webkit-border-radius: 100px;
 }

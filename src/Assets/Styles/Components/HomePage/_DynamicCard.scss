@@ -6,11 +6,11 @@
         gap: $medium-space;
         position: relative;
         .card-content {
-            gap: 16px;
+            gap: $large-space;
             width: 200px;
             .ingredients {
                 letter-spacing: 2px;
-                line-height: 20px;
+                line-height: $xLarge-space;
             }
             .shekel {
                 font-weight: 100;
@@ -19,7 +19,7 @@
             .price {
                 font-weight: 900;
                 position: absolute;
-                bottom: 16px;
+                bottom: $large-space;
             }
         }
         .card-title {

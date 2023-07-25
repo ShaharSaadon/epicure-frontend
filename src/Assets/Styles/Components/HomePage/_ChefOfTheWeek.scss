@@ -1,9 +1,9 @@
 .chef-of-the-week {
     margin-block-start: 48px;
-    margin-inline: 20px;
+    margin-inline: $xLarge-space;
     .chef-title {
         @include h3Mobile();
-        margin-block-end: 16px;
+        margin-block-end: $large-space;
     }
     .chef-box {
         position: relative;

@@ -3,7 +3,7 @@
 @use "sass:map";
 
 $breakpoints: (
-    mobile-breakpoint: em(480px),
+    mobile-breakpoint: 480px,
 );
 
 @mixin mq($key) {
@@ -28,6 +28,8 @@ $breakpoints: (
     font-family: HelveticaT;
     font-size: 32px;
     color: $primary-color1;
+    line-height: 40px;
+    letter-spacing: 2px;
 }
 @mixin h2Dekstop() {
     font-family: HelveticaT;
@@ -43,14 +45,14 @@ $breakpoints: (
 // Mobile Mixin
 @mixin h1Mobile() {
     font-family: HelveticaR;
-    font-size: 24px;
+    font-size: $xxLarge-space;
     color: $primary-color1;
     font-weight: 200;
     line-height: 32px;
 }
 @mixin h2Mobile() {
     font-family: HelveticaR;
-    font-size: 16px;
+    font-size: $large-space;
     color: $primary-color1;
 }
 @mixin h3Mobile() {
@@ -58,17 +60,17 @@ $breakpoints: (
     font-size: 18px;
     color: $primary-color1;
     font-weight: 200;
-    line-height: 24px;
+    line-height: $xxLarge-space;
     letter-spacing: 1.25px;
 }
 @mixin button() {
     background-color: $primary-color1;
     color: $secondary-color3;
-    font-size: em(16px);
+    font-size: em($large-space);
 }
 
 @mixin placeHolderMobile() {
-    font-size: 12px;
+    font-size: $medium-space;
     letter-spacing: 1.3px;
     color: $primary-color1;
 }

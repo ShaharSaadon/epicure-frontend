@@ -1,8 +1,8 @@
 .dynamic-carousel {
-    margin-inline-start: 20px;
+    margin-inline-start: $xLarge-space;
     .title {
         @include h3Mobile();
-        margin-block-end: 8px;
+        margin-block-end: $small-space;
     }
     .all-restaurants {
         gap: $medium-space;
