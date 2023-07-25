@@ -1,16 +1,16 @@
-.app-header{
+.app-header {
     background-color: gray;
     height: app-header-height;
-    padding: 8px 20px ;
-    .right-nav{
+    padding: 8px 20px;
+    .right-nav {
         position: absolute;
         right: 20px;
-        gap:20px;
+        gap: 20px;
     }
-    .logo{
+    .logo {
         width: 32px;
     }
-    .hamburger{
+    .hamburger {
         width: 20px;
     }
 }
