@@ -6,6 +6,7 @@ import "swiper/css";
 import { MobileCarousel } from "./MobileCarousel.tsx";
 import { DekstopCarousel } from "./DekstopCarousel.tsx";
 import { useDeviceDetect } from "../../customHooks/useDeviceDetect.ts";
+import { Link } from "react-router-dom";
 
 interface DynamicCarouselProps {
     title: string;
@@ -26,10 +27,12 @@ export const DynamicCarousel: React.FC<DynamicCarouselProps> = ({
             ) : (
                 <MobileCarousel data={data} />
             )}
-            <h3 className="all-restaurants flex items-center">
-                All Restaurants
-                <img src={doubleArrowSvg} alt="" className="arrow-icon" />
-            </h3>
+            <Link to="/restaurants">
+                <h3 className="all-restaurants flex items-center">
+                    All Restaurants
+                    <img src={doubleArrowSvg} alt="" className="arrow-icon" />
+                </h3>
+            </Link>
         </div>
     );
 };

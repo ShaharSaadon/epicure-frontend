@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 export const AppFooter = () => {
     const { pathname } = useLocation();
     const [isHomePage, setisHomePage] = useState(pathname === "/");
-    console.log(isHomePage, pathname);
     useEffect(() => {
         pathname === "/" ? setisHomePage(true) : setisHomePage(false);
     }, [pathname]);
