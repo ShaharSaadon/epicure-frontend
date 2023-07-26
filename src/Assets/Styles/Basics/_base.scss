@@ -11,7 +11,7 @@ body {
     font-size: rem($large-space);
     min-height: 100vh;
     color: $primary-color1;
-    font-family: HelveticaR;
+    font-family: Helvetica;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
@@ -69,12 +69,13 @@ button {
 }
 img {
     width: 100%;
-img {
-    width: 100%;
-}
-input {
-    font-family: inherit;
-    text-align: inherit;
-    font-family: inherit;
-    text-align: inherit;
+    img {
+        width: 100%;
+    }
+    input {
+        font-family: inherit;
+        text-align: inherit;
+        font-family: inherit;
+        text-align: inherit;
+    }
 }

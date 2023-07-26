@@ -1,43 +1,21 @@
 // SETUP
 
-<<<<<<< HEAD
 @import "Setup/variables";
 @import "Setup/mixins";
 @import "Setup/functions";
-=======
-@import "Setup/mixins";
-@import "Setup/functions";
-@import "Setup/variables";
->>>>>>> main
 
 // BASE
 
 @import "Basics/typography";
 @import "Basics/base";
 @import "Basics/helpers";
-<<<<<<< HEAD
 // @import "Basics/layout";
-=======
->>>>>>> main
 
 // COMPONENTS
 @import "Components/AppHeader";
 @import "Components/AppFooter";
 @import "Components/HomePage/HeroSection";
-<<<<<<< HEAD
 @import "Components/HomePage/DynamicCard";
 @import "Components/HomePage/DynamicCarousel";
 @import "Components/HomePage/OurIcons";
 @import "Components/HomePage/ChefOfTheWeek";
-=======
-
-// COMPONENTS
-@import "Components/AppHeader";
-@import "Components/AppFooter";
-@import "Components/HomePage/HeroSection";
-
-// COMPONENTS
-@import "Components/AppHeader";
-@import "Components/AppFooter";
-@import "Components/HomePage/HeroSection";
->>>>>>> main

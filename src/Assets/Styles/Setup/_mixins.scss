@@ -25,38 +25,38 @@ $breakpoints: (
 
 // Dekstop Mixin
 @mixin h1Dekstop() {
-    font-family: HelveticaT;
+    font-family: Helvetica;
     font-size: 32px;
     color: $primary-color1;
     line-height: 40px;
     letter-spacing: 2px;
 }
 @mixin h2Dekstop() {
-    font-family: HelveticaT;
+    font-family: Helvetica;
     font-size: 30px;
     color: $primary-color1;
 }
 @mixin h3Dekstop() {
-    font-family: HelveticaT;
+    font-family: Helvetica;
     font-size: 40px;
     color: $primary-color1;
     font-weight: 700;
 }
 // Mobile Mixin
 @mixin h1Mobile() {
-    font-family: HelveticaR;
+    font-family: Helvetica;
     font-size: $xxLarge-space;
     color: $primary-color1;
     font-weight: 200;
     line-height: 32px;
 }
 @mixin h2Mobile() {
-    font-family: HelveticaR;
+    font-family: Helvetica;
     font-size: $large-space;
     color: $primary-color1;
 }
 @mixin h3Mobile() {
-    font-family: HelveticaR;
+    font-family: Helvetica;
     font-size: 18px;
     color: $primary-color1;
     font-weight: 200;
