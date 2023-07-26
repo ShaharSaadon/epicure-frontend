@@ -1,4 +1,4 @@
-import imageMap from "../../Services/link.service.ts";
+import { linkService } from "../../Services/link.service.ts";
 import { Restaurant, Dish } from "../../Assets/data.ts";
 
 interface DynamicCardProps {
@@ -6,6 +6,7 @@ interface DynamicCardProps {
 }
 
 export const DynamicCard = ({ data }: DynamicCardProps) => {
+    const { imageMap } = linkService;
     return (
         <section className="dynamic-card flex flex-column">
             <img src={imageMap[data.name]} alt={data.name} className="claro" />

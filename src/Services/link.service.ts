@@ -26,4 +26,15 @@ const imageMap: ImageMapType = {
     "Smoked Pizza": smokedPizzaImg,
 };
 
-export default imageMap;
+const mainNavLinks = [
+    { path: "/restaurants", text: "Restaurants" },
+    { path: "/chefs", text: "Chefs" },
+    { path: "/contact-us", text: "Contact Us" },
+    { path: "/term-of-use", text: "Term of Use" },
+    { path: "/privacy-policy", text: "Privacy Policy" },
+];
+
+export const linkService = {
+    imageMap,
+    mainNavLinks,
+};
