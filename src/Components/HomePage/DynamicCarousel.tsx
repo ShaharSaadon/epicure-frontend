@@ -1,24 +1,27 @@
+// Components/DynamicCarousel.tsx
+import React from "react";
 import doubleArrowSvg from "../../Assets/Images/HomePage/icons/double-arrow.svg";
 import { Restaurant, Dish } from "../../Assets/data.ts";
 import "swiper/css";
-import { useMediaQuery } from "react-responsive";
 import { MobileCarousel } from "./MobileCarousel.tsx";
 import { DekstopCarousel } from "./DekstopCarousel.tsx";
+import { useDeviceDetect } from "../../customHooks/useDeviceDetect.ts";
+
 interface DynamicCarouselProps {
     title: string;
     data: (Dish | Restaurant)[];
 }
 
-export const DynamicCarousel = ({ title, data }: DynamicCarouselProps) => {
-    const isDekstop = useMediaQuery({
-        query: "(min-width: 480px)",
-    });
+export const DynamicCarousel: React.FC<DynamicCarouselProps> = ({
+    title,
+    data,
+}) => {
+    const { isDesktop } = useDeviceDetect();
 
-    console.log("isPhone", isDekstop);
     return (
         <div className="dynamic-carousel">
             <h1 className="title">{title}</h1>
-            {isDekstop ? (
+            {isDesktop ? (
                 <DekstopCarousel data={data} />
             ) : (
                 <MobileCarousel data={data} />
