@@ -1,4 +1,4 @@
-import { AppHeader } from "./Components/AppHeader";
+import { AppHeader } from "./Components/AppHeader/AppHeader";
 import { AppFooter } from "./Components/AppFooter";
 import { HomePage } from "./Pages/HomePage";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
