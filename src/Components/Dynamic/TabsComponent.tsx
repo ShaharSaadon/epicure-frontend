@@ -1,7 +1,7 @@
 import { Restaurant, Dish } from "../../Assets/data.ts";
 import { TabIndicatorProps } from "@mui/material/Tabs";
-import { DynamicRestaurants } from "../../Components/Restaurants/DynamicRestaurants.tsx";
-import { DekstopCarousel } from "../../Components/HomePage/DekstopCarousel";
+import { DynamicRestaurants } from "../Restaurants/DynamicRestaurants.tsx";
+import { DekstopCarousel } from "./DekstopCarousel.tsx";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";

@@ -1,7 +1,7 @@
 import {
     CustomTabPanels,
     CustomTabs,
-} from "../Components/Restaurants/TabsComponent";
+} from "../Components/Dynamic/TabsComponent";
 import { useEffect, useState } from "react";
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";

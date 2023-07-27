@@ -4,7 +4,7 @@ import { linkService } from "../Services/link.service.ts";
 import {
     CustomTabs,
     CustomTabPanels,
-} from "../Components/Restaurants/TabsComponent.tsx";
+} from "../Components/Dynamic/TabsComponent.tsx";
 import { useTabs } from "../customHooks/useTabs.ts";
 import { allrestaurants } from "../Assets/data.ts";
 import { RestaurantFilter } from "../Components/Restaurants/RestaurantFilter.tsx";

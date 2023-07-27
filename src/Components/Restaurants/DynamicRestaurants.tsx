@@ -1,6 +1,6 @@
 import React from "react";
 import { Restaurant } from "../../Assets/data.ts";
-import { DynamicCard } from "../HomePage/DynamicCard.tsx";
+import { DynamicCard } from "../Dynamic/DynamicCard.tsx";
 
 interface DynamicRestaurantslProps {
     filter: String;

@@ -12,15 +12,17 @@
 // @import "Basics/layout";
 
 // COMPONENTS
-@import "Components/AppHeader/AppHeader";
+@import "Components/AppHeader/MobileNav";
 @import "Components/AppHeader/Hamburger";
 @import "Components/AppHeader/Search";
-@import "Components/AppHeader/Bag";
+@import "Components/AppHeader/Cart";
 @import "Components/AppFooter";
-@import "Components/HomePage/DynamicCarousel";
+@import "Components/Dynamic/DynamicCarousel";
 @import "Components/HomePage/ChefOfTheWeek";
 @import "Components/HomePage/HeroSection";
-@import "Components/HomePage/DynamicCard";
+@import "Components/Dynamic/DynamicCard";
+@import "Components/Dynamic/Search";
 @import "Components/HomePage/OurIcons";
 @import "Components/RestaurantFilter";
 @import "Views/RestaurantPage";
+@import "Components/AppHeader/AppHeader";

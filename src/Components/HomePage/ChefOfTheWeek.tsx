@@ -1,5 +1,5 @@
 import ChefOfTheWeekImg from "../../Assets/Images/HomePage/chef-of-the-week.png";
-import { DynamicCarousel } from "./DynamicCarousel";
+import { DynamicCarousel } from "../Dynamic/DynamicCarousel";
 import { chefOfTheWeekRestaurants } from "../../Assets/data";
 
 export const ChefOfTheWeek = () => {

@@ -1,20 +1,17 @@
 import LogoSvg from "../../Assets/Images/AppHeader/Logo.svg";
-import ProfileSvg from "../../Assets/Images/AppHeader/Profile.svg";
-import SearchSvg from "../../Assets/Images/AppHeader/Search.svg";
-import BagSvg from "../../Assets/Images/AppHeader/Bag.svg";
-import { linkService } from "../../Services/link.service";
-import { NavLink } from "react-router-dom";
+
 import { Hamburger } from "./Hamburger";
-import { Bag } from "./Bag";
-import { Search } from "./Search";
+import { Cart } from "./Cart";
+import { SearchHeader } from "./SearchHeader";
 import { useToggle } from "../../customHooks/useToggle";
 import { Link } from "react-router-dom";
+import { MobileNav } from "./MobileNav";
+import { Actions } from "./Actions";
 
 export const AppHeader = () => {
     const [isHeaderOpen, toggleHeader] = useToggle();
-    const [isBagOpen, toggleBag] = useToggle();
+    const [isCartOpen, toggleCart] = useToggle();
     const [isSearchOpen, toggleSearch] = useToggle();
-    const { mainNavLinks } = linkService;
 
     return (
         <div className="app-header flex justify-between items-center">
@@ -27,35 +24,19 @@ export const AppHeader = () => {
                 <img src={LogoSvg} alt="Logo" className="logo" />
             </Link>
 
-            <div className="right-nav flex">
-                <img src={ProfileSvg} alt="Profile" className="profile" />
-                <img
-                    src={SearchSvg}
-                    alt="Search"
-                    className="search-icon"
-                    onClick={toggleSearch}
-                />
-                <img
-                    src={BagSvg}
-                    alt="Bag"
-                    className="bag-icon"
-                    onClick={toggleBag}
-                />
-            </div>
+            <Actions toggleSearch={toggleSearch} toggleCart={toggleCart} />
 
-            <nav
-                className={`nav flex flex-column ${isHeaderOpen ? "open" : ""}`}
-            >
-                {mainNavLinks.map((link, index) => (
-                    <NavLink key={index} to={link.path} className="nav-link">
-                        {link.text}
-                    </NavLink>
-                ))}
-            </nav>
+            <MobileNav
+                isHeaderOpen={isHeaderOpen}
+                toggleHeader={toggleHeader}
+            />
 
-            <Search isSearchOpen={isSearchOpen} toggleSearch={toggleSearch} />
+            <SearchHeader
+                isSearchOpen={isSearchOpen}
+                toggleSearch={toggleSearch}
+            />
 
-            <Bag isBagOpen={isBagOpen} toggleBag={toggleBag} />
+            <Cart isCartOpen={isCartOpen} toggleCart={toggleCart} />
         </div>
     );
 };

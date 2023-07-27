@@ -52,7 +52,7 @@ $breakpoints: (
 }
 @mixin h2Mobile() {
     font-family: Helvetica;
-    font-size: $large-space;
+    font-size: $large-space; //16px
     color: $primary-color1;
 }
 @mixin h3Mobile() {

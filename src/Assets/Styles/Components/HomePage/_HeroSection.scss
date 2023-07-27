@@ -27,24 +27,6 @@
         .text {
             @include h1Mobile();
         }
-        .search {
-            border: 1px black solid;
-            width: 100%;
-            padding: $min-space $medium-space;
-            border-radius: $min-space;
-            .search-input {
-                background-color: inherit;
-                border: none;
-                width: 100%;
-
-                &::placeholder {
-                    @include placeHolderMobile();
-                }
-            }
-            .search-icon {
-                width: $xLarge-space;
-            }
-        }
     }
 
     @include mq(mobile-breakpoint) {

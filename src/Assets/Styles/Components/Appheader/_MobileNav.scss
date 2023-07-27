@@ -1,0 +1,25 @@
+.app-header {
+    .mobile-nav {
+        z-index: 2;
+        display: none;
+        width: 100%;
+        position: absolute;
+        background-color: $primary-color3;
+        top: 46px;
+        .nav-link {
+            position: relative;
+            padding: $medium-space;
+            font-size: em($xLarge-space);
+            font-weight: 500;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .active {
+            font-weight: 700;
+        }
+        &.open {
+            display: flex;
+        }
+    }
+}
