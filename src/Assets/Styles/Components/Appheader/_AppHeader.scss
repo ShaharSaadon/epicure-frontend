@@ -1,0 +1,43 @@
+.app-header {
+    height: $app-header-height;
+    padding: $small-space $xLarge-space;
+    .right-nav {
+        position: absolute;
+        right: $xLarge-space;
+        gap: $xLarge-space;
+
+        .search-icon {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .bag-icon {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .logo {
+        width: 32px;
+    }
+    .nav {
+        z-index: 2;
+        display: none;
+        // border: 1px black solid;
+        position: absolute;
+        background-color: $secondary-color3;
+        top: 48px;
+        .nav-link {
+            position: relative;
+            padding: $medium-space;
+            font-size: em($xLarge-space);
+            font-weight: 600;
+        }
+        .active {
+            font-weight: 700;
+        }
+        &.open {
+            display: flex;
+        }
+    }
+}

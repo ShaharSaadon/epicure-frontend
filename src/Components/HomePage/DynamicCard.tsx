@@ -16,7 +16,7 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
                 <img
                     src={imageMap[data.name]}
                     alt={data.name}
-                    className="claro"
+                    className="card-image"
                 />
                 <div className="card-info flex flex-column">
                     <h1 className="card-title">{data.name}</h1>

@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { allrestaurants } from "../Assets/data";
-import { useTabs } from "../customHooks/useTabs";
-import { linkService } from "../Services/link.service";
-import { Box } from "@mui/material";
-import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 import {
     CustomTabPanels,
     CustomTabs,
 } from "../Components/Restaurants/TabsComponent";
-import { DynamicCard } from "../Components/HomePage/DynamicCard";
+import { useEffect, useState } from "react";
+import { allrestaurants } from "../Assets/data";
+import { linkService } from "../Services/link.service";
+import { useParams } from "react-router-dom";
+import { useTabs } from "../customHooks/useTabs";
+import { Box } from "@mui/material";
+import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 
 export const RestaurantPage = () => {
     let { restaurantName } = useParams();
@@ -29,20 +28,21 @@ export const RestaurantPage = () => {
 
     if (!restaurant) return;
     return (
-        <Box sx={{ width: "100%" }}>
+        <Box sx={{ width: "100%" }} className="restaurant-page">
             <img
                 src={imageMap[restaurant.name]}
                 alt={restaurant.name}
-                className="claro"
+                className="hero-image"
             />
-
-            <h1>{restaurant.name}</h1>
-            <h2>{restaurant.chef}</h2>
-            <div className="mode">
-                <img src={clockSvg} alt="clock" />
-                <h2>Open now</h2>
+            <div className="hero-container flex flex-column">
+                <h1 className="name">{restaurant.name}</h1>
+                <h2 className="chef">{restaurant.chef}</h2>
+                <div className="mode flex">
+                    <img src={clockSvg} alt="clock" className="clock-icon" />
+                    <h2 className="mode-text">Open now</h2>
+                </div>
             </div>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <Box sx={{}} className="lunch-type flex justify-center">
                 <CustomTabs
                     value={value}
                     handleChange={handleChange}

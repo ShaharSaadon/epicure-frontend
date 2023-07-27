@@ -5,6 +5,8 @@
 html {
     font-size: $large-space;
     scroll-behavior: smooth;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 body {

@@ -17,9 +17,9 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: $xxLarge-space;
         justify-items: center;
-        .carousel-item {
-            max-width: 380px;
-        }
+        // .carousel-item {
+        //     max-width: 380px;
+        // }
     }
 
     @include mq(mobile-breakpoint) {

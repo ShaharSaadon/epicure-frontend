@@ -5,7 +5,7 @@ import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import { Restaurants } from "./Pages/Restaurants";
 import { RestaurantPage } from "./Pages/RestaurantPage";
 
-function App() {
+export const App = () => {
     return (
         <Router>
             <AppHeader />
@@ -20,6 +20,4 @@ function App() {
             <AppFooter />
         </Router>
     );
-}
-
-export default App;
+};

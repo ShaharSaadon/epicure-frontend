@@ -27,7 +27,6 @@ export const AppHeader = () => {
                 <img src={LogoSvg} alt="Logo" className="logo" />
             </Link>
 
-            <div className=""></div>
             <div className="right-nav flex">
                 <img src={ProfileSvg} alt="Profile" className="profile" />
                 <img

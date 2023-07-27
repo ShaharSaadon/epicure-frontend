@@ -1,11 +1,10 @@
-import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import { Restaurant, Dish } from "../../Assets/data.ts";
+import { TabIndicatorProps } from "@mui/material/Tabs";
 import { DynamicRestaurants } from "../../Components/Restaurants/DynamicRestaurants.tsx";
 import { DekstopCarousel } from "../../Components/HomePage/DekstopCarousel";
-import { Restaurant, Dish } from "../../Assets/data.ts";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -25,14 +24,14 @@ interface CustomTabPanelsProps {
     data: (Dish | Restaurant)[];
 }
 
-function a11yProps(index: number) {
+const a11yProps = (index: number) => {
     return {
         id: `simple-tab-${index}`,
         "aria-controls": `simple-tabpanel-${index}`,
     };
-}
+};
 
-function CustomTabPanel(props: TabPanelProps) {
+const CustomTabPanel = (props: TabPanelProps) => {
     const { children, value, index, ...other } = props;
 
     return (
@@ -45,13 +44,29 @@ function CustomTabPanel(props: TabPanelProps) {
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
-                    <div>{children}</div> // Change Typography to div
+                    <div>{children}</div>
                 </Box>
             )}
         </div>
     );
-}
+};
 
+const TabIndicator = (props: TabIndicatorProps) => {
+    return (
+        <span
+            {...props}
+            className="custom-tab-indicator"
+            style={{
+                width: "100%",
+                height: 2,
+                backgroundColor: "yellow !important",
+                borderRadius: 4,
+                margin: "0 20px",
+                ...props.style,
+            }}
+        />
+    );
+};
 export const CustomTabs: React.FC<CustomTabsProps> = ({
     value,
     handleChange,
@@ -62,6 +77,10 @@ export const CustomTabs: React.FC<CustomTabsProps> = ({
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
+            TabIndicatorProps={{
+                children: <TabIndicator />,
+            }}
+            indicatorColor="secondary"
         >
             {filters.map((filter, index) => (
                 <Tab label={filter} {...a11yProps(index)} key={index} />
