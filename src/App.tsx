@@ -2,7 +2,7 @@ import { AppHeader } from "./Components/AppHeader/AppHeader";
 import { AppFooter } from "./Components/AppFooter";
 import { HomePage } from "./Pages/HomePage";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
-import { Restaurants } from "./Pages/Restaurants";
+import { RestaurantIndex } from "./Pages/RestaurantIndex";
 import { RestaurantPage } from "./Pages/RestaurantPage";
 
 export const App = () => {
@@ -14,7 +14,7 @@ export const App = () => {
                     path="/restaurants/:restaurantName"
                     element={<RestaurantPage />}
                 />
-                <Route path="/restaurants" element={<Restaurants />} />
+                <Route path="/restaurants" element={<RestaurantIndex />} />
                 <Route path="/" element={<HomePage />} />
             </Routes>
             <AppFooter />

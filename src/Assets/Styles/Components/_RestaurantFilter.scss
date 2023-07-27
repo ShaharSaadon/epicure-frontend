@@ -1,0 +1,14 @@
+.restaurant-filter {
+    background-color: $secondary-color3;
+    .filter-type {
+        padding: 18px 22px;
+        gap: 8px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .arrow-icon {
+        width: 24px;
+    }
+}

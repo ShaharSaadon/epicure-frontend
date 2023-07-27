@@ -13,13 +13,14 @@
 
 // COMPONENTS
 @import "Components/AppHeader/AppHeader";
-@import "Components/AppHeader/Bag";
 @import "Components/AppHeader/Hamburger";
 @import "Components/AppHeader/Search";
+@import "Components/AppHeader/Bag";
 @import "Components/AppFooter";
+@import "Components/HomePage/DynamicCarousel";
+@import "Components/HomePage/ChefOfTheWeek";
 @import "Components/HomePage/HeroSection";
 @import "Components/HomePage/DynamicCard";
-@import "Components/HomePage/DynamicCarousel";
 @import "Components/HomePage/OurIcons";
-@import "Components/HomePage/ChefOfTheWeek";
+@import "Components/RestaurantFilter";
 @import "Views/RestaurantPage";

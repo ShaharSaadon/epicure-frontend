@@ -2,7 +2,6 @@
     height: $app-header-height;
     padding: $small-space $xLarge-space;
     .right-nav {
-        position: absolute;
         right: $xLarge-space;
         gap: $xLarge-space;
 
@@ -19,11 +18,11 @@
     }
     .logo {
         width: 32px;
+        margin-inline-start: 76px;
     }
     .nav {
         z-index: 2;
         display: none;
-        // border: 1px black solid;
         position: absolute;
         background-color: $secondary-color3;
         top: 48px;

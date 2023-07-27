@@ -1,26 +1,29 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { linkService } from "../Services/link.service";
+import { linkService } from "../Services/link.service.ts";
 import {
     CustomTabs,
     CustomTabPanels,
-} from "../Components/Restaurants/TabsComponent";
-import { useTabs } from "../customHooks/useTabs";
+} from "../Components/Restaurants/TabsComponent.tsx";
+import { useTabs } from "../customHooks/useTabs.ts";
 import { allrestaurants } from "../Assets/data.ts";
-
-export const Restaurants: React.FC = () => {
+import { RestaurantFilter } from "../Components/Restaurants/RestaurantFilter.tsx";
+export const RestaurantIndex: React.FC = () => {
     const { value, handleChange } = useTabs(0);
-    const filters = Object.values(linkService.restaurantFilter);
+    const { restaurantFilter } = linkService;
+    const filters = Object.values(restaurantFilter);
 
     return (
         <Box sx={{ width: "100%" }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <Box sx={{}} className="flex justify-center">
                 <CustomTabs
                     value={value}
                     handleChange={handleChange}
                     filters={filters}
                 />
             </Box>
+            <RestaurantFilter />
+
             <CustomTabPanels
                 value={value}
                 filters={filters}

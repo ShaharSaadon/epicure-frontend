@@ -63,9 +63,16 @@ enum lunchfilter {
     DINNER = "Dinner",
 }
 
+const filterTypes = [
+    { type: "price", label: "Price Range" },
+    { type: "distance", label: "Distance" },
+    { type: "rating", label: "Rating" },
+];
+
 export const linkService = {
     imageMap,
     mainNavLinks,
     restaurantFilter,
     lunchfilter,
+    filterTypes,
 };
