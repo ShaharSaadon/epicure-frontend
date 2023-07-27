@@ -5,6 +5,17 @@
         position: absolute;
         right: $xLarge-space;
         gap: $xLarge-space;
+
+        .search-icon {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .bag-icon {
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
     .logo {
         width: 32px;
@@ -22,8 +33,9 @@
         // margin: 50px auto;
         transform: rotate(0deg);
         transition: 0.5s ease-in-out;
-        cursor: pointer;
-
+        &:hover {
+            cursor: pointer;
+        }
         span {
             display: block;
             position: absolute;
@@ -66,6 +78,7 @@
     }
 
     .nav {
+        z-index: 2;
         display: none;
         // border: 1px black solid;
         position: absolute;
@@ -86,20 +99,29 @@
     }
 
     .bag {
+        z-index: 2;
         display: none;
         position: absolute;
         top: 48px;
         &.open {
             display: flex;
         }
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .search {
+        z-index: 2;
+        border: 1px black solid;
         display: none;
         position: absolute;
         top: 48px;
         &.open {
             display: flex;
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
 }
