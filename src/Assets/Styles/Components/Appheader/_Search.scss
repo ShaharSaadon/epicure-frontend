@@ -1,0 +1,15 @@
+.app-header {
+    .search {
+        z-index: 2;
+        border: 1px black solid;
+        display: none;
+        position: absolute;
+        top: 48px;
+        &.open {
+            display: flex;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

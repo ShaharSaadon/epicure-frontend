@@ -1,5 +1,6 @@
 .dynamic-card {
-    max-width: $dynamic-card-width;
+    max-width: 380px;
+    margin-block-end: 24px;
     .card-info {
         background-color: $secondary-color1;
         padding: $large-space;
