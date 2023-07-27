@@ -2,8 +2,7 @@
     height: $app-header-height;
     padding: $small-space $xLarge-space;
     .right-nav {
-        // position: absolute;
-        right: $xLarge-space;
+        // right: $xLarge-space;
         gap: $xLarge-space;
 
         .search-icon {
@@ -21,9 +20,6 @@
         margin-inline-start: 76px;
         width: 32px;
     }
-    // .hamburger {
-    //     width: $xxLarge-space;
-    // }
 
     .hamburger {
         display: inline-flex;
