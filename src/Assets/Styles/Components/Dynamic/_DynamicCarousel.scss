@@ -25,7 +25,7 @@
     @include mq(mobile-breakpoint) {
         margin-inline: $normal-padding;
 
-        text-align: center;
+        // text-align: center;
         .all-restaurants {
             justify-content: flex-end;
         }

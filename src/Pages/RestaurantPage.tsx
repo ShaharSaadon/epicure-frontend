@@ -11,32 +11,33 @@ import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 
 export const RestaurantPage = () => {
-    let { restaurantName } = useParams();
+    let { restaurant } = useParams();
     const { value, handleChange } = useTabs(0);
     const { lunchfilter, imageMap } = linkService;
     const filters = Object.values(lunchfilter);
 
-    const [restaurant, setRestaurant] = useState(
-        allrestaurants.find((restaurant) => restaurant.name === restaurantName)
+    const [currRestaurant, setCurrRestaurant] = useState(
+        allrestaurants.find((rest) => rest.name === restaurant)
     );
 
-    const [dishes, setDishes] = useState(restaurant?.dishes || []);
+    if (!currRestaurant) return;
+    const [dishes, setDishes] = useState(currRestaurant?.dishes || []);
 
     useEffect(() => {
-        setDishes(restaurant?.dishes || []);
+        setDishes(currRestaurant?.dishes || []);
     }, [restaurant]);
 
     if (!restaurant) return;
     return (
         <Box sx={{ width: "100%" }} className="restaurant-page">
             <img
-                src={imageMap[restaurant.name]}
-                alt={restaurant.name}
+                src={imageMap[currRestaurant.name]}
+                alt={currRestaurant.name}
                 className="hero-image"
             />
             <div className="hero-container flex flex-column">
-                <h1 className="name">{restaurant.name}</h1>
-                <h2 className="chef">{restaurant.chef}</h2>
+                <h1 className="name">{currRestaurant.name}</h1>
+                <h2 className="chef">{currRestaurant.chef}</h2>
                 <div className="mode flex">
                     <img src={clockSvg} alt="clock" className="clock-icon" />
                     <h2 className="mode-text">Open now</h2>
