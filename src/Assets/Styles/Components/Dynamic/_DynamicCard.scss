@@ -23,6 +23,9 @@
                 position: absolute;
                 bottom: $large-space;
             }
+            .rating {
+                display: none;
+            }
         }
         .card-title {
             @include h3Mobile();
@@ -31,5 +34,15 @@
     }
     .dish {
         height: $dynamic-card-height;
+    }
+
+    @include mq(mobile-breakpoint) {
+        .card-info {
+            .card-content {
+                .rating {
+                    display: flex;
+                }
+            }
+        }
     }
 }

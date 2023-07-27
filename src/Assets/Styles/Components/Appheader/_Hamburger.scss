@@ -1,6 +1,7 @@
 .app-header {
     .hamburger {
         display: inline-flex;
+
         color: $primary-color1;
         width: 24px;
         height: 32px;
@@ -43,6 +44,12 @@
         &.open span:nth-child(3) {
             top: 12px;
             transform: rotate(-135deg);
+        }
+    }
+
+    @include mq(mobile-breakpoint) {
+        .hamburger {
+            display: none;
         }
     }
 }

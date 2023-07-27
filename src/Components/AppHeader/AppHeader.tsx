@@ -1,5 +1,4 @@
 import LogoSvg from "../../Assets/Images/AppHeader/Logo.svg";
-
 import { Hamburger } from "./Hamburger";
 import { Cart } from "./Cart";
 import { SearchHeader } from "./SearchHeader";
@@ -7,12 +6,11 @@ import { useToggle } from "../../customHooks/useToggle";
 import { Link } from "react-router-dom";
 import { MobileNav } from "./MobileNav";
 import { Actions } from "./Actions";
-
+import { DekstopNav } from "./DekstopNav";
 export const AppHeader = () => {
     const [isHeaderOpen, toggleHeader] = useToggle();
     const [isCartOpen, toggleCart] = useToggle();
     const [isSearchOpen, toggleSearch] = useToggle();
-
     return (
         <div className="app-header flex justify-between items-center">
             <Hamburger
@@ -20,9 +18,13 @@ export const AppHeader = () => {
                 toggleHeader={toggleHeader}
             />
 
-            <Link to="/">
-                <img src={LogoSvg} alt="Logo" className="logo" />
-            </Link>
+            <div className="left-side flex items-center">
+                <Link to="/" className="flex">
+                    <img src={LogoSvg} alt="Logo" className="logo" />
+                </Link>
+                <h1 className="dekstop-logo">Epicure</h1>
+                <DekstopNav />
+            </div>
 
             <Actions toggleSearch={toggleSearch} toggleCart={toggleCart} />
 

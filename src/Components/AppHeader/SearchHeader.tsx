@@ -1,11 +1,11 @@
 import { Search } from "../Dynamic/Search";
 
-interface SearchProps {
+interface SearchHeaderProps {
     isSearchOpen: boolean;
     toggleSearch: () => void;
 }
 
-export const SearchHeader: React.FC<SearchProps> = ({
+export const SearchHeader: React.FC<SearchHeaderProps> = ({
     isSearchOpen,
     toggleSearch,
 }) => {

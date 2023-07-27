@@ -20,4 +20,16 @@
         width: 32px;
         margin-inline-start: 76px;
     }
+
+    .dekstop-logo {
+        display: none;
+        font-weight: 400;
+        margin-inline-start: 16px;
+    }
+
+    @include mq(mobile-breakpoint) {
+        .dekstop-logo {
+            display: flex;
+        }
+    }
 }

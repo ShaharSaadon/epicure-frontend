@@ -8,7 +8,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
     isHeaderOpen,
     toggleHeader,
 }) => {
-    const { mainNavLinks } = linkService;
+    const { mobileNavLinks } = linkService;
 
     return (
         <nav
@@ -17,7 +17,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             }`}
             onClick={toggleHeader}
         >
-            {mainNavLinks.map((link, index) => (
+            {mobileNavLinks.map((link, index) => (
                 <NavLink key={index} to={link.path} className="nav-link">
                     {link.text}
                 </NavLink>

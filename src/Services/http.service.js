@@ -1,4 +1,4 @@
-import Axios from 'axios';
+atimport Axios from 'axios';
 // import { router } from '@/router'
 
 const BASE_URL =

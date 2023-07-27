@@ -43,12 +43,16 @@ const imageMap: ImageMapType = {
     "Red Farm": redFarmImg,
 };
 
-const mainNavLinks = [
+const mobileNavLinks = [
     { path: "/restaurants", text: "Restaurants" },
     { path: "/chefs", text: "Chefs" },
     { path: "/contact-us", text: "Contact Us" },
     { path: "/term-of-use", text: "Term of Use" },
     { path: "/privacy-policy", text: "Privacy Policy" },
+];
+const dekstopNavLinks = [
+    { path: "/restaurants", text: "Restaurants" },
+    { path: "/chefs", text: "Chefs" },
 ];
 
 enum restaurantFilter {
@@ -71,8 +75,9 @@ const filterTypes = [
 
 export const linkService = {
     imageMap,
-    mainNavLinks,
+    mobileNavLinks,
     restaurantFilter,
     lunchfilter,
     filterTypes,
+    dekstopNavLinks,
 };

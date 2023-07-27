@@ -1,6 +1,7 @@
 import { linkService } from "../../Services/link.service.ts";
 import { Restaurant, Dish } from "../../Assets/data.ts";
 import { Link } from "react-router-dom";
+import { Rating } from "@mui/material";
 
 interface DynamicCardProps {
     data: Dish | Restaurant;
@@ -21,8 +22,16 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
                 <div className="card-info flex flex-column">
                     <h1 className="card-title">{data.name}</h1>
                     {isRestaurant ? (
-                        <div className="card-content flex flex-column restaurant">
+                        <div className="card-content flex flex-column restaurant justify-center items-center">
                             <p> {data.chef}</p>
+                            {data.stars && (
+                                <Rating
+                                    name="read-only"
+                                    value={data.stars}
+                                    readOnly
+                                    className="rating"
+                                />
+                            )}
                         </div>
                     ) : (
                         <div className="card-content flex flex-column dish">
