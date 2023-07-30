@@ -28,8 +28,12 @@
     }
 
     @include mq(mobile-breakpoint) {
+        margin-inline: 100px;
         .dekstop-logo {
             display: flex;
+        }
+        .logo {
+            margin-inline-start: 0;
         }
     }
 }

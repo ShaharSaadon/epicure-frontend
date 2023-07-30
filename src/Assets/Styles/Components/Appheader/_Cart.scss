@@ -1,8 +1,8 @@
 .app-header {
     .cart {
-        // padding: 60px 24px 44px 12px;
         background-color: $primary-color3;
         width: 100%;
+        right: 0;
         z-index: 2;
         display: none;
         position: absolute;
@@ -20,6 +20,26 @@
         }
         .cart-message {
             @include h2Mobile();
+        }
+
+        .history {
+            position: absolute;
+            bottom: 44px;
+            border: 1px black solid;
+            padding: 4px 16px;
+            font-size: 18px;
+            font-weight: 600;
+
+            &::hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    @include mq(mobile-breakpoint) {
+        .cart {
+            width: 35%;
+            right: 0;
         }
     }
 }
