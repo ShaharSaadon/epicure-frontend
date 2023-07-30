@@ -12,7 +12,7 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
     const isRestaurant = data.type !== "dish";
 
     return (
-        <Link to={"/" + data.name}>
+        <Link to={data.name}>
             <section className="dynamic-card flex flex-column">
                 <img
                     src={imageMap[data.name]}
