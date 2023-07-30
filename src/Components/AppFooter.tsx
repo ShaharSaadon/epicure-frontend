@@ -15,24 +15,31 @@ export const AppFooter = () => {
             {isHomePage ? (
                 <div className="main-footer">
                     <img src={logoSvg} alt="logo" className="logo" />
-                    <div className="google download-box flex items-center justify-center">
-                        <img
-                            src={googlePlaySvg}
-                            alt="google play logo"
-                            className="icon"
-                        />
-                        <div className="text flex flex-column items-center">
-                            <p>Get it on</p>
-                            <p>Google Play</p>
+                    <div className="download-boxes">
+                        <div className="google download-box flex items-center justify-center">
+                            <img
+                                src={googlePlaySvg}
+                                alt="google play logo"
+                                className="icon"
+                            />
+                            <div className="text flex flex-column items-center">
+                                <p>Get it on</p>
+                                <p>Google Play</p>
+                            </div>
+                        </div>
+                        <div className="apple download-box flex items-center justify-center">
+                            <img
+                                src={appleSvg}
+                                alt="apple logo"
+                                className="icon"
+                            />
+                            <div className="text flex flex-column items-center">
+                                <p>Download on the</p>
+                                <p>App Store</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="apple download-box flex items-center justify-center">
-                        <img src={appleSvg} alt="apple logo" className="icon" />
-                        <div className="text flex flex-column items-center">
-                            <p>Download on the</p>
-                            <p>App Store</p>
-                        </div>
-                    </div>
+
                     <div className="about">
                         <h1 className="about-title">ABOUT US:</h1>
                         <p className="about-text">
@@ -53,7 +60,7 @@ export const AppFooter = () => {
             ) : (
                 ""
             )}
-            <ul className="clean-list flex flex-column">
+            <ul className="footer-nav clean-list flex flex-column">
                 <li>Contact Us</li>
                 <li>Term of Use</li>
                 <li>Privacy Policy</li>
