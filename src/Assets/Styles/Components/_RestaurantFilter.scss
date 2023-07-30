@@ -1,4 +1,5 @@
 .restaurant-filter {
+    display: none;
     background-color: $secondary-color3;
     margin-block-start: 40px;
     .filter-type {
@@ -9,7 +10,12 @@
             cursor: pointer;
         }
     }
+
     .arrow-icon {
         width: 24px;
+    }
+
+    @include mq(mobile-breakpoint) {
+        display: flex;
     }
 }

@@ -5,6 +5,7 @@ import { DekstopCarousel } from "./DekstopCarousel.tsx";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import { MapComponent } from "../Restaurants/MapComponent.tsx";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -98,7 +99,11 @@ export const CustomTabPanels: React.FC<CustomTabPanelsProps> = ({
         <>
             {filters.map((filter, index) => (
                 <CustomTabPanel value={value} index={index} key={index}>
-                    <DynamicRestaurants filter={filter} />
+                    {filter !== "Your new Tab" ? (
+                        <DynamicRestaurants filter={filter} />
+                    ) : (
+                        <MapComponent />
+                    )}{" "}
                     <DekstopCarousel data={data} />
                 </CustomTabPanel>
             ))}

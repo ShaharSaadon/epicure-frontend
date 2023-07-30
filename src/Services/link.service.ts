@@ -58,8 +58,8 @@ const dekstopNavLinks = [
 enum restaurantFilter {
     ALL = "ALL",
     NEW = "NEW",
-    MOST_POPULAR = "MOST_POPULAR",
-    OPEN_NOW = "OPEN_NOW",
+    MOST_POPULAR = "MOST POPULAR",
+    OPEN_NOW = "OPEN NOW",
 }
 enum lunchfilter {
     BREAKFAST = "Breakfast",
