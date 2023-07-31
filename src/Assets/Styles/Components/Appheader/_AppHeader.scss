@@ -2,10 +2,10 @@
     height: $app-header-height;
     padding: 0 20px;
     z-index: 100;
-    position: fixed;
-    top: 0;
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
     background-color: white;
-    width: 100%;
     .right-nav {
         right: $xLarge-space;
         gap: $xLarge-space;
@@ -42,6 +42,7 @@
     }
     @include mq(mobile-breakpoint) {
         margin-inline: 100px;
+        position: relative;
         .dekstop-logo {
             display: flex;
         }
