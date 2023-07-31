@@ -5,12 +5,10 @@ import {
 import { useEffect, useState } from "react";
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { useTabs } from "../customHooks/useTabs";
 import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
 
 export const RestaurantPage = () => {
     let { restaurantId } = useParams();
@@ -20,16 +18,6 @@ export const RestaurantPage = () => {
 
     const [open, setOpen] = useState<boolean>(false);
     const [selectedDish, setSelectedDish] = useState<DishType | null>(null);
-
-    const handleOpen = (dishId: string) => {
-        const selectedDish = dishes.find((dish) => dish._Id === dishId);
-        setSelectedDish(selectedDish);
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
 
     const [currRestaurant, setCurrRestaurant] = useState(
         allrestaurants.find((rest) => rest._Id === restaurantId)
@@ -86,6 +74,8 @@ export const RestaurantPage = () => {
                 filters={filters}
                 data={requestedDishes()}
             />
+
+            <Outlet />
         </Box>
     );
 };
