@@ -1,5 +1,5 @@
-import { DynamicCard } from "./DynamicCard.tsx";
-import { Restaurant, Dish } from "../../Assets/data.ts";
+import { DynamicCard } from "./DynamicCard";
+import { Restaurant, Dish } from "../../Assets/data";
 
 interface DekstopCarouselProps {
     data: (Dish | Restaurant)[];

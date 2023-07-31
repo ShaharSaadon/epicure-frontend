@@ -8,7 +8,7 @@
         position: absolute;
         gap: 20px;
         top: 46px;
-        height: 60vh;
+        height: 220px;
         &.open {
             display: flex;
         }
@@ -41,6 +41,7 @@
         .cart {
             width: 35%;
             right: 0;
+            height: 60vh;
             .history {
                 display: inline-block;
             }

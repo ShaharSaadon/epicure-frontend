@@ -1,11 +1,10 @@
 // Components/DynamicCarousel.tsx
-import React from "react";
 import doubleArrowSvg from "../../Assets/Images/HomePage/icons/double-arrow.svg";
-import { Restaurant, Dish } from "../../Assets/data.ts";
+import { Restaurant, Dish } from "../../Assets/data";
 import "swiper/css";
-import { MobileCarousel } from "./MobileCarousel.tsx";
-import { DekstopCarousel } from "./DekstopCarousel.tsx";
-import { useDeviceDetect } from "../../customHooks/useDeviceDetect.ts";
+import { MobileCarousel } from "./MobileCarousel";
+import { DekstopCarousel } from "./DekstopCarousel";
+import { useDeviceDetect } from "../../customHooks/useDeviceDetect";
 import { Link } from "react-router-dom";
 
 interface DynamicCarouselProps {

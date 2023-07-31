@@ -1,29 +1,23 @@
 import { Restaurant, Dish } from "../../Assets/data";
-import { TabIndicatorProps } from "@mui/material/Tabs";
-import { DynamicRestaurants } from "../Restaurants/DynamicRestaurants";
 import { DekstopCarousel } from "./DekstopCarousel";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-
 interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
     value: number;
 }
-
 interface CustomTabsProps {
     filters: string[];
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
     value: number;
 }
-
 interface CustomTabPanelsProps {
     filters: string[];
     value: number;
     data: (Dish | Restaurant)[];
 }
-
 const CustomTabPanel = (props: TabPanelProps) => {
     const { children, value, index, ...other } = props;
 
@@ -43,7 +37,6 @@ const CustomTabPanel = (props: TabPanelProps) => {
         </div>
     );
 };
-
 const TabIndicator = (props: TabIndicatorProps) => {
     return (
         <span
@@ -74,14 +67,22 @@ export const CustomTabs: React.FC<CustomTabsProps> = ({
                 children: <TabIndicator />,
             }}
             indicatorColor="secondary"
+            variant="scrollable"
+            scrollButtons="auto"
         >
             {filters.map((filter, index) => (
-                <Tab label={filter} key={index} />
+                <Tab
+                    label={filter}
+                    key={index}
+                    sx={{
+                        maxWidth: "125px", // Set max-width of each tab
+                        padding: "7px", // Adjust padding as needed
+                    }}
+                />
             ))}
         </Tabs>
     );
 };
-
 export const CustomTabPanels: React.FC<CustomTabPanelsProps> = ({
     value,
     filters,

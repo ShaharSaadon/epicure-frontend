@@ -9,12 +9,27 @@ import { useParams } from "react-router-dom";
 import { useTabs } from "../customHooks/useTabs";
 import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
 
 export const RestaurantPage = () => {
     let { restaurantId } = useParams();
     const { value, handleChange } = useTabs(0);
     const { lunchfilter, imageMap } = linkService;
     const filters = Object.values(lunchfilter);
+
+    const [open, setOpen] = useState<boolean>(false);
+    const [selectedDish, setSelectedDish] = useState<DishType | null>(null);
+
+    const handleOpen = (dishId: string) => {
+        const selectedDish = dishes.find((dish) => dish._Id === dishId);
+        setSelectedDish(selectedDish);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const [currRestaurant, setCurrRestaurant] = useState(
         allrestaurants.find((rest) => rest._Id === restaurantId)
