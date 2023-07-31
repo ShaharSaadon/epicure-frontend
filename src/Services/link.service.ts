@@ -43,9 +43,11 @@ const imageMap: ImageMapType = {
     "Red Farm": redFarmImg,
 };
 
-const mobileNavLinks = [
+const upperMobileNavLinks = [
     { path: "/restaurants", text: "Restaurants" },
     { path: "/chefs", text: "Chefs" },
+];
+const lowerMobileNavLinks = [
     { path: "/contact-us", text: "Contact Us" },
     { path: "/term-of-use", text: "Term of Use" },
     { path: "/privacy-policy", text: "Privacy Policy" },
@@ -75,7 +77,8 @@ const filterTypes = [
 
 export const linkService = {
     imageMap,
-    mobileNavLinks,
+    upperMobileNavLinks,
+    lowerMobileNavLinks,
     restaurantFilter,
     lunchfilter,
     filterTypes,
