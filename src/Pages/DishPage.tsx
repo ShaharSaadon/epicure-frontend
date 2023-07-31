@@ -3,6 +3,7 @@ import { allrestaurants } from "../Assets/data";
 import { useParams } from "react-router-dom";
 import { linkService } from "../Services/link.service";
 import { Checkbox } from "@mui/material";
+import { useSelector } from "react-redux";
 
 export const DishPage = () => {
     let { restaurantId, dishId } = useParams();
@@ -17,6 +18,8 @@ export const DishPage = () => {
 
     const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
+    const { cart } = useSelector(({ cartModule }) => cartModule);
+    console.log(cart);
     return (
         <div className="dish-page">
             <img src={imageMap[currDish.name]} alt="" className="dish-image" />
