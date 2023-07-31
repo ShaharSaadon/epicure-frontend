@@ -11,13 +11,13 @@ import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 
 export const RestaurantPage = () => {
-    let { restaurant } = useParams();
+    let { restaurantId } = useParams();
     const { value, handleChange } = useTabs(0);
     const { lunchfilter, imageMap } = linkService;
     const filters = Object.values(lunchfilter);
 
     const [currRestaurant, setCurrRestaurant] = useState(
-        allrestaurants.find((rest) => rest.name === restaurant)
+        allrestaurants.find((rest) => rest._Id === restaurantId)
     );
 
     if (!currRestaurant) return;
@@ -25,9 +25,25 @@ export const RestaurantPage = () => {
 
     useEffect(() => {
         setDishes(currRestaurant?.dishes || []);
-    }, [restaurant]);
+    }, [restaurantId]);
 
-    if (!restaurant) return;
+    if (!restaurantId) return;
+
+    const requestedDishes = () => {
+        switch (value) {
+            case 0: //Breakfast
+                console.log("filters[0]", filters);
+                return dishes.filter((dish) => dish.dishType === filters[0]);
+            case 1: //Lanch
+                return dishes.filter((dish) => dish.dishType === filters[1]);
+            case 2: //Dinner
+                return dishes.filter((dish) => dish.dishType === filters[2]);
+
+            default:
+                return [];
+        }
+    };
+
     return (
         <Box sx={{ width: "100%" }} className="restaurant-page">
             <img
@@ -50,7 +66,11 @@ export const RestaurantPage = () => {
                     filters={filters}
                 />
             </Box>
-            <CustomTabPanels value={value} filters={filters} data={dishes} />
+            <CustomTabPanels
+                value={value}
+                filters={filters}
+                data={requestedDishes()}
+            />
         </Box>
     );
 };

@@ -1,5 +1,5 @@
-import { linkService } from "../../Services/link.service.ts";
-import { Restaurant, Dish } from "../../Assets/data.ts";
+import { linkService } from "../../Services/link.service";
+import { Restaurant, Dish } from "../../Assets/data";
 import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
 
@@ -12,7 +12,13 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
     const isRestaurant = data.type !== "dish";
 
     return (
-        <Link to={data.name}>
+        <Link
+            to={
+                isRestaurant
+                    ? `/restaurants/${data._Id}`
+                    : `/restaurants/${data.restaurantId}/${data._Id}`
+            }
+        >
             <section className="dynamic-card flex flex-column">
                 <img
                     src={imageMap[data.name]}

@@ -5,16 +5,14 @@ import { linkService } from "../Services/link.service";
 import { Checkbox } from "@mui/material";
 
 export const DishPage = () => {
-    let { restaurant, dish } = useParams();
-    const currRestaurant = allrestaurants.find(
-        (rest) => rest.name === restaurant
-    );
+    let { restaurantId, dishId } = useParams();
+    const restaurant = allrestaurants.find((rest) => rest._Id === restaurantId);
     const { imageMap } = linkService;
 
     // if (!currRestaurant) return;
-    const [dishes, setDishes] = useState(currRestaurant?.dishes || []);
+    const [dishes, setDishes] = useState(restaurant?.dishes || []);
 
-    const currDish = dishes.find((dishObj) => dishObj.name === dish);
+    const currDish = dishes.find((dish) => dish._Id === dishId);
     if (!currDish) return null;
 
     const label = { inputProps: { "aria-label": "Checkbox demo" } };

@@ -37,9 +37,9 @@
             margin: 0 auto;
         }
         .dekstop-carousel {
+            justify-content: center;
             display: flex;
             flex-wrap: wrap;
-
             .carousel-item {
                 width: 272px;
                 margin: 10px;

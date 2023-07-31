@@ -11,8 +11,14 @@ export const App = () => {
         <Router>
             <AppHeader />
             <Routes>
-                <Route path="/:restaurant" element={<RestaurantPage />} />
-                <Route path="/:restaurant/:dish" element={<DishPage />} />
+                <Route
+                    path="/restaurants/:restaurantId/:dishId"
+                    element={<DishPage />}
+                />
+                <Route
+                    path="/restaurants/:restaurantId"
+                    element={<RestaurantPage />}
+                />
                 <Route path="/restaurants" element={<RestaurantIndex />} />
                 <Route path="/" element={<HomePage />} />
             </Routes>
