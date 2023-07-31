@@ -14,7 +14,7 @@ export const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
             onClick={toggleCart}
         >
             <img src={CartImage} alt="cart" className="cart-icon" />
-            <h2 className="cart-message">YOUR CART IS EMPTY</h2>
+            <h2 className="cart-message">YOUR BAG IS EMPTY</h2>
 
             <div className="history">ORDER HISTORY</div>
         </div>
