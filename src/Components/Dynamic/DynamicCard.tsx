@@ -23,20 +23,28 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
                     <h1 className="card-title">{data.name}</h1>
                     {isRestaurant ? (
                         <div className="card-content flex flex-column restaurant">
-                            <p> {data.chef}</p>
+                            <p className="chef-name"> {data.chef}</p>
                             {data.stars && (
                                 <Rating
                                     name="read-only"
                                     value={data.stars}
                                     readOnly
-                                    className="rating"
+                                    className="rating flex justify-center"
                                 />
                             )}
                         </div>
                     ) : (
                         <div className="card-content flex flex-column dish">
                             <p className="ingredients"> {data.ingredients}</p>
-                            <p>{data.special}</p>
+                            {data.special ? (
+                                <img
+                                    src={imageMap[data.special]}
+                                    alt=""
+                                    className="icon-special"
+                                />
+                            ) : (
+                                ""
+                            )}
                             <p className="price">₪ {data.price}</p>
                         </div>
                     )}

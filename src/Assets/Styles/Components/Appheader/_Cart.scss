@@ -23,6 +23,7 @@
         }
 
         .history {
+            display: none;
             position: absolute;
             bottom: 44px;
             border: 1px black solid;
@@ -40,6 +41,9 @@
         .cart {
             width: 35%;
             right: 0;
+            .history {
+                display: inline-block;
+            }
         }
     }
 }

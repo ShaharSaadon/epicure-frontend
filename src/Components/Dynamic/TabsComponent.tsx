@@ -25,13 +25,6 @@ interface CustomTabPanelsProps {
     data: (Dish | Restaurant)[];
 }
 
-const a11yProps = (index: number) => {
-    return {
-        id: `simple-tab-${index}`,
-        "aria-controls": `simple-tabpanel-${index}`,
-    };
-};
-
 const CustomTabPanel = (props: TabPanelProps) => {
     const { children, value, index, ...other } = props;
 
@@ -84,7 +77,7 @@ export const CustomTabs: React.FC<CustomTabsProps> = ({
             indicatorColor="secondary"
         >
             {filters.map((filter, index) => (
-                <Tab label={filter} {...a11yProps(index)} key={index} />
+                <Tab label={filter} key={index} />
             ))}
         </Tabs>
     );

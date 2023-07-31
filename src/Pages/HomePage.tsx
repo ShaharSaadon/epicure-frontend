@@ -6,7 +6,7 @@ import { popularRestaurants, bestDishes } from "../Assets/data";
 
 export const HomePage = () => {
     return (
-        <div>
+        <div className="home-page">
             <HeroSection />
             <DynamicCarousel
                 title="POPULAR RESTAURANT IN EPICURE:"

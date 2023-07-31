@@ -1,24 +1,17 @@
-import spicy from "../../Assets/Images/HomePage/icons/spicy.svg";
-import vegan from "../../Assets/Images/HomePage/icons/vegan.svg";
-import vegitarian from "../../Assets/Images/HomePage/icons/vegitarian.svg";
+import { linkService } from "../../Services/link.service";
 
 export const OurIcons = () => {
+    const { ourIconsData } = linkService;
     return (
-        <div className="icons-container text-center">
+        <div className="icons-container flex  flex-column text-center">
             <h1 className="icon-title">THE MEANING OF OUR ICONS:</h1>
             <div className="our-icons flex flex-column items-center ">
-                <div className="icon-type flex flex-column">
-                    <img src={spicy} alt="spicy" className="icon" />
-                    <p>Spicy</p>
-                </div>
-                <div className="icon-type flex flex-column">
-                    <img src={vegitarian} alt="vegitarian" className="icon" />
-                    <p>Vegitarian</p>
-                </div>
-                <div className="icon-type flex flex-column">
-                    <img src={vegan} alt="vegan" className="icon" />
-                    <p>Vegan</p>
-                </div>
+                {ourIconsData.map((item, index) => (
+                    <div className="icon-type flex flex-column" key={index}>
+                        <img src={item.icon} alt={item.type} className="icon" />
+                        <p className="icon-name">{item.type}</p>
+                    </div>
+                ))}
             </div>
         </div>
     );

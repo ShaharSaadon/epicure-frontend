@@ -1,6 +1,6 @@
 .icons-container {
     background-color: $secondary-color3;
-    gap: 56px;
+    // gap: 56px;
     padding: $xxLarge-space 0;
     @include h3Mobile();
 
@@ -11,6 +11,9 @@
     }
     .icon-type {
         gap: 32px;
+        .icon-name {
+            margin-block-end: 56px;
+        }
     }
     .icon {
         width: 77px;
