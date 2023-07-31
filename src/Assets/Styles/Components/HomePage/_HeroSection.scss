@@ -3,7 +3,7 @@
     margin-block-end: 48px;
     .img-container {
         width: 100%;
-        max-height: 600px;
+        max-height: 70vh;
         overflow: hidden;
         display: flex;
         justify-content: center;
@@ -37,8 +37,8 @@
                 @include h1Dekstop();
                 width: 66%;
             }
-            .search {
-                width: 66%;
+            .search-dynamic {
+                width: 80%;
             }
         }
     }

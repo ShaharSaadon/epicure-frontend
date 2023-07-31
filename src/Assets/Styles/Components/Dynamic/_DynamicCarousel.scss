@@ -2,10 +2,11 @@
     margin-inline-start: $xLarge-space;
     .title {
         @include h3Mobile();
-        margin-block-end: 40px;
+        margin-block-end: 16px;
     }
     .all-restaurants {
         gap: $medium-space;
+        font-size: 16px;
         margin-block-end: 48px;
         .arrow-icon {
             width: $xxLarge-space;
@@ -17,20 +18,18 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: $xxLarge-space;
         justify-items: center;
-        // .carousel-item {
-        //     max-width: 380px;
-        // }
     }
 
     @include mq(mobile-breakpoint) {
         margin-inline: $normal-padding;
 
-        text-align: center;
         .all-restaurants {
             justify-content: flex-end;
+            font-size: 24px;
         }
         .title {
-            text-align: start;
+            @include h2Dekstop();
+            text-align: center;
             margin-block: 42px;
         }
     }

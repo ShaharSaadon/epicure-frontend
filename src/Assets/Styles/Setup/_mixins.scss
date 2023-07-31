@@ -29,7 +29,7 @@ $breakpoints: (
     font-size: 32px;
     color: $primary-color1;
     line-height: 40px;
-    letter-spacing: 2px;
+    letter-spacing: 2.6px;
 }
 @mixin h2Dekstop() {
     font-family: Helvetica;
@@ -73,4 +73,10 @@ $breakpoints: (
     font-size: $medium-space;
     letter-spacing: 1.3px;
     color: $primary-color1;
+}
+@mixin placeHolderDekstop() {
+    font-size: $xxLarge-space;
+    letter-spacing: 1.3px;
+    color: $primary-color1;
+    font-weight: 100;
 }

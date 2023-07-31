@@ -1,6 +1,7 @@
 .restaurant-page {
     .hero-image {
-        max-height: 425;
+        max-height: 425px;
+        object-fit: cover;
     }
     .hero-container {
         padding: 24px 0 16px 20px;

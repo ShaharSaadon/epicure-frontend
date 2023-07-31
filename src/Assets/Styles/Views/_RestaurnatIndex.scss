@@ -1,0 +1,10 @@
+.restaurant-index {
+    .dynamic-card {
+        // max-width: 280px;
+    }
+    .dekstop-carousel {
+        display: flex;
+        gap: $xLarge-space;
+        flex-wrap: wrap;
+    }
+}

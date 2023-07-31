@@ -1,0 +1,34 @@
+.dish-page {
+    .dish-image {
+        max-height: 270px;
+        object-fit: cover;
+    }
+    .dish-info {
+        padding: 32px 20px;
+
+        .dish-title {
+            @include h3Mobile();
+            font-weight: 900;
+            margin-block-end: 16px;
+        }
+
+        .ingredients {
+            margin-block-end: 48px;
+        }
+
+        .question-title {
+            @include h3Mobile();
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: orange;
+                display: inline-block; /* Add this line to make the line only as wide as the text */
+            }
+        }
+    }
+}

@@ -12,7 +12,7 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
     const isRestaurant = data.type !== "dish";
 
     return (
-        <Link to={isRestaurant ? `/restaurants/${data.name}` : "#"}>
+        <Link to={data.name}>
             <section className="dynamic-card flex flex-column">
                 <img
                     src={imageMap[data.name]}
@@ -22,21 +22,29 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
                 <div className="card-info flex flex-column">
                     <h1 className="card-title">{data.name}</h1>
                     {isRestaurant ? (
-                        <div className="card-content flex flex-column restaurant justify-center items-center">
-                            <p> {data.chef}</p>
+                        <div className="card-content flex flex-column restaurant">
+                            <p className="chef-name"> {data.chef}</p>
                             {data.stars && (
                                 <Rating
                                     name="read-only"
                                     value={data.stars}
                                     readOnly
-                                    className="rating"
+                                    className="rating flex justify-center"
                                 />
                             )}
                         </div>
                     ) : (
                         <div className="card-content flex flex-column dish">
                             <p className="ingredients"> {data.ingredients}</p>
-                            <p>{data.special}</p>
+                            {data.special ? (
+                                <img
+                                    src={imageMap[data.special]}
+                                    alt=""
+                                    className="icon-special"
+                                />
+                            ) : (
+                                ""
+                            )}
                             <p className="price">₪ {data.price}</p>
                         </div>
                     )}

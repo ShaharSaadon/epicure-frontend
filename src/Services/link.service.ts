@@ -16,18 +16,23 @@ import nitanThaiImg from "../Assets/Images/Restaurants/nitan-thai.png";
 import yaPanImg from "../Assets/Images/Restaurants/ya-pan.png";
 import redFarmImg from "../Assets/Images/Restaurants/red-farm.png";
 import taMaLaKo from "../Assets/Images/Restaurants/ta-ma-la-ko.png";
+import spicyImg from "../Assets/Images/HomePage/icons/spicy.svg";
+import veganImg from "../Assets/Images/HomePage/icons/vegan.svg";
+import vegitarianImg from "../Assets/Images/HomePage/icons/vegitarian.svg";
 type ImageType = string;
 
 interface ImageMapType {
     [key: string]: ImageType;
 }
-
 const imageMap: ImageMapType = {
     Claro: claroImg,
     Onza: onzaImg,
     Mashya: mashyaImg,
     Lumina: luminaImg,
     Messa: messaImg,
+    spicy: spicyImg,
+    vegan: veganImg,
+    vegitarian: vegitarianImg,
     "Kitchen Market": kitchenMarketImg,
     "Tiger Lilly": tigerLillyImg,
     "Pad Ki Mao": padKiMaoImg,
@@ -56,25 +61,36 @@ const dekstopNavLinks = [
     { path: "/restaurants", text: "Restaurants" },
     { path: "/chefs", text: "Chefs" },
 ];
-
 enum restaurantFilter {
     ALL = "ALL",
     NEW = "NEW",
-    MOST_POPULAR = "MOST_POPULAR",
-    OPEN_NOW = "OPEN_NOW",
+    MOST_POPULAR = "MOST POPULAR",
+    OPEN_NOW = "OPEN NOW",
 }
 enum lunchfilter {
     BREAKFAST = "Breakfast",
     LANCH = "Lanch",
     DINNER = "Dinner",
 }
-
 const filterTypes = [
     { type: "price", label: "Price Range" },
     { type: "distance", label: "Distance" },
     { type: "rating", label: "Rating" },
 ];
-
+const ourIconsData = [
+    {
+        type: "Spicy",
+        icon: spicyImg,
+    },
+    {
+        type: "Vegitarian",
+        icon: vegitarianImg,
+    },
+    {
+        type: "Vegan",
+        icon: veganImg,
+    },
+];
 export const linkService = {
     imageMap,
     upperMobileNavLinks,
@@ -83,4 +99,5 @@ export const linkService = {
     lunchfilter,
     filterTypes,
     dekstopNavLinks,
+    ourIconsData,
 };

@@ -25,5 +25,11 @@
 @import "Components/Dynamic/Search";
 @import "Components/HomePage/OurIcons";
 @import "Components/RestaurantFilter";
-@import "Views/RestaurantPage";
 @import "Components/AppHeader/AppHeader";
+
+// VIEWS
+
+@import "Views/RestaurantPage";
+@import "Views/RestaurnatIndex";
+@import "Views/DishPage";
+@import "Views/_HomePage.scss";

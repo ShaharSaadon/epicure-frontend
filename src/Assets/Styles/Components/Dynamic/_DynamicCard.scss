@@ -7,7 +7,7 @@
         gap: $medium-space;
         position: relative;
         .card-content {
-            gap: $large-space;
+            gap: $min-space;
             width: 200px;
             .ingredients {
                 letter-spacing: 2px;
@@ -26,6 +26,10 @@
             .rating {
                 display: none;
             }
+            .icon-special {
+                width: 30px;
+                // margin-block-end: 12px;
+            }
         }
         .card-title {
             @include h3Mobile();
@@ -38,10 +42,18 @@
 
     @include mq(mobile-breakpoint) {
         .card-info {
+            align-items: center;
             .card-content {
                 .rating {
                     display: flex;
                 }
+            }
+            .card-title {
+                @include h1Dekstop();
+                font-weight: 900;
+            }
+            .chef-name {
+                font-size: 24px;
             }
         }
     }

@@ -1,27 +1,38 @@
 footer {
     .main-footer {
+        display: grid;
+        grid-template-areas:
+            "logo" "."
+            "downloads" "."
+            "about" ".";
         background-color: $secondary-color3;
         padding: $xxLarge-space $xLarge-space 48px $xLarge-space;
         .logo {
+            grid-area: logo;
             width: $logo-width;
             margin-block-end: 32px;
         }
-        .download-box {
-            width: 180px;
-            padding: $small-space $medium-space;
-            margin-block-end: $large-space;
-            border-radius: 10px;
-            gap: $small-space;
-            border: 1px $primary-color1 solid;
-            .icon {
-                width: $xLarge-space;
-            }
-            .text {
-                font-weight: 900;
-                font-family: Helvetica;
+        .download-boxes {
+            grid-area: downloads;
+            .download-box {
+                width: 180px;
+                padding: $small-space $medium-space;
+                margin-block-end: $large-space;
+                border-radius: 10px;
+                gap: $small-space;
+                border: 1px $primary-color1 solid;
+                .icon {
+                    width: $xLarge-space;
+                }
+                .text {
+                    font-weight: 900;
+                    font-family: Helvetica;
+                }
             }
         }
+
         .about {
+            grid-area: about;
             margin-block-start: 48px;
             .about-title {
                 @include h3Mobile();
@@ -36,10 +47,19 @@ footer {
         }
     }
 
-    .clean-list {
+    .footer-nav {
         @include h3Mobile();
         padding: 32px 0 $xxLarge-space $xLarge-space;
         background-color: #fff;
         gap: 40px;
+    }
+
+    @include mq(mobile-breakpoint) {
+        .main-footer {
+            // background-color: green;
+            grid-template-areas:
+                "about" "logo"
+                "downloads" "logo";
+        }
     }
 }
