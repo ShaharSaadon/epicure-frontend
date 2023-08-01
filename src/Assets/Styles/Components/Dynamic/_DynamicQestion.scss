@@ -1,0 +1,10 @@
+.questions {
+    gap: 24px;
+    .question-title {
+        margin-block-start: 48px;
+    }
+    .options {
+        row-gap: 24px;
+        column-gap: 12px;
+    }
+}

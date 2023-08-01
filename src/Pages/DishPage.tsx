@@ -31,6 +31,7 @@ export const DishPage = () => {
 
     useEffect(() => {
         dispatch(openModal());
+
         const restaurant = allrestaurants.find(
             (rest) => rest._Id === restaurantId
         );

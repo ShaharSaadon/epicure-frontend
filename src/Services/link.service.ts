@@ -47,7 +47,6 @@ const imageMap: ImageMapType = {
     "Ta Ma La Ko": taMaLaKo,
     "Red Farm": redFarmImg,
 };
-
 const upperMobileNavLinks = [
     { path: "/restaurants", text: "Restaurants" },
     { path: "/chefs", text: "Chefs" },
@@ -61,7 +60,6 @@ const dekstopNavLinks = [
     { path: "/restaurants", text: "Restaurants" },
     { path: "/chefs", text: "Chefs" },
 ];
-
 const dynamicQuestions = [
     {
         title: "Choose a side",
@@ -74,7 +72,6 @@ const dynamicQuestions = [
         options: ["Whithout peanuts", "Sticky Less spicy"],
     },
 ];
-
 enum restaurantFilter {
     ALL = "ALL",
     NEW = "NEW",
