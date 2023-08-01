@@ -61,6 +61,20 @@ const dekstopNavLinks = [
     { path: "/restaurants", text: "Restaurants" },
     { path: "/chefs", text: "Chefs" },
 ];
+
+const dynamicQuestions = [
+    {
+        title: "Choose a side",
+        type: "radio",
+        options: ["White Bread", "Sticky rice"],
+    },
+    {
+        title: "Changes",
+        type: "checkbox",
+        options: ["Whithout peanuts", "Sticky Less spicy"],
+    },
+];
+
 enum restaurantFilter {
     ALL = "ALL",
     NEW = "NEW",
@@ -100,4 +114,5 @@ export const linkService = {
     filterTypes,
     dekstopNavLinks,
     ourIconsData,
+    dynamicQuestions,
 };

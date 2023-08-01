@@ -1,47 +1,49 @@
-.hero-section {
-    position: relative;
-    margin-block-end: 48px;
-    .img-container {
-        width: 100%;
-        height: 270px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-    .box {
-        position: absolute;
-        padding: $medium-space;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba($color: $secondary-color3, $alpha: 0.8);
-        gap: $xLarge-space;
-        width: 90%;
-
-        .text {
-            @include h1Mobile();
-        }
-    }
-
-    @include mq(mobile-breakpoint) {
+.home-page {
+    .hero-section {
+        position: relative;
+        margin-block-end: 48px;
         .img-container {
-            height: 66vh;
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .hero-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
         .box {
-            width: 66%;
+            position: absolute;
+            padding: $medium-space;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba($color: $secondary-color3, $alpha: 0.8);
+            gap: $xLarge-space;
+            width: 90%;
 
             .text {
-                @include h1Dekstop();
-                width: 66%;
+                @include h1Mobile();
             }
-            .search-dynamic {
-                width: 80%;
+        }
+
+        @include mq(mobile-breakpoint) {
+            .img-container {
+                height: 66vh;
+            }
+            .box {
+                width: 66%;
+
+                .text {
+                    @include h1Dekstop();
+                    width: 66%;
+                }
+                .search-dynamic {
+                    width: 80%;
+                }
             }
         }
     }

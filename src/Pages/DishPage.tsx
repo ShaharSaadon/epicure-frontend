@@ -3,35 +3,42 @@ import { useSelector, useDispatch } from "react-redux";
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
 import { useNavigate } from "react-router-dom";
-import { toggleModal } from "../store/actions/modal.actions";
+import { toggleModal, openModal } from "../store/actions/modal.actions";
 import { IconButton } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { Checkbox } from "@mui/material";
 import { Modal } from "@mui/material";
 import { Dish } from "../Assets/data";
 import CloseIcon from "@mui/icons-material/Close";
+import { DynamicQuestion } from "../Components/Dynamic/DynamicQuestion";
+
+interface DynamicQuestion {
+    title: string;
+    type: string;
+    options: string[];
+}
 
 export const DishPage = () => {
     let { restaurantId, dishId } = useParams();
+
     const [currDish, setCurrDish] = useState<Dish | null>(null);
+    const { imageMap, dynamicQuestions } = linkService;
     const { isOpen } = useSelector(({ modalModule }) => modalModule);
-    const { imageMap } = linkService;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const label = { inputProps: { "aria-label": "Checkbox demo" } };
+    // const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
     useEffect(() => {
-        if (restaurantId && dishId) {
-            const restaurant = allrestaurants.find(
-                (rest) => rest._Id === restaurantId
-            );
-            const dishes = restaurant?.dishes || [];
-            const foundDish = dishes.find((dish) => dish._Id === dishId);
-            setCurrDish(foundDish || null);
-        }
-    }, [restaurantId, dishId]);
+        dispatch(openModal());
+        const restaurant = allrestaurants.find(
+            (rest) => rest._Id === restaurantId
+        );
+
+        const dishes = restaurant?.dishes || [];
+        const foundDish = dishes.find((dish) => dish._Id === dishId);
+        if (foundDish) setCurrDish(foundDish);
+    }, [currDish]);
 
     const handleCloseModal = () => {
         dispatch(toggleModal());
@@ -48,37 +55,31 @@ export const DishPage = () => {
             BackdropProps={{ open: false }}
         >
             <div className="dish-page">
+                <IconButton
+                    className="close-container"
+                    onClick={handleCloseModal}
+                >
+                    <CloseIcon className="close-button" />
+                </IconButton>
                 <img
                     src={imageMap[currDish.name]}
                     alt=""
                     className="dish-image"
                 />
-                <IconButton className="close-button" onClick={handleCloseModal}>
-                    <CloseIcon />
-                </IconButton>
+
                 <div className="dish-info">
                     <h1 className="dish-title">{currDish.name}</h1>
                     <p className="ingredients">{currDish.ingredients}</p>
-                    <div className="side">
-                        <h1 className="question-title">Choose a Side</h1>
-                        <input
-                            type="radio"
-                            value="white-bread"
-                            name="side"
-                        />{" "}
-                        White Bread
-                        <input
-                            type="radio"
-                            value="sticky-rise"
-                            name="side"
-                        />{" "}
-                        Sticky rice
-                    </div>
-                    <div className="changes">
-                        <h1 className="question-title">Changes</h1>
-                        <Checkbox {...label} /> without peanuts
-                        <Checkbox {...label} /> Stickey less spicy
-                    </div>
+                    {dynamicQuestions.map(
+                        (question: DynamicQuestion, index: Number) => (
+                            <DynamicQuestion
+                                key={index}
+                                title={question.title}
+                                type={question.type}
+                                options={question.options}
+                            />
+                        )
+                    )}
                     <div className="quantity">
                         <h1 className="question-title">Quantity</h1>
                         <input type="text" />
