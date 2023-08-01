@@ -10,7 +10,7 @@ import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 import { DishPage } from "./DishPage";
 
-export const RestaurantPage = () => {
+const RestaurantPage = () => {
     const { lunchfilter, imageMap } = linkService;
     const { value, handleChange } = useTabs(0);
     const { restaurantId } = useParams();
@@ -68,3 +68,5 @@ export const RestaurantPage = () => {
         </Box>
     );
 };
+
+export default RestaurantPage;

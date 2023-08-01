@@ -80,3 +80,13 @@ $breakpoints: (
     color: $primary-color1;
     font-weight: 100;
 }
+
+@mixin common-btn() {
+    background-color: $primary-color1;
+    color: $primary-color3;
+    padding: 12px 24px;
+    width: 200px;
+    height: 48px;
+    font-size: 18px;
+    font-weight: 400;
+}

@@ -4,7 +4,11 @@ export const HeroSection = () => {
     return (
         <section className="hero-section">
             <div className="img-container">
-                <img src={heroImage} alt="dishes" className="hero-image" />
+                <img
+                    src={heroImage}
+                    alt="Assorted dishes on a table"
+                    className="hero-image"
+                />
             </div>
             <div className="box flex flex-column items-center text-center">
                 <h2 className="text">

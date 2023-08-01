@@ -1,32 +1,50 @@
-.dish-page {
-    .close-container {
-        background-color: $primary-color3;
-        width: 100%;
-        display: flex;
-        padding: 12px;
-        justify-content: start;
-    }
-    .dish-image {
-        max-height: 270px;
-        object-fit: cover;
-    }
-    .dish-info {
-        padding: 32px 20px;
-
-        .dish-title {
-            @include h3Mobile();
-            font-weight: 900;
-            margin-block-end: 16px;
+.modal {
+    // min-height: max-content;
+    overflow-y: auto;
+    .dish-page {
+        .close-container {
+            background-color: $primary-color3;
+            width: 100%;
+            display: flex;
+            padding: 12px;
+            justify-content: start;
         }
-
-        .ingredients {
-            line-height: 18px;
-            letter-spacing: 1.97px;
+        .dish-image {
+            max-height: 270px;
+            object-fit: cover;
         }
+        .dish-info {
+            padding: 32px 20px;
+            .question-title {
+                margin-block: 16px;
+            }
+            .add-bug-btn {
+                margin-block: 48px;
+                @include common-btn();
+            }
+            .dish-title {
+                @include h3Mobile();
+                font-weight: 900;
+                margin-block-end: 16px;
+            }
 
-        .question-title {
-            @include h3Mobile();
-            position: relative;
+            .ingredients {
+                line-height: 18px;
+                letter-spacing: 1.97px;
+            }
+
+            .question-title {
+                @include h3Mobile();
+                position: relative;
+            }
+            .quantity {
+                .quantity-box {
+                    gap: 32px;
+                    .icon {
+                        width: 20px;
+                    }
+                }
+            }
         }
     }
 }

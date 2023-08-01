@@ -5,14 +5,14 @@ interface ToggleModalAction {
     type: typeof TOGGLE_MODAL;
 }
 
+interface OpenModalAction {
+    type: typeof OPEN_MODAL;
+}
+
 export function toggleModal(): ToggleModalAction {
     return {
         type: TOGGLE_MODAL,
     };
-}
-
-interface OpenModalAction {
-    type: typeof OPEN_MODAL;
 }
 
 export function openModal(): OpenModalAction {

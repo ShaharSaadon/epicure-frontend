@@ -8,11 +8,13 @@ import {
 
 import { cartReducer } from "./reducers/cart.reducer";
 import { modalReducer } from "./reducers/modal.reducer";
+import { restaurantReducer } from "./reducers/restaurant.reducer";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     cartModule: cartReducer,
     modalModule: modalReducer,
+    restaurantModule: restaurantReducer,
 });
 
 export const store = createStore(

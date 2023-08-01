@@ -29,7 +29,11 @@ export const DynamicCarousel: React.FC<DynamicCarouselProps> = ({
             <Link to="/restaurants">
                 <h3 className="all-restaurants flex items-center">
                     All Restaurants
-                    <img src={doubleArrowSvg} alt="" className="arrow-icon" />
+                    <img
+                        src={doubleArrowSvg}
+                        alt="Double arrow icon"
+                        className="arrow-icon"
+                    />
                 </h3>
             </Link>
         </div>

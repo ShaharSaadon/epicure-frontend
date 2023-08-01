@@ -8,6 +8,9 @@ interface TabPanelProps {
     index: number;
     value: number;
 }
+interface TabIndicatorProps {
+    style: React.CSSProperties;
+}
 interface CustomTabsProps {
     filters: string[];
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
@@ -23,10 +26,10 @@ const CustomTabPanel = (props: TabPanelProps) => {
 
     return (
         <div
+            key={index}
             role="tabpanel"
             hidden={value !== index}
             id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
             {value === index && (
@@ -62,7 +65,6 @@ export const CustomTabs: React.FC<CustomTabsProps> = ({
         <Tabs
             value={value}
             onChange={handleChange}
-            aria-label="basic tabs example"
             TabIndicatorProps={{
                 children: <TabIndicator />,
             }}
@@ -75,8 +77,8 @@ export const CustomTabs: React.FC<CustomTabsProps> = ({
                     label={filter}
                     key={index}
                     sx={{
-                        maxWidth: "125px", // Set max-width of each tab
-                        padding: "7px", // Adjust padding as needed
+                        maxWidth: "125px",
+                        padding: "7px",
                     }}
                 />
             ))}

@@ -4,7 +4,7 @@ export interface Restaurant {
     name: string;
     chef?: string;
     stars: number;
-    openHoures?: String[];
+    openHoures: string[];
     dishes?: Dish[];
     faundationDate: Date;
 }
@@ -98,9 +98,9 @@ export const allrestaurants: Restaurant[] = [
         stars: 4,
         openHoures: [
             "09:00-21:00",
-            "09:00-21:00",
-            "09:00-21:00",
-            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
             "09:00-21:00",
             "09:00-21:00",
             "09:00-21:00",
