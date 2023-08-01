@@ -2,35 +2,24 @@ import {
     CustomTabPanels,
     CustomTabs,
 } from "../Components/Dynamic/TabsComponent";
-import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
-import { Outlet, useParams } from "react-router-dom";
 import { useTabs } from "../customHooks/useTabs";
 import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 
 export const RestaurantPage = () => {
-    let { restaurantId } = useParams();
-    const { value, handleChange } = useTabs(0);
     const { lunchfilter, imageMap } = linkService;
+    const { value, handleChange } = useTabs(0);
+    const { restaurantId } = useParams();
+
     const filters = Object.values(lunchfilter);
 
-    const [open, setOpen] = useState<boolean>(false);
-    const [selectedDish, setSelectedDish] = useState<DishType | null>(null);
-
-    const [currRestaurant, setCurrRestaurant] = useState(
-        allrestaurants.find((rest) => rest._Id === restaurantId)
+    const currRestaurant = allrestaurants.find(
+        (rest) => rest._Id === restaurantId
     );
-
-    if (!currRestaurant) return;
-    const [dishes, setDishes] = useState(currRestaurant?.dishes || []);
-
-    useEffect(() => {
-        setDishes(currRestaurant?.dishes || []);
-    }, [restaurantId]);
-
-    if (!restaurantId) return;
+    const dishes = currRestaurant?.dishes;
 
     const requestedDishes = () => {
         switch (value) {
@@ -47,6 +36,7 @@ export const RestaurantPage = () => {
         }
     };
 
+    if (!currRestaurant) return;
     return (
         <Box sx={{ width: "100%" }} className="restaurant-page">
             <img
@@ -74,8 +64,6 @@ export const RestaurantPage = () => {
                 filters={filters}
                 data={requestedDishes()}
             />
-
-            <Outlet />
         </Box>
     );
 };

@@ -3,11 +3,20 @@ import {
     UPDATE_CART_ITEM,
     ADD_TO_CART,
 } from "../reducers/cart.reducer";
-
 import { Dish } from "../../Assets/data";
 
 interface AddToCartAction {
     type: typeof ADD_TO_CART;
+    dish: Dish;
+}
+
+interface RemoveFromCartAction {
+    type: typeof REMOVE_FROM_CART;
+    dish: Dish;
+}
+
+interface UpdateCartItemAction {
+    type: typeof UPDATE_CART_ITEM;
     dish: Dish;
 }
 
@@ -18,21 +27,11 @@ export function addToCart(dish: Dish): AddToCartAction {
     };
 }
 
-interface RemoveFromCartAction {
-    type: typeof REMOVE_FROM_CART;
-    dish: Dish;
-}
-
 export function removeFromCart(dish: Dish): RemoveFromCartAction {
     return {
         type: REMOVE_FROM_CART,
         dish,
     };
-}
-
-interface UpdateCartItemAction {
-    type: typeof UPDATE_CART_ITEM;
-    dish: Dish;
 }
 
 export function updateCartItem(dish: Dish): UpdateCartItemAction {
