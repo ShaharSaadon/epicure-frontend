@@ -4,7 +4,8 @@ interface DynamicQuestionProps {
     title: string;
     type: string;
     options: string[];
-    onChange: (selectedOption: string) => void; // single string, not an array
+    idQuestion: string;
+    onChange: (selectedOption: string) => void;
 }
 export const DynamicQuestion = ({
     title,
@@ -38,7 +39,7 @@ export const DynamicQuestion = ({
     };
 
     return (
-        <div className="questions flex flex-column">
+        <div className="questions ">
             <h1 className="question-title">{title}</h1>
             {options.map((option, index) => (
                 <div className="options flex" key={index}>
@@ -53,7 +54,7 @@ export const DynamicQuestion = ({
                                 : selectedCheckboxes.includes(option)
                         }
                     />
-                    <p>{option}</p>
+                    <p className="option">{option}</p>
                 </div>
             ))}
         </div>

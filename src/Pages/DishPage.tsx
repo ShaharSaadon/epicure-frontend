@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-    setCurrentRestaurant,
+    DishToOrder,
     setCurrentDish,
 } from "../store/actions/restaurant.actions";
 
@@ -12,11 +12,11 @@ import { toggleModal, openModal } from "../store/actions/modal.actions";
 import { IconButton } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { Modal } from "@mui/material";
-import { Dish } from "../Assets/data";
 import { DynamicQuestion } from "../Components/Dynamic/DynamicQuestion";
 import CloseIcon from "@mui/icons-material/Close";
 import plus from "../Assets/Images/Restaurants/plus.svg";
 import menus from "../Assets/Images/Restaurants/menus.svg";
+import { addToCart } from "../store/actions/cart.actions";
 interface DynamicQuestion {
     title: string;
     type: string;
@@ -28,12 +28,20 @@ const DishPage = () => {
 
     const { imageMap, dynamicQuestions } = linkService;
     const { isOpen } = useSelector(({ modalModule }) => modalModule);
-    const { currentRestaurant, currentDish } = useSelector(
+    const { currentDish } = useSelector(
         ({ restaurantModule }) => restaurantModule
     );
 
+    const { cart } = useSelector(({ cartModule }) => cartModule);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const [dishToOrder, setDishToOrder] = useState({
+        ...currentDish,
+        side: "",
+        changes: "",
+        quantity: 1,
+    });
 
     useEffect(() => {
         dispatch(openModal());
@@ -42,38 +50,42 @@ const DishPage = () => {
             (rest) => rest._Id === restaurantId
         );
 
-        if (foundRestaurant) dispatch(setCurrentRestaurant(foundRestaurant)); // Set the current restaurant
-
         const dishes = foundRestaurant?.dishes || [];
         const foundDish = dishes.find((dish) => dish._Id === dishId);
 
-        if (foundDish) dispatch(setCurrentDish(foundDish)); // Set the current dish
+        if (foundDish) dispatch(setCurrentDish(foundDish));
+
+        setDishToOrder({
+            ...currentDish,
+            side: "",
+            changes: "",
+            quantity: 1,
+        });
     }, [currentDish]);
 
+    console.log(currentDish);
     const handleCloseModal = () => {
         dispatch(toggleModal());
         navigate(-1);
     };
 
-    const [dishToOrder, setDishToOrder] = useState({
-        side: "",
-        changes: "",
-        quantity: 1,
-    });
+    const handleAddToCart = () => {
+        dispatch(addToCart(dishToOrder));
+    };
+
     const handleQuantity = (operator: number) => {
-        setDishToOrder((prevDishToOrder) => ({
+        setDishToOrder((prevDishToOrder: DishToOrder) => ({
             ...prevDishToOrder,
             quantity: prevDishToOrder.quantity + operator,
         }));
     };
 
     const handleChange = (field: string, value: string) => {
-        setDishToOrder((prev) => ({
-            ...prev,
+        setDishToOrder((prevDishToOrder: DishToOrder) => ({
+            ...prevDishToOrder,
             [field]: value,
         }));
     };
-    console.log(dishToOrder);
 
     if (!currentDish) return null;
 
@@ -98,6 +110,8 @@ const DishPage = () => {
                     className="dish-image"
                 />
 
+                {JSON.stringify(cart, null, 2)}
+
                 <div className="dish-info">
                     <h1 className="dish-title">{currentDish.name}</h1>
                     <p className="ingredients">{currentDish.ingredients}</p>
@@ -109,7 +123,7 @@ const DishPage = () => {
                                 type={question.type}
                                 options={question.options}
                                 onChange={(value: string) =>
-                                    handleChange(question.title, value)
+                                    handleChange(question.idQuestion, value)
                                 }
                             />
                         )
@@ -133,7 +147,9 @@ const DishPage = () => {
                         </div>
                     </div>
 
-                    <button className="add-bug-btn">ADD TO BAG</button>
+                    <button className="add-bug-btn" onClick={handleAddToCart}>
+                        ADD TO BAG
+                    </button>
                 </div>
             </div>
         </Modal>

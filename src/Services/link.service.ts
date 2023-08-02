@@ -65,11 +65,13 @@ const dynamicQuestions = [
         title: "Choose a side",
         type: "radio",
         options: ["White Bread", "Sticky rice"],
+        idQuestion: "side",
     },
     {
         title: "Changes",
         type: "checkbox",
         options: ["Whithout peanuts", "Sticky Less spicy"],
+        idQuestion: "changes",
     },
 ];
 enum restaurantFilter {

@@ -1,12 +1,12 @@
 const CART_KEY = "cart";
 
-import { Dish } from "../Assets/data";
+import { DishToOrder } from "../store/actions/cart.actions";
 
-function saveCart(cart: Dish[]): void {
+function saveCart(cart: DishToOrder[]): void {
     store(CART_KEY, cart);
 }
 
-function loadCart(): Dish[] {
+function loadCart(): DishToOrder[] {
     return load(CART_KEY, []);
 }
 

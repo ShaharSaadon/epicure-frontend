@@ -35,8 +35,14 @@
 
             .question-title {
                 @include h3Mobile();
-                position: relative;
+                display: inline-block;
+                border-bottom: 2px solid currentColor;
+                border-bottom-color: $underline-color;
             }
+            .options {
+                margin-block-end: 16px;
+            }
+
             .quantity {
                 .quantity-box {
                     gap: 32px;
