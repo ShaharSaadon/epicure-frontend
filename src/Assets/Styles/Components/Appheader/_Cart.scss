@@ -1,22 +1,12 @@
 .app-header {
+    @include headerToggleCmp(cart);
+
     .cart {
-        padding-top: 24px;
         justify-content: flex-start;
-        background-color: $primary-color3;
-        width: 100%;
         right: 0;
-        z-index: 5;
-        display: none;
-        position: absolute;
         gap: 20px;
-        top: 0;
         height: 80vh;
-        &.open {
-            display: flex;
-        }
-        &:hover {
-            cursor: pointer;
-        }
+
         .cart-icon {
             width: 44px;
         }

@@ -1,3 +1,5 @@
+import { Password } from "@mui/icons-material";
+
 export interface Restaurant {
     _Id: String;
     type: "restaurant";
@@ -8,7 +10,6 @@ export interface Restaurant {
     dishes?: Dish[];
     faundationDate: Date;
 }
-
 export interface Dish {
     _Id: String;
     type: "dish";
@@ -18,6 +19,20 @@ export interface Dish {
     price?: number;
     restaurantId: string;
     dishType?: string;
+}
+
+export interface User {
+    _Id: string;
+    email: string;
+    password: string;
+}
+export interface Credentials {
+    email: string;
+    password: string;
+}
+export interface LoggedInUser {
+    _Id: string;
+    email: string;
 }
 export const chefOfTheWeekRestaurants: Restaurant[] = [
     {
@@ -263,4 +278,8 @@ export const allrestaurants: Restaurant[] = [
         stars: 3,
         faundationDate: new Date("2022-01-15"),
     },
+];
+
+export const allUsers: User[] = [
+    { _Id: "1", email: "1@gmail.com", password: "1" },
 ];

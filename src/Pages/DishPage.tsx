@@ -71,6 +71,7 @@ const DishPage = () => {
 
     const handleAddToCart = () => {
         dispatch(addToCart(dishToOrder));
+        navigate(-1);
     };
 
     const handleQuantity = (operator: number) => {

@@ -8,21 +8,26 @@ import { MobileNav } from "./MobileNav";
 import { Actions } from "./Actions";
 import { DekstopNav } from "./DekstopNav";
 import { useEffect } from "react";
+import { Login } from "./Login";
 export const AppHeader = () => {
     const [isHeaderOpen, toggleHeader] = useToggle();
     const [isCartOpen, toggleCart] = useToggle();
     const [isSearchOpen, toggleSearch] = useToggle();
+    const [isLoginOpen, toggleLogin] = useToggle();
 
     // Prevent body scrolling when any of the menus is open
     useEffect(() => {
         document.body.style.overflow =
-            isHeaderOpen || isCartOpen || isSearchOpen ? "hidden" : "";
-    }, [isHeaderOpen, isCartOpen, isSearchOpen]);
+            isHeaderOpen || isCartOpen || isSearchOpen || isLoginOpen
+                ? "hidden"
+                : "";
+    }, [isHeaderOpen, isCartOpen, isSearchOpen, isLoginOpen]);
 
     const closeAll = () => {
         if (isHeaderOpen) toggleHeader();
         if (isCartOpen) toggleCart();
         if (isSearchOpen) toggleSearch();
+        if (isLoginOpen) toggleLogin();
     };
 
     return (
@@ -41,10 +46,17 @@ export const AppHeader = () => {
                     <DekstopNav />
                 </div>
 
-                <Actions toggleSearch={toggleSearch} toggleCart={toggleCart} />
+                <Actions
+                    toggleSearch={toggleSearch}
+                    toggleCart={toggleCart}
+                    toggleLogin={toggleLogin}
+                />
 
                 {/* Overlay */}
-                {(isHeaderOpen || isCartOpen || isSearchOpen) && (
+                {(isHeaderOpen ||
+                    isCartOpen ||
+                    isSearchOpen ||
+                    isLoginOpen) && (
                     <div className="overlay" onClick={closeAll} />
                 )}
 
@@ -59,6 +71,8 @@ export const AppHeader = () => {
                 />
 
                 <Cart isCartOpen={isCartOpen} toggleCart={toggleCart} />
+
+                <Login isLoginOpen={isLoginOpen} toggleLogin={toggleLogin} />
             </div>
         </>
     );

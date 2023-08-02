@@ -5,16 +5,12 @@ interface SearchHeaderProps {
     toggleSearch: () => void;
 }
 
-export const SearchHeader: React.FC<SearchHeaderProps> = ({
-    isSearchOpen,
-    toggleSearch,
-}) => {
+export const SearchHeader: React.FC<SearchHeaderProps> = ({ isSearchOpen }) => {
     return (
         <div
             className={`search ${
                 isSearchOpen ? "open" : ""
             } flex  items-center justify-center `}
-            onClick={toggleSearch}
         >
             <Search />
         </div>

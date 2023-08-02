@@ -90,3 +90,31 @@ $breakpoints: (
     font-size: 18px;
     font-weight: 400;
 }
+@mixin common-btn-light() {
+    color: $primary-color1;
+    background-color: $primary-color3;
+    padding: 12px 24px;
+    width: 200px;
+    height: 48px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+@mixin headerToggleCmp($variable) {
+    .#{$variable} {
+        background-color: $primary-color3;
+        z-index: 5;
+        padding-top: 24px;
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        &.open {
+            display: flex;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
