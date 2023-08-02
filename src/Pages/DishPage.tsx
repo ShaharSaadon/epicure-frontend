@@ -24,6 +24,7 @@ interface DynamicQuestion {
 }
 
 const DishPage = () => {
+    3;
     let { restaurantId, dishId } = useParams();
 
     const { imageMap, dynamicQuestions } = linkService;
@@ -63,7 +64,6 @@ const DishPage = () => {
         });
     }, [currentDish]);
 
-    console.log(currentDish);
     const handleCloseModal = () => {
         dispatch(toggleModal());
         navigate(-1);
@@ -110,7 +110,7 @@ const DishPage = () => {
                     className="dish-image"
                 />
 
-                {JSON.stringify(cart, null, 2)}
+                {/* {JSON.stringify(cart, null, 2)} */}
 
                 <div className="dish-info">
                     <h1 className="dish-title">{currentDish.name}</h1>

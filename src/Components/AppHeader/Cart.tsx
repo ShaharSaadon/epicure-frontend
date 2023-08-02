@@ -1,11 +1,14 @@
-import CartImage from "../../Assets/Images/AppHeader/Cart.svg";
-
+import { EmptyCart } from "./EmptyCart";
+import { useSelector } from "react-redux";
+import { FullCart } from "./FullCart";
 interface CartProps {
     isCartOpen: boolean;
     toggleCart: () => void;
 }
 
 export const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
+    const { cart } = useSelector(({ cartModule }) => cartModule);
+    const cartLength = cart.length;
     return (
         <div
             className={`cart ${
@@ -13,10 +16,7 @@ export const Cart: React.FC<CartProps> = ({ isCartOpen, toggleCart }) => {
             } flex flex-column items-center justify-center`}
             onClick={toggleCart}
         >
-            <img src={CartImage} alt="cart" className="cart-icon" />
-            <h2 className="cart-message">YOUR BAG IS EMPTY</h2>
-
-            <div className="history">ORDER HISTORY</div>
+            {cartLength === 0 ? <EmptyCart /> : <FullCart />}
         </div>
     );
 };

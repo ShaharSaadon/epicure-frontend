@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { linkService } from "../../Services/link.service";
+import { Hamburger } from "./Hamburger";
 interface MobileNavProps {
     isHeaderOpen: boolean;
     toggleHeader: () => void;

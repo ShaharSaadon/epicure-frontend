@@ -31,6 +31,7 @@ const RestaurantIndex: React.FC = () => {
                     filters={filters}
                 />
             </Box>
+
             <RestaurantFilter />
 
             <CustomTabPanels

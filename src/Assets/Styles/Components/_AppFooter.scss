@@ -1,7 +1,8 @@
 footer {
-    // position: absolute;
+    position: relative;
     // bottom: -10vh;
-    // background-color: $primary-color1;
+    // -color: $primary-color1;
+    z-index: 1300;
     .main-footer {
         display: grid;
         grid-template-areas:

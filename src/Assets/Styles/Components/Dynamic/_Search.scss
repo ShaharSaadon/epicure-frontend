@@ -12,6 +12,7 @@
         &::placeholder {
             @include placeHolderMobile();
             text-align: center;
+            color: rgba($color: $primary-color1, $alpha: 0.6);
         }
     }
     .search-icon {
@@ -22,11 +23,13 @@
         .search-input {
             &::placeholder {
                 @include placeHolderDekstop();
+                font-size: 22px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: max-content;
                 padding: 0;
+                color: rgba($color: $primary-color1, $alpha: 0.6);
             }
         }
 

@@ -7,7 +7,7 @@
         display: none;
         position: absolute;
         gap: 20px;
-        top: 46px;
+        top: 0;
         height: 220px;
         &.open {
             display: flex;
@@ -34,6 +34,16 @@
             &::hover {
                 cursor: pointer;
             }
+        }
+    }
+    .full-cart {
+        .image-dish {
+            width: 100px;
+            height: 100px;
+        }
+        .dish-info {
+            padding: 12px;
+            background-color: $secondary-color1;
         }
     }
 

@@ -27,7 +27,7 @@ export const ChefOfTheWeek = () => {
                 </p>
             </div>
             <DynamicCarousel
-                title="Yossi's Restaurants"
+                title="YOSSI's RESTAURANTS"
                 data={chefOfTheWeekRestaurants}
             />
         </div>

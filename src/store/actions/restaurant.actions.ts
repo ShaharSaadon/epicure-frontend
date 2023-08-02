@@ -4,11 +4,7 @@ import {
     SET_CURRENT_RESTAURANT,
     SET_CURRENT_DISH,
 } from "../reducers/restaurant.reducer";
-export interface DishToOrder {
-    changes: string[];
-    quantity: number; // not 'quantiny'
-    side: string;
-}
+
 export interface SetCurrentRestaurantAction {
     type: typeof SET_CURRENT_RESTAURANT;
     restaurant: Restaurant;
