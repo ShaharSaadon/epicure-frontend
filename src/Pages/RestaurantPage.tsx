@@ -1,7 +1,5 @@
-import {
-    CustomTabPanels,
-    CustomTabs,
-} from "../Components/Dynamic/CustomTabPanels";
+import { CustomTabPanels } from "../Components/Dynamic/CustomTabPanels";
+import { CustomTabs } from "../Components/Dynamic/CustomTabs";
 import { restaurantService } from "../Services/restaurant.service";
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";

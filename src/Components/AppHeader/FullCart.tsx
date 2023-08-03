@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import { DishToOrder } from "../../store/actions/cart.actions";
 import { linkService } from "../../Services/link.service";
+import { useNavigate } from "react-router-dom";
 export const FullCart = () => {
     const { cart } = useSelector(({ cartModule }) => cartModule);
     const { imageMap } = linkService;
+    const navigate = useNavigate();
 
     const calculateTotalPrice = () => {
         let totalPrice = 0;
@@ -37,7 +39,12 @@ export const FullCart = () => {
                 ))}
             </div>
             <h1 className="cart-title">Total - ₪{calculateTotalPrice()}</h1>
-            <button className="checkout-btn">CHECKOUT</button>
+            <button
+                className="checkout-btn"
+                onClick={() => navigate("/checkout")}
+            >
+                CHECKOUT
+            </button>
         </div>
     );
 };
