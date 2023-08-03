@@ -60,7 +60,7 @@ export const AppFooter = () => {
             ) : (
                 ""
             )}
-            <ul className="footer-nav clean-list flex flex-column">
+            <ul className="footer-nav clean-list flex ">
                 <li>Contact Us</li>
                 <li>Term of Use</li>
                 <li>Privacy Policy</li>

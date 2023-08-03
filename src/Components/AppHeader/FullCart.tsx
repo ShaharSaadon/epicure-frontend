@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import { DishToOrder } from "../../store/actions/cart.actions";
 import { linkService } from "../../Services/link.service";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import lockSvg from "../../Assets/Images/AppHeader/lock.svg";
 export const FullCart = () => {
     const { cart } = useSelector(({ cartModule }) => cartModule);
     const { imageMap } = linkService;
     const navigate = useNavigate();
+    const location = useLocation();
 
     const calculateTotalPrice = () => {
         let totalPrice = 0;
@@ -17,6 +19,7 @@ export const FullCart = () => {
     return (
         <div className="full-cart flex flex-column items-center ">
             <h1 className="cart-title">MY ORDER</h1>
+
             <div className="items-list flex flex-column">
                 {cart.map((item: DishToOrder) => (
                     <div className="cart-item flex" key={item._Id}>
@@ -38,12 +41,22 @@ export const FullCart = () => {
                     </div>
                 ))}
             </div>
+
             <h1 className="cart-title">Total - ₪{calculateTotalPrice()}</h1>
             <button
-                className="checkout-btn"
-                onClick={() => navigate("/checkout")}
+                className="checkout-btn flex items-center justify-center"
+                onClick={() =>
+                    navigate(
+                        location.pathname === "/checkout"
+                            ? "/payment"
+                            : "/checkout"
+                    )
+                }
             >
-                CHECKOUT
+                <img src={lockSvg} alt="lock-icon" className="icon" />
+                {location.pathname === "/checkout"
+                    ? "COMPLETE PAYMENT"
+                    : "COMPLETE CHECKOUT"}
             </button>
         </div>
     );
