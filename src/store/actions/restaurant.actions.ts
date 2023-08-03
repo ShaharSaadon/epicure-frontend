@@ -18,7 +18,6 @@ export interface SetCurrentDishAction {
 export function setCurrentRestaurant(
     restaurant: Restaurant
 ): SetCurrentRestaurantAction {
-    console.log("restaurant action:", restaurant);
     return {
         type: SET_CURRENT_RESTAURANT,
         restaurant,

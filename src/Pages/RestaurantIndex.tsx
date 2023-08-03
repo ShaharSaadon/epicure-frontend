@@ -1,11 +1,9 @@
-import {
-    CustomTabs,
-    CustomTabPanels,
-} from "../Components/Dynamic/TabsComponent";
+import { CustomTabPanels } from "../Components/Dynamic/CustomTabPanels";
 import { restaurantService } from "../Services/restaurant.service";
 import { RestaurantFilter } from "../Components/Restaurants/RestaurantFilter";
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
+import { CustomTabs } from "../Components/Dynamic/CustomTabs";
 import { useTabs } from "../customHooks/useTabs";
 import { useMemo } from "react";
 

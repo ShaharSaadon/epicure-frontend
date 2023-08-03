@@ -8,6 +8,7 @@ import { Loader } from "./Components/Dynamic/Loader";
 const RestaurantIndex = lazy(() => import("./Pages/RestaurantIndex"));
 const RestaurantPage = lazy(() => import("./Pages/RestaurantPage"));
 const DishPage = lazy(() => import("./Pages/DishPage"));
+const Checkout = lazy(() => import("./Pages/Checkout"));
 const NotFoundPage = lazy(() => import("./Pages/NotFoundPage"));
 
 export const App = () => {
@@ -25,6 +26,7 @@ export const App = () => {
                         element={<RestaurantPage />}
                     />
                     <Route path="/restaurants" element={<RestaurantIndex />} />
+                    <Route path="/checkout" element={<Checkout />} />
                     <Route path="/" element={<HomePage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>

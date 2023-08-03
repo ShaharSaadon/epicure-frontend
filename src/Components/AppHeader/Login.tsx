@@ -32,7 +32,6 @@ export const Login: React.FC<LoginProps> = ({ isLoginOpen }) => {
     };
 
     const { loggedinUser } = useSelector(({ userModule }) => userModule);
-    console.log(loggedinUser);
     return (
         <div
             className={`login ${

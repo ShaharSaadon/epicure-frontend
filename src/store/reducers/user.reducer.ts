@@ -26,18 +26,14 @@ export function userReducer(
     state = INITIAL_STATE,
     action: UserActionTypes
 ): UserState {
-    console.log("before", action);
     switch (action.type) {
         case SET_LOGGEDIN_USER:
-            console.log("inside", action);
-
             return {
                 ...state,
                 loggedinUser: action.user,
             };
 
         default:
-            console.log("default", action);
             return state;
     }
 }

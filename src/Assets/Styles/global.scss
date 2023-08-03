@@ -9,7 +9,6 @@
 @import "Basics/typography";
 @import "Basics/base";
 @import "Basics/helpers";
-// @import "Basics/layout";
 
 // COMPONENTS
 @import "Components/AppHeader/MobileNav";
@@ -17,17 +16,19 @@
 @import "Components/AppHeader/Search";
 @import "Components/AppHeader/Cart";
 @import "Components/AppHeader/DekstopNav";
+@import "Components/AppHeader/Login";
+@import "Components/AppHeader/AppHeader";
 @import "Components/AppFooter";
+
 @import "Components/Dynamic/DynamicCarousel";
-@import "Components/HomePage/ChefOfTheWeek";
-@import "Components/HomePage/HeroSection";
 @import "Components/Dynamic/DynamicCard";
 @import "Components/Dynamic/DynamicQestion";
 @import "Components/Dynamic/Search";
+@import "Components/HomePage/ChefOfTheWeek";
+@import "Components/HomePage/HeroSection";
 @import "Components/HomePage/OurIcons";
+
 @import "Components/RestaurantFilter";
-@import "Components/AppHeader/AppHeader";
-@import "Components/AppHeader/Login";
 
 // VIEWS
 

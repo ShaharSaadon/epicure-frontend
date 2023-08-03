@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentDish } from "../store/actions/restaurant.actions";
-
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
 import { useNavigate } from "react-router-dom";
@@ -10,10 +9,10 @@ import { IconButton } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { Modal } from "@mui/material";
 import { DynamicQuestion } from "../Components/Dynamic/DynamicQuestion";
+import { addToCart } from "../store/actions/cart.actions";
 import CloseIcon from "@mui/icons-material/Close";
 import plus from "../Assets/Images/Restaurants/plus.svg";
 import menus from "../Assets/Images/Restaurants/menus.svg";
-import { addToCart } from "../store/actions/cart.actions";
 interface DynamicQuestion {
     title: string;
     type: string;
