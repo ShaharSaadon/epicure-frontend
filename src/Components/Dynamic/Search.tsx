@@ -1,4 +1,5 @@
 import SearchSvg from "../../Assets/Images/AppHeader/Search.svg";
+import { Wrapper } from "../AppHeader/Wrapper";
 
 export const Search = () => {
     return (

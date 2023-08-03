@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { linkService } from "../../Services/link.service";
-import { Hamburger } from "./Hamburger";
+import { Wrapper } from "./Wrapper";
 interface MobileNavProps {
     isHeaderOpen: boolean;
     toggleHeader: () => void;
@@ -18,6 +18,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             }`}
             onClick={toggleHeader}
         >
+            <Wrapper />
             {upperMobileNavLinks.map((link, index) => (
                 <NavLink key={index} to={link.path} className="nav-link">
                     {link.text}

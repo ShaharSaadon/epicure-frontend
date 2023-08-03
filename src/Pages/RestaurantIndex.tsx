@@ -4,13 +4,13 @@ import {
 } from "../Components/Dynamic/TabsComponent";
 import { restaurantService } from "../Services/restaurant.service";
 import { RestaurantFilter } from "../Components/Restaurants/RestaurantFilter";
+import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
 import { useTabs } from "../customHooks/useTabs";
 import { useMemo } from "react";
 
 import React from "react";
 import Box from "@mui/material/Box";
-import { allrestaurants } from "../Assets/data";
 
 const RestaurantIndex: React.FC = () => {
     const { value, handleChange } = useTabs(0);

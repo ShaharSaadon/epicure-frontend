@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-    DishToOrder,
-    setCurrentDish,
-} from "../store/actions/restaurant.actions";
+import { setCurrentDish } from "../store/actions/restaurant.actions";
 
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
@@ -33,10 +30,6 @@ const DishPage = () => {
         ({ restaurantModule }) => restaurantModule
     );
 
-    const { cart } = useSelector(({ cartModule }) => cartModule);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
     const [dishToOrder, setDishToOrder] = useState({
         ...currentDish,
         side: "",
@@ -44,13 +37,15 @@ const DishPage = () => {
         quantity: 1,
     });
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     useEffect(() => {
         dispatch(openModal());
 
         const foundRestaurant = allrestaurants.find(
             (rest) => rest._Id === restaurantId
         );
-
         const dishes = foundRestaurant?.dishes || [];
         const foundDish = dishes.find((dish) => dish._Id === dishId);
 
@@ -94,7 +89,6 @@ const DishPage = () => {
         <Modal
             open={isOpen}
             onClose={handleCloseModal}
-            // BackdropComponent={Backdrop}
             BackdropProps={{ open: false }}
             className="modal"
         >
@@ -110,8 +104,6 @@ const DishPage = () => {
                     alt=""
                     className="dish-image"
                 />
-
-                {/* {JSON.stringify(cart, null, 2)} */}
 
                 <div className="dish-info">
                     <h1 className="dish-title">{currentDish.name}</h1>

@@ -1,22 +1,24 @@
 import { SET_LOGGEDIN_USER } from "../reducers/user.reducer";
 import { userService } from "../../Services/user.service";
-import { Credentials } from "../../Assets/data";
+import { User } from "../../Assets/data";
+
 interface UserCredentials {
     email: string;
     password: string;
 }
+
 export interface SetLoggedInUserAction {
     type: typeof SET_LOGGEDIN_USER;
-    credentials: Credentials;
+    user: User | null; // Use the correct type for User
 }
 
 export function login(userCred: UserCredentials) {
     return async (dispatch: any) => {
         try {
-            const credentials = await userService.login(userCred);
+            const user = await userService.userLogin(userCred);
             const action: SetLoggedInUserAction = {
                 type: SET_LOGGEDIN_USER,
-                credentials,
+                user,
             };
             dispatch(action);
         } catch (error) {

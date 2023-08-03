@@ -1,5 +1,3 @@
-import { Password } from "@mui/icons-material";
-
 export interface Restaurant {
     _Id: String;
     type: "restaurant";
@@ -20,7 +18,6 @@ export interface Dish {
     restaurantId: string;
     dishType?: string;
 }
-
 export interface User {
     _Id: string;
     email: string;
@@ -111,6 +108,7 @@ export const allrestaurants: Restaurant[] = [
         name: "Claro",
         chef: "Ran Shmueli",
         stars: 4,
+        faundationDate: new Date("2023-01-15"),
         openHoures: [
             "09:00-21:00",
             "09:00-17:00",
@@ -212,7 +210,6 @@ export const allrestaurants: Restaurant[] = [
                 restaurantId: "4",
             },
         ],
-        faundationDate: new Date("2023-01-15"),
     },
     {
         _Id: "7",
@@ -221,6 +218,107 @@ export const allrestaurants: Restaurant[] = [
         chef: "Meir Adoni",
         stars: 3,
         faundationDate: new Date("2023-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
     {
         _Id: "8",
@@ -229,6 +327,107 @@ export const allrestaurants: Restaurant[] = [
         chef: "Aviv Moshe",
         stars: 1,
         faundationDate: new Date("2023-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
     {
         _Id: "9",
@@ -237,6 +436,107 @@ export const allrestaurants: Restaurant[] = [
         chef: "Shahaf Shabtay",
         stars: 1,
         faundationDate: new Date("2023-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
     {
         _Id: "6",
@@ -245,6 +545,107 @@ export const allrestaurants: Restaurant[] = [
         chef: "Yanir Green",
         stars: 4,
         faundationDate: new Date("2023-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
     {
         _Id: "10",
@@ -253,6 +654,107 @@ export const allrestaurants: Restaurant[] = [
         chef: "Yuval Ben Moshe",
         stars: 5,
         faundationDate: new Date("2022-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
     {
         _Id: "11",
@@ -261,6 +763,107 @@ export const allrestaurants: Restaurant[] = [
         chef: "Shahar Saadon",
         stars: 4,
         faundationDate: new Date("2022-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
     {
         _Id: "12",
@@ -269,6 +872,107 @@ export const allrestaurants: Restaurant[] = [
         chef: "René Descartes ",
         stars: 5,
         faundationDate: new Date("2022-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
     {
         _Id: "13",
@@ -277,9 +981,109 @@ export const allrestaurants: Restaurant[] = [
         chef: "Dekel",
         stars: 3,
         faundationDate: new Date("2022-01-15"),
+        openHoures: [
+            "09:00-21:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-17:00",
+            "09:00-21:00",
+            "09:00-21:00",
+            "09:00-21:00",
+        ],
+        dishes: [
+            {
+                _Id: "A",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "B",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "C",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Breakfast",
+                restaurantId: "4",
+            },
+            {
+                _Id: "D",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "E",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "F",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Lanch",
+                restaurantId: "4",
+            },
+            {
+                _Id: "G",
+                type: "dish",
+                name: "Pad Ki Mao",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 88,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "H",
+                type: "dish",
+                name: "Ta Ma La Ko",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+            {
+                _Id: "I",
+                type: "dish",
+                name: "Red Farm",
+                ingredients:
+                    "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+                price: 65,
+                dishType: "Dinner",
+                restaurantId: "4",
+            },
+        ],
     },
 ];
-
 export const allUsers: User[] = [
     { _Id: "1", email: "1@gmail.com", password: "1" },
 ];

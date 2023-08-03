@@ -1,21 +1,23 @@
-import LogoSvg from "../../Assets/Images/AppHeader/Logo.svg";
-import { Hamburger } from "./Hamburger";
-import { Cart } from "./Cart";
 import { SearchHeader } from "./SearchHeader";
-import { useToggle } from "../../customHooks/useToggle";
-import { Link } from "react-router-dom";
-import { MobileNav } from "./MobileNav";
-import { Actions } from "./Actions";
 import { DekstopNav } from "./DekstopNav";
+import { useToggle } from "../../customHooks/useToggle";
+import { Hamburger } from "./Hamburger";
+import { MobileNav } from "./MobileNav";
 import { useEffect } from "react";
+import { Actions } from "./Actions";
 import { Login } from "./Login";
+import { Cart } from "./Cart";
+import { Link } from "react-router-dom";
+
+import LogoSvg from "../../Assets/Images/AppHeader/Logo.svg";
+
 export const AppHeader = () => {
     const [isHeaderOpen, toggleHeader] = useToggle();
     const [isCartOpen, toggleCart] = useToggle();
     const [isSearchOpen, toggleSearch] = useToggle();
     const [isLoginOpen, toggleLogin] = useToggle();
 
-    // Prevent body scrolling when any of the menus is open
+    //Prevent scrollliing
     useEffect(() => {
         document.body.style.overflow =
             isHeaderOpen || isCartOpen || isSearchOpen || isLoginOpen

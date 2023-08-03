@@ -2,7 +2,7 @@ const STORAGE_KEY_LOGGEDIN_USER = "loggedinUser";
 import { allUsers } from "../Assets/data";
 export const userService = {
     getLoggedinUser,
-    login,
+    userLogin: login,
 };
 
 import { User, LoggedInUser } from "../Assets/data";
@@ -35,8 +35,9 @@ function saveLocalUser(user: LoggedInUser) {
         email: user.email,
     };
 
-    console.log("user:", user);
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));
 
     return user;
 }
+
+window.userService = userService;

@@ -2,42 +2,35 @@ import {
     CustomTabPanels,
     CustomTabs,
 } from "../Components/Dynamic/TabsComponent";
-import { useParams } from "react-router-dom";
+import { restaurantService } from "../Services/restaurant.service";
 import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
+import { useParams } from "react-router-dom";
 import { useTabs } from "../customHooks/useTabs";
+import { useMemo } from "react";
 import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
-import { DishPage } from "./DishPage";
+import NotFoundPage from "./NotFoundPage";
 
 const RestaurantPage = () => {
-    const { lunchfilter, imageMap } = linkService;
+    const { restaurantId } = useParams<{ restaurantId: string }>();
     const { value, handleChange } = useTabs(0);
-    const { restaurantId } = useParams();
-
+    const { lunchfilter, imageMap } = linkService;
     const filters = Object.values(lunchfilter);
+    const OPEN_NOW = "Open now";
+    const CLOSED = "Closed";
 
     const currRestaurant = allrestaurants.find(
         (rest) => rest._Id === restaurantId
     );
-    const dishes = currRestaurant?.dishes;
+    const dishes = currRestaurant?.dishes || [];
 
-    const requestedDishes = () => {
-        switch (value) {
-            case 0: //Breakfast
-                console.log("filters[0]", filters);
-                return dishes.filter((dish) => dish.dishType === filters[0]);
-            case 1: //Lanch
-                return dishes.filter((dish) => dish.dishType === filters[1]);
-            case 2: //Dinner
-                return dishes.filter((dish) => dish.dishType === filters[2]);
+    const filteredDishes = useMemo(
+        () => restaurantService.filterDishes(value, dishes, filters),
+        [value, dishes, filters]
+    );
 
-            default:
-                return [];
-        }
-    };
-
-    if (!currRestaurant) return;
+    if (!currRestaurant) return <NotFoundPage />;
     return (
         <Box sx={{ width: "100%" }} className="restaurant-page">
             <img
@@ -50,7 +43,11 @@ const RestaurantPage = () => {
                 <h2 className="chef">{currRestaurant.chef}</h2>
                 <div className="mode flex">
                     <img src={clockSvg} alt="clock" className="clock-icon" />
-                    <h2 className="mode-text">Open now</h2>
+                    <h2 className="mode-text">
+                        {restaurantService.isOpenNow(currRestaurant.openHoures)
+                            ? OPEN_NOW
+                            : CLOSED}
+                    </h2>
                 </div>
             </div>
             <Box sx={{}} className="lunch-type flex justify-center">
@@ -63,7 +60,7 @@ const RestaurantPage = () => {
             <CustomTabPanels
                 value={value}
                 filters={filters}
-                data={requestedDishes()}
+                data={filteredDishes}
             />
         </Box>
     );

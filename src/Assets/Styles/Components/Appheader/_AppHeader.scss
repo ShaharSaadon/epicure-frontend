@@ -25,7 +25,12 @@
         width: 32px;
         margin-inline-start: 76px;
     }
-
+    .header-wrapper {
+        padding: 12px;
+        .icon {
+            width: 20px;
+        }
+    }
     .dekstop-logo {
         display: none;
         font-weight: 400;

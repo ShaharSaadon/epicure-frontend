@@ -1,8 +1,11 @@
 .app-header {
     @include headerToggleCmp(login);
+
     .login {
         right: 0;
         height: max-content;
+        text-align: center;
+        align-items: center;
         .title {
             @include h3Mobile();
         }
@@ -19,6 +22,7 @@
             margin-block-start: 40px;
             margin-block-end: 16px;
             @include common-btn();
+            width: 100%;
         }
         .forget {
             font-size: 14px;

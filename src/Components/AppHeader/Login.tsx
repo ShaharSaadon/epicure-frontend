@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
 import { TextField } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/actions/user.actions";
@@ -9,7 +8,7 @@ interface LoginProps {
     toggleLogin: () => void;
 }
 
-export const Login: React.FC<LoginProps> = ({ isLoginOpen, toggleLogin }) => {
+export const Login: React.FC<LoginProps> = ({ isLoginOpen }) => {
     const [credentials, setCredentials] = useState<{
         email: string;
         password: string;
@@ -29,10 +28,11 @@ export const Login: React.FC<LoginProps> = ({ isLoginOpen, toggleLogin }) => {
     const dispatch = useDispatch();
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        dispatch(login(credentials));
+        dispatch(login({ ...credentials }));
     };
 
-    const { loggedInUser } = useSelector(({ userModule }) => userModule);
+    const { loggedinUser } = useSelector(({ userModule }) => userModule);
+    console.log(loggedinUser);
     return (
         <div
             className={`login ${
@@ -40,9 +40,9 @@ export const Login: React.FC<LoginProps> = ({ isLoginOpen, toggleLogin }) => {
             } flex flex-column items-center justify-center`}
             // onClick={toggleLogin}
         >
-            {loggedInUser ? (
+            {!loggedinUser ? (
                 <div className="login-box">
-                    <h1 className="title">SIGN IN</h1>
+                    <h1 className="title">SIGN IN </h1>
                     <h2 className="sub-title">
                         To continue the order, please sign in
                     </h2>
@@ -85,7 +85,7 @@ export const Login: React.FC<LoginProps> = ({ isLoginOpen, toggleLogin }) => {
                     <button className="signup-button">Sign Up</button>
                 </div>
             ) : (
-                `hello ${loggedInUser}`
+                `hello ${loggedinUser.email}`
             )}
         </div>
     );
