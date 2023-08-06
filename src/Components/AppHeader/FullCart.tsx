@@ -34,7 +34,7 @@ export const FullCart = () => {
                                 {item.name}
                             </h1>
                             <p className="details">
-                                {item.side} | {item.changes.join(" | ")}
+                                {item.side} | {item?.changes?.join(" | ")}
                             </p>
                             <p className="price">₪{item.price}</p>
                         </div>
