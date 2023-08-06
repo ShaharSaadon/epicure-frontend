@@ -1,3 +1,5 @@
+import { Restaurant } from "@mui/icons-material";
+
 export interface Restaurant {
     _Id: String;
     type: "restaurant";
@@ -18,10 +20,16 @@ export interface Dish {
     restaurantId: string;
     dishType?: string;
 }
+export interface Order {
+    date: Date;
+    restaurantId: number;
+    price: number;
+}
 export interface User {
     _Id: string;
     email: string;
     password: string;
+    orders: Order[];
 }
 export interface Credentials {
     email: string;
@@ -1085,5 +1093,10 @@ export const allrestaurants: Restaurant[] = [
     },
 ];
 export const allUsers: User[] = [
-    { _Id: "1", email: "1@gmail.com", password: "1" },
+    {
+        _Id: "1",
+        email: "1@gmail.com",
+        password: "1",
+        orders: [{ date: new Date(), restaurantId: 4, price: 60 }],
+    },
 ];

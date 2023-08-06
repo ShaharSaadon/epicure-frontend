@@ -11,4 +11,10 @@
     .text-input {
         margin-block-end: 40px;
     }
+
+    @include mq(mobile-breakpoint) {
+        width: 500px;
+        margin: 0 auto;
+        justify-content: center;
+    }
 }
