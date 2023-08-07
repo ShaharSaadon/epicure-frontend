@@ -1,5 +1,7 @@
-import { allrestaurants } from "../Assets/data";
 import { Restaurant, Dish } from "../Assets/data";
+import { httpService } from "./http.service.js";
+
+const STORAGE_KEY = "restaurant";
 
 const filterRestaurants = (
     value: number,
@@ -54,7 +56,18 @@ const isOpenNow = (openHours: string[]) => {
     }
     return false;
 };
+
+async function query(filterBy = { category: "" }) {
+    return httpService.get(STORAGE_KEY, filterBy);
+}
+
+async function getById(restaurantId: string) {
+    return httpService.get(`restaurant/${restaurantId}`);
+}
+
 export const restaurantService = {
+    query,
+    getById,
     filterRestaurants,
     filterDishes,
     isOpenNow,

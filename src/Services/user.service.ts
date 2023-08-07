@@ -33,6 +33,7 @@ function saveLocalUser(user: LoggedInUser) {
     user = {
         _Id: user._Id,
         email: user.email,
+        orders: user.orders,
     };
 
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));

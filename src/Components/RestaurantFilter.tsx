@@ -1,5 +1,5 @@
-import arrowImg from "../../Assets/Images/Restaurants/arrow.png";
-import { linkService } from "../../Services/link.service";
+import arrowImg from "../Assets/Images/Restaurants/arrow.png";
+import { linkService } from "../Services/link.service";
 export const RestaurantFilter = () => {
     const { filterTypes } = linkService;
     return (

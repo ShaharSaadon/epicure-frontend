@@ -38,6 +38,7 @@ export interface Credentials {
 export interface LoggedInUser {
     _Id: string;
     email: string;
+    orders: Order[];
 }
 export const chefOfTheWeekRestaurants: Restaurant[] = [
     {
