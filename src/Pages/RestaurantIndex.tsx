@@ -1,24 +1,34 @@
 import { CustomTabPanels } from "../Components/Dynamic/tab/CustomTabPanels";
-import { restaurantService } from "../Services/restaurant.service";
 import { RestaurantFilter } from "../Components/RestaurantFilter";
-import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
 import { CustomTabs } from "../Components/Dynamic/tab/CustomTabs";
 import { useTabs } from "../customHooks/useTabs";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+import { loadRestaurants } from "../store/actions/restaurant.actions";
 
 import React from "react";
 import Box from "@mui/material/Box";
+import { useDispatch, useSelector } from "react-redux";
 
 const RestaurantIndex: React.FC = () => {
     const { value, handleChange } = useTabs(0);
     const { restaurantFilter } = linkService;
     const filters = Object.values(restaurantFilter);
-
-    const filteredRestaurants = useMemo(
-        () => restaurantService.filterRestaurants(value, allrestaurants),
-        [value]
+    const dispatch = useDispatch();
+    const { restaurants } = useSelector(
+        ({ restaurantModule }) => restaurantModule
     );
+
+    // const filteredRestaurants = useMemo(
+    //     () => restaurantService.filterRestaurants(value, restaurants),
+    //     [value]
+    // );
+
+    useEffect(() => {
+        console.log(restaurants);
+        document.title = `Epicure | Restaurant List`;
+        dispatch(loadRestaurants());
+    }, []);
 
     return (
         <Box sx={{ width: "100%" }} className="restaurant-index">
@@ -31,11 +41,12 @@ const RestaurantIndex: React.FC = () => {
             </Box>
 
             <RestaurantFilter />
-
+            {/* {JSON.stringify(restaurants, null, 2)} */}
+            {JSON.stringify(restaurants, null, 2)}
             <CustomTabPanels
                 value={value}
                 filters={filters}
-                data={filteredRestaurants}
+                data={restaurants}
             />
         </Box>
     );

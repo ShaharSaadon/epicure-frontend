@@ -1,7 +1,6 @@
 import { CustomTabPanels } from "../Components/Dynamic/tab/CustomTabPanels";
 import { CustomTabs } from "../Components/Dynamic/tab/CustomTabs";
 import { restaurantService } from "../Services/restaurant.service";
-import { allrestaurants } from "../Assets/data";
 import { linkService } from "../Services/link.service";
 import { useParams } from "react-router-dom";
 import { useTabs } from "../customHooks/useTabs";
@@ -9,6 +8,8 @@ import { useMemo } from "react";
 import { Box } from "@mui/material";
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 import NotFoundPage from "./NotFoundPage";
+import { useSelector } from "react-redux";
+import { Restaurant } from "../Assets/data";
 
 const RestaurantPage = () => {
     const { restaurantId } = useParams<{ restaurantId: string }>();
@@ -18,9 +19,13 @@ const RestaurantPage = () => {
     const OPEN_NOW = "Open now";
     const CLOSED = "Closed";
 
-    const currRestaurant = allrestaurants.find(
-        (rest) => rest._Id === restaurantId
+    const { restaurants } = useSelector(
+        ({ restaurantModule }) => restaurantModule
     );
+    const currRestaurant = restaurants.find(
+        (rest: Restaurant) => rest._id === restaurantId
+    );
+
     const dishes = currRestaurant?.dishes || [];
 
     const filteredDishes = useMemo(

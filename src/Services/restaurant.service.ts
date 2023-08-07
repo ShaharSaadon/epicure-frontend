@@ -57,7 +57,11 @@ const isOpenNow = (openHours: string[]) => {
     return false;
 };
 
-async function query(filterBy = { category: "" }) {
+interface FilterBy {
+    category?: string;
+}
+
+async function query(filterBy: FilterBy = { category: "" }) {
     return httpService.get(STORAGE_KEY, filterBy);
 }
 

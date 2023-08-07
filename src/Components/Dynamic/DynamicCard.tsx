@@ -24,8 +24,8 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
         <Link
             to={
                 isRestaurant
-                    ? `/restaurants/${data._Id}`
-                    : `/restaurants/${data.restaurantId}/${data._Id}`
+                    ? `/restaurants/${data._id}`
+                    : `/restaurants/${data.restaurantId}/${data._id}`
             }
             onClick={handleOpenModal}
         >

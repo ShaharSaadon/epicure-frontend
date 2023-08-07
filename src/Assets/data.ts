@@ -1,7 +1,7 @@
 import { Restaurant } from "@mui/icons-material";
 
 export interface Restaurant {
-    _Id: String;
+    _id: String;
     type: "restaurant";
     name: string;
     chef?: string;
@@ -11,7 +11,7 @@ export interface Restaurant {
     faundationDate: Date;
 }
 export interface Dish {
-    _Id: String;
+    _id: String;
     type: "dish";
     name: string;
     special?: string;
