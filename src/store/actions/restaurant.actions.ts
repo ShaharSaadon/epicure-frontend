@@ -51,6 +51,7 @@ export function loadRestaurants(
     };
     return async (dispatch: Dispatch) => {
         try {
+            console.log(filterBy);
             const restaurants: Restaurant[] = await restaurantService.query(
                 filterBy
             );

@@ -14,6 +14,7 @@ const RestaurantIndex: React.FC = () => {
     const { value, handleChange } = useTabs(0);
     const { restaurantFilter } = linkService;
     const filters = Object.values(restaurantFilter);
+    const filtersKeys = Object.keys(restaurantFilter);
     const dispatch = useDispatch();
     const { restaurants } = useSelector(
         ({ restaurantModule }) => restaurantModule
@@ -27,8 +28,8 @@ const RestaurantIndex: React.FC = () => {
     useEffect(() => {
         console.log(restaurants);
         document.title = `Epicure | Restaurant List`;
-        dispatch(loadRestaurants());
-    }, []);
+        dispatch(loadRestaurants(filtersKeys[value]));
+    }, [value]);
 
     return (
         <Box sx={{ width: "100%" }} className="restaurant-index">
