@@ -41,8 +41,6 @@ const RestaurantIndex: React.FC = () => {
             </Box>
 
             <RestaurantFilter />
-            {/* {JSON.stringify(restaurants, null, 2)} */}
-            {JSON.stringify(restaurants, null, 2)}
             <CustomTabPanels
                 value={value}
                 filters={filters}
