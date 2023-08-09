@@ -35,8 +35,6 @@ const RestaurantPage = () => {
     useEffect(() => {
         document.title = `Epicure | ${restaurant?.name}`;
         dispatch(loadRestaurant(restaurantId));
-
-        console.log(restaurant);
     }, [restaurantId]);
 
     if (!restaurant) return <NotFoundPage />;

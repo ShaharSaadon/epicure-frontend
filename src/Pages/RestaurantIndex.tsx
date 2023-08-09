@@ -20,7 +20,6 @@ const RestaurantIndex: React.FC = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(restaurants);
         document.title = `Epicure | Restaurant List`;
         dispatch(loadRestaurants(filtersKeys[value]));
     }, [value]);

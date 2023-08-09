@@ -56,7 +56,6 @@ const DishPage = () => {
     };
 
     const handleAddToCart = () => {
-        console.log(dishToOrder);
         dispatch(addToCart(dishToOrder));
         navigate(-1);
     };

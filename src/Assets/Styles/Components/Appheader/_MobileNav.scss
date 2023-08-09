@@ -23,8 +23,6 @@
             display: flex;
         }
         .border {
-            // border-top: 1px black solid;
-
             &::before {
                 content: "";
                 position: absolute;

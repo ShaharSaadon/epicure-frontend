@@ -18,12 +18,12 @@ export function modalReducer(
         case TOGGLE_MODAL:
             return {
                 ...state,
-                isOpen: !state.isOpen, // Toggles the current state
+                isOpen: !state.isOpen,
             };
         case OPEN_MODAL:
             return {
                 ...state,
-                isOpen: true, // Sets the isOpen state to true
+                isOpen: true,
             };
         default:
             return state;

@@ -28,7 +28,6 @@ export const ChefOfTheWeek: React.FC<ChefOfTheWeekProps> = ({ chef }) => {
                     chef?.name?.split(" ")[0].toLocaleUpperCase() +
                     "'S RESTAURANT"
                 }
-                // title={"Yossi"}
                 data={chef?.associatedRestaurants}
             />
         </div>

@@ -1,4 +1,3 @@
-// Hooks/useTabs.ts
 import { useState, SyntheticEvent } from "react";
 
 interface UseTabsReturn {

@@ -1,39 +1,13 @@
-import { Restaurant, Dish } from "../Assets/data";
+import { Dish } from "../Services/link.service.js";
 import { httpService } from "./http.service.js";
 
 const STORAGE_KEY = "restaurant";
 
-const filterRestaurants = (
-    value: number,
-    restaurants: Restaurant[]
-): Restaurant[] => {
-    switch (value) {
-        case 0: //All
-            return restaurants;
-        case 1: //New
-            const currentYear = new Date().getFullYear();
-            return restaurants.filter(
-                (restaurant) =>
-                    restaurant.faundationDate.getFullYear() === currentYear
-            );
-
-        case 2: //Most Popular
-            return restaurants.filter((restaurant) => restaurant.stars >= 4);
-
-        case 3: //Open Now
-            return restaurants.filter((restaurant) =>
-                isOpenNow(restaurant.openHoures)
-            );
-
-        default:
-            return restaurants;
-    }
-};
-
 const filterDishes = (value: number, dishes: Dish[], filters: string[]) => {
+    console.log(filters);
     switch (value) {
         case 0: //Breakfast
-            return dishes.filter((dish) => dish.dishType === filters[0]);
+            return dishes.filter((dish) => dish.dishType === "Breakfast");
         case 1: //Lanch
             return dishes.filter((dish) => dish.dishType === filters[1]);
         case 2: //Dinner
@@ -72,7 +46,6 @@ async function getById(restaurantId: string) {
 export const restaurantService = {
     query,
     getById,
-    filterRestaurants,
     filterDishes,
     isOpenNow,
 };

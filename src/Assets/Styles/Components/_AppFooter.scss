@@ -1,8 +1,5 @@
 footer {
     position: relative;
-    // bottom: -10vh;
-    // -color: $primary-color1;
-
     .main-footer {
         display: grid;
         grid-template-areas:
@@ -61,7 +58,6 @@ footer {
 
     @include mq(mobile-breakpoint) {
         .main-footer {
-            // background-color: green;
             grid-template-areas:
                 "about" "logo"
                 "downloads" "logo";

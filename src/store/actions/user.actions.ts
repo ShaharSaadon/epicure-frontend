@@ -9,7 +9,7 @@ interface UserCredentials {
 
 export interface SetLoggedInUserAction {
     type: typeof SET_LOGGEDIN_USER;
-    user: User | null; // Use the correct type for User
+    user: User | null;
 }
 
 export function login(userCred: UserCredentials) {

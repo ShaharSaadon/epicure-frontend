@@ -37,7 +37,6 @@ export const Login: React.FC<LoginProps> = ({ isLoginOpen }) => {
             className={`login ${
                 isLoginOpen ? "open" : ""
             } flex flex-column items-center justify-center`}
-            // onClick={toggleLogin}
         >
             {!loggedinUser ? (
                 <div className="login-box">
