@@ -23,6 +23,10 @@ export interface SetRestaurantsAction {
     type: typeof SET_RESTAURANTS;
     restaurants: Restaurant[];
 }
+export interface SetSignatureDishAction {
+    type: typeof SET_SIGNATURE_DISH;
+    signatureDish: Dish[];
+}
 
 export function loadRestaurant(
     restaurantId: string
@@ -75,6 +79,21 @@ export function loadDish(
             const action: SetDishAction = {
                 type: SET_DISH,
                 dish,
+            };
+            dispatch(action);
+        } catch (error) {
+            console.log("error:", error);
+        }
+    };
+}
+
+export function loadSignatureDish(): (dispatch: Dispatch) => Promise<void> {
+    return async (dispatch: Dispatch) => {
+        try {
+            const signatureDish: Dish[] = await restaurantService.queryDishes();
+            const action: SetSignatureDishAction = {
+                type: SET_SIGNATURE_DISH,
+                signatureDish,
             };
             dispatch(action);
         } catch (error) {
