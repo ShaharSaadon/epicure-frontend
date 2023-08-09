@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCurrentDish } from "../store/actions/restaurant.actions";
-import { allrestaurants } from "../Assets/data";
+import { toggleModal, openModal } from "../store/actions/modal.actions";
+import { DynamicQuestion } from "../Components/Dynamic/DynamicQuestion";
+import { loadDish } from "../store/actions/restaurant.actions";
+import { DishToOrder } from "../store/actions/cart.actions";
 import { linkService } from "../Services/link.service";
 import { useNavigate } from "react-router-dom";
-import { toggleModal, openModal } from "../store/actions/modal.actions";
 import { IconButton } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { Modal } from "@mui/material";
-import { DynamicQuestion } from "../Components/Dynamic/DynamicQuestion";
 import { addToCart } from "../store/actions/cart.actions";
+import { Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import plus from "../Assets/Images/Restaurants/plus.svg";
 import menus from "../Assets/Images/Restaurants/menus.svg";
@@ -20,17 +20,14 @@ interface DynamicQuestion {
 }
 
 const DishPage = () => {
-    3;
-    let { restaurantId, dishId } = useParams();
+    let { dishId } = useParams();
 
     const { imageMap, dynamicQuestions } = linkService;
     const { isOpen } = useSelector(({ modalModule }) => modalModule);
-    const { currentDish } = useSelector(
-        ({ restaurantModule }) => restaurantModule
-    );
+    const { dish } = useSelector(({ restaurantModule }) => restaurantModule);
 
     const [dishToOrder, setDishToOrder] = useState({
-        ...currentDish,
+        ...dish,
         side: "",
         changes: "",
         quantity: 1,
@@ -41,22 +38,19 @@ const DishPage = () => {
 
     useEffect(() => {
         dispatch(openModal());
+        dispatch(loadDish(dishId));
+    }, []);
 
-        const foundRestaurant = allrestaurants.find(
-            (rest) => rest._Id === restaurantId
-        );
-        const dishes = foundRestaurant?.dishes || [];
-        const foundDish = dishes.find((dish) => dish._Id === dishId);
-
-        if (foundDish) dispatch(setCurrentDish(foundDish));
-
-        setDishToOrder({
-            ...currentDish,
-            side: "",
-            changes: "",
-            quantity: 1,
-        });
-    }, [currentDish]);
+    useEffect(() => {
+        if (dish) {
+            setDishToOrder({
+                ...dish,
+                side: "",
+                changes: "",
+                quantity: 1,
+            });
+        }
+    }, [dish]);
 
     const handleCloseModal = () => {
         dispatch(toggleModal());
@@ -64,6 +58,7 @@ const DishPage = () => {
     };
 
     const handleAddToCart = () => {
+        console.log(dishToOrder);
         dispatch(addToCart(dishToOrder));
         navigate(-1);
     };
@@ -82,7 +77,7 @@ const DishPage = () => {
         }));
     };
 
-    if (!currentDish) return null;
+    if (!dish) return null;
 
     return (
         <Modal
@@ -98,15 +93,11 @@ const DishPage = () => {
                 >
                     <CloseIcon className="close-button" />
                 </IconButton>
-                <img
-                    src={imageMap[currentDish.name]}
-                    alt=""
-                    className="dish-image"
-                />
+                <img src={imageMap[dish.name]} alt="" className="dish-image" />
 
                 <div className="dish-info">
-                    <h1 className="dish-title">{currentDish.name}</h1>
-                    <p className="ingredients">{currentDish.ingredients}</p>
+                    <h1 className="dish-title">{dish.name}</h1>
+                    <p className="ingredients">{dish.ingredients}</p>
                     {dynamicQuestions.map(
                         (question: DynamicQuestion, index: Number) => (
                             <DynamicQuestion

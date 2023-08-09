@@ -1,24 +1,35 @@
-import { CustomTabPanels } from "../Components/Dynamic/CustomTabPanels";
-import { restaurantService } from "../Services/restaurant.service";
-import { RestaurantFilter } from "../Components/Restaurants/RestaurantFilter";
-import { allrestaurants } from "../Assets/data";
+import { CustomTabPanels } from "../Components/Dynamic/tab/CustomTabPanels";
+import { RestaurantFilter } from "../Components/RestaurantFilter";
 import { linkService } from "../Services/link.service";
-import { CustomTabs } from "../Components/Dynamic/CustomTabs";
+import { CustomTabs } from "../Components/Dynamic/tab/CustomTabs";
 import { useTabs } from "../customHooks/useTabs";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+import { loadRestaurants } from "../store/actions/restaurant.actions";
 
 import React from "react";
 import Box from "@mui/material/Box";
+import { useDispatch, useSelector } from "react-redux";
 
 const RestaurantIndex: React.FC = () => {
     const { value, handleChange } = useTabs(0);
     const { restaurantFilter } = linkService;
     const filters = Object.values(restaurantFilter);
-
-    const filteredRestaurants = useMemo(
-        () => restaurantService.filterRestaurants(value, allrestaurants),
-        [value]
+    const filtersKeys = Object.keys(restaurantFilter);
+    const dispatch = useDispatch();
+    const { restaurants } = useSelector(
+        ({ restaurantModule }) => restaurantModule
     );
+
+    // const filteredRestaurants = useMemo(
+    //     () => restaurantService.filterRestaurants(value, restaurants),
+    //     [value]
+    // );
+
+    useEffect(() => {
+        console.log(restaurants);
+        document.title = `Epicure | Restaurant List`;
+        dispatch(loadRestaurants(filtersKeys[value]));
+    }, [value]);
 
     return (
         <Box sx={{ width: "100%" }} className="restaurant-index">
@@ -31,11 +42,10 @@ const RestaurantIndex: React.FC = () => {
             </Box>
 
             <RestaurantFilter />
-
             <CustomTabPanels
                 value={value}
                 filters={filters}
-                data={filteredRestaurants}
+                data={restaurants}
             />
         </Box>
     );

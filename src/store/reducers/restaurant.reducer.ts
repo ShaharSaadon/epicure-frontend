@@ -1,41 +1,59 @@
 import { Dish, Restaurant } from "../../Assets/data";
-export const SET_CURRENT_RESTAURANT = "SET_CURRENT_RESTAURANT";
-export const SET_CURRENT_DISH = "SET_CURRENT_DISH";
-export const SET_DISH_TO_ORDER = "SET_DISH_TO_ORDER";
-
+export const SET_RESTAURANTS = "SET_RESTAURANTS";
+export const SET_RESTAURANT = "SET_RESTAURANT";
+export const SET_DISH = "SET_DISH";
+export const SET_SIGNATURE_DISH = "SET_SIGNATURE_DISH";
 import {
-    SetCurrentRestaurantAction,
-    SetCurrentDishAction,
+    SetRestaurantAction,
+    SetDishAction,
+    SetRestaurantsAction,
+    SetSignatureDishAction,
 } from "../actions/restaurant.actions";
 interface RestaurantState {
-    currentRestaurant: Restaurant | null;
-    currentDish: Dish | null;
+    restaurant: Restaurant | null;
+    dish: Dish | null;
+    restaurants: Restaurant[];
+    signatureDish: Dish[];
 }
 
 const INITIAL_STATE: RestaurantState = {
-    currentRestaurant: null,
-    currentDish: null,
+    restaurant: null,
+    dish: null,
+    restaurants: [],
+    signatureDish: [],
 };
 
-type ModalActions =
-    | ReturnType<typeof toggleModal>
-    | SetCurrentRestaurantAction
-    | SetCurrentDishAction;
+type RestaurantActions =
+    | SetRestaurantAction
+    | SetDishAction
+    | SetRestaurantsAction
+    | SetSignatureDishAction;
 
 export function restaurantReducer(
     state = INITIAL_STATE,
-    action: ModalActions
+    action: RestaurantActions
 ): RestaurantState {
+    console.log(action);
     switch (action.type) {
-        case SET_CURRENT_RESTAURANT:
+        case SET_RESTAURANTS:
             return {
                 ...state,
-                currentRestaurant: action.restaurant,
+                restaurants: action.restaurants,
             };
-        case SET_CURRENT_DISH:
+        case SET_RESTAURANT:
             return {
                 ...state,
-                currentDish: action.dish,
+                restaurant: action.restaurant,
+            };
+        case SET_SIGNATURE_DISH:
+            return {
+                ...state,
+                signatureDish: action.signatureDish,
+            };
+        case SET_DISH:
+            return {
+                ...state,
+                dish: action.dish,
             };
 
         default:

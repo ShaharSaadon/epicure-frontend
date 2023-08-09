@@ -1,6 +1,6 @@
 import { linkService } from "../../Services/link.service";
 import { Restaurant, Dish } from "../../Assets/data";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Rating } from "@mui/material";
 import { toggleModal } from "../../store/actions/modal.actions";
 import { useDispatch } from "react-redux";
@@ -13,6 +13,7 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
     const { imageMap } = linkService;
     const isRestaurant = data.type !== "dish";
     const dispatch = useDispatch();
+    const { restaurantId } = useParams<{ restaurantId: string }>();
 
     const handleOpenModal = () => {
         if (!isRestaurant) {
@@ -24,8 +25,8 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
         <Link
             to={
                 isRestaurant
-                    ? `/restaurants/${data._Id}`
-                    : `/restaurants/${data.restaurantId}/${data._Id}`
+                    ? `/restaurants/${data._id}`
+                    : `/restaurants/${restaurantId}/${data._id}`
             }
             onClick={handleOpenModal}
         >
