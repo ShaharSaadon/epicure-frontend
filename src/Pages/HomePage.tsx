@@ -1,22 +1,27 @@
 import { useEffect } from "react";
-import { bestDishes } from "../Assets/data";
 import { DynamicCarousel } from "../Components/Dynamic/DynamicCarousel";
 import { ChefOfTheWeek } from "../Components/HomePage/ChefOfTheWeek";
 import { HeroSection } from "../Components/HomePage/HeroSection";
 import { OurIcons } from "../Components/HomePage/OurIcons";
-import { loadRestaurants } from "../store/actions/restaurant.actions";
+import {
+    loadChef,
+    loadRestaurants,
+    loadSignatureDish,
+} from "../store/actions/restaurant.actions";
 import { useDispatch, useSelector } from "react-redux";
 
 export const HomePage = () => {
-    const { restaurants } = useSelector(
+    const { restaurants, signatureDish, chef } = useSelector(
         ({ restaurantModule }) => restaurantModule
     );
     const dispatch = useDispatch();
     const MOST_POPULAR = "MOST_POPULAR";
-
+    const chefId = "64d35568a7e85c2bc2989dc7";
     useEffect(() => {
         document.title = `Epicure | Home Page`;
         dispatch(loadRestaurants(MOST_POPULAR));
+        dispatch(loadSignatureDish());
+        dispatch(loadChef(chefId));
     }, []);
 
     const sortedRestaurants = [...(restaurants || [])].sort(
@@ -32,9 +37,9 @@ export const HomePage = () => {
                 title="POPULAR RESTAURANT IN EPICURE:"
                 data={popularRestaurants}
             />
-            <DynamicCarousel title="SIGNATURE DISH OF:" data={bestDishes} />
+            <DynamicCarousel title="SIGNATURE DISH OF:" data={signatureDish} />
             <OurIcons />
-            <ChefOfTheWeek />
+            <ChefOfTheWeek chef={chef} />
         </div>
     );
 };

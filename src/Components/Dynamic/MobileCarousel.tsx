@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { DynamicCard } from "./DynamicCard.tsx";
-import { Restaurant, Dish } from "../../Assets/data.ts";
+import { Restaurant, Dish } from "../../Services/link.service.ts";
 
 interface MobileCarouselProps {
     data: (Dish | Restaurant)[];

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Order } from "../Assets/data";
+import { Order } from "../Services/link.service";
 export const Orders = () => {
     const { loggedinUser } = useSelector(({ userModule }) => userModule);
     const orders = loggedinUser.orders;

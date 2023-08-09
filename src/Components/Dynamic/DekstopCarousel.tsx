@@ -1,5 +1,5 @@
 import { DynamicCard } from "./DynamicCard";
-import { Restaurant, Dish } from "../../Assets/data";
+import { Restaurant, Dish } from "../../Services/link.service";
 
 interface DekstopCarouselProps {
     data: (Dish | Restaurant)[];

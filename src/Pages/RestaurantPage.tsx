@@ -1,15 +1,16 @@
-import { CustomTabPanels } from "../Components/Dynamic/tab/CustomTabPanels";
-import { CustomTabs } from "../Components/Dynamic/tab/CustomTabs";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useMemo } from "react";
 import { restaurantService } from "../Services/restaurant.service";
+import { CustomTabPanels } from "../Components/Dynamic/tab/CustomTabPanels";
+import { loadRestaurant } from "../store/actions/restaurant.actions";
 import { linkService } from "../Services/link.service";
+import { CustomTabs } from "../Components/Dynamic/tab/CustomTabs";
 import { useParams } from "react-router-dom";
 import { useTabs } from "../customHooks/useTabs";
-import { useEffect, useMemo } from "react";
 import { Box } from "@mui/material";
+
 import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 import NotFoundPage from "./NotFoundPage";
-import { useDispatch, useSelector } from "react-redux";
-import { loadRestaurant } from "../store/actions/restaurant.actions";
 
 const RestaurantPage = () => {
     const { restaurantId } = useParams<{ restaurantId: string }>();

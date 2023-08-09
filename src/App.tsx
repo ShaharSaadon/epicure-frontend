@@ -5,6 +5,7 @@ import { AppFooter } from "./Components/AppFooter";
 import { HomePage } from "./Pages/HomePage";
 import { Loader } from "./Components/Dynamic/Loader";
 import { Orders } from "./Pages/Orders";
+import { ChefPage } from "./Pages/ChefPage";
 
 const RestaurantIndex = lazy(() => import("./Pages/RestaurantIndex"));
 const RestaurantPage = lazy(() => import("./Pages/RestaurantPage"));
@@ -26,6 +27,7 @@ export const App = () => {
                         path="/restaurants/:restaurantId"
                         element={<RestaurantPage />}
                     />
+                    <Route path="/chefs" element={<ChefPage />} />
                     <Route path="/restaurants" element={<RestaurantIndex />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/orders" element={<Orders />} />

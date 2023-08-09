@@ -3,5 +3,5 @@ import { useState, useCallback } from "react";
 export const useToggle = (initialState = false) => {
     const [state, setState] = useState(initialState);
     const toggle = useCallback(() => setState((state) => !state), []);
-    return [state, toggle] as const; // `as const` makes array items read-only
+    return [state, toggle] as const;
 };

@@ -19,8 +19,21 @@ import taMaLaKo from "../Assets/Images/Restaurants/ta-ma-la-ko.png";
 import spicyImg from "../Assets/Images/HomePage/icons/spicy.svg";
 import veganImg from "../Assets/Images/HomePage/icons/vegan.svg";
 import vegitarianImg from "../Assets/Images/HomePage/icons/vegitarian.svg";
+import YossiShitritImg from "../Assets/Images/HomePage/yossi-shitrit.png";
+
 type ImageType = string;
 
+enum restaurantFilter {
+    ALL = "ALL",
+    NEW = "NEW",
+    MOST_POPULAR = "MOST POPULAR",
+    OPEN_NOW = "OPEN NOW",
+}
+enum lunchfilter {
+    BREAKFAST = "Breakfast",
+    LANCH = "Lanch",
+    DINNER = "Dinner",
+}
 interface ImageMapType {
     [key: string]: ImageType;
 }
@@ -33,6 +46,7 @@ const imageMap: ImageMapType = {
     spicy: spicyImg,
     vegan: veganImg,
     vegitarian: vegitarianImg,
+    "Yossi Shitrit": YossiShitritImg,
     "Kitchen Market": kitchenMarketImg,
     "Tiger Lilly": tigerLillyImg,
     "Pad Ki Mao": padKiMaoImg,
@@ -74,17 +88,6 @@ const dynamicQuestions = [
         idQuestion: "changes",
     },
 ];
-enum restaurantFilter {
-    ALL = "ALL",
-    NEW = "NEW",
-    MOST_POPULAR = "MOST POPULAR",
-    OPEN_NOW = "OPEN NOW",
-}
-enum lunchfilter {
-    BREAKFAST = "Breakfast",
-    LANCH = "Lanch",
-    DINNER = "Dinner",
-}
 const filterTypes = [
     { type: "price", label: "Price Range" },
     { type: "distance", label: "Distance" },
@@ -115,3 +118,58 @@ export const linkService = {
     ourIconsData,
     dynamicQuestions,
 };
+
+export interface Restaurant {
+    _id: String;
+    type: "restaurant";
+    name: string;
+    chef?: string;
+    stars: number;
+    openHoures: string[];
+    dishes?: Dish[];
+    faundationDate: Date;
+}
+export interface Dish {
+    _id: String;
+    type: "dish";
+    name: string;
+    special?: string;
+    ingredients: string;
+    price?: number;
+    restaurantId: string;
+    dishType?: string;
+}
+export interface Order {
+    _id: string;
+    date: Date;
+    restaurantId: number;
+    price: number;
+}
+export interface User {
+    _id: string;
+    email: string;
+    password: string;
+    orders: Order[];
+}
+export interface Credentials {
+    email: string;
+    password: string;
+}
+export interface iDynamicQuestion {
+    title: string;
+    type: string;
+    options: string[];
+    idQuestion: string;
+}
+export interface LoggedInUser {
+    _id: string;
+    email: string;
+    orders: Order[];
+}
+export interface iChef {
+    _id: string;
+    name: string;
+    description: string;
+    associatedRestaurants: Restaurant[];
+    restaurants: Restaurant[];
+}

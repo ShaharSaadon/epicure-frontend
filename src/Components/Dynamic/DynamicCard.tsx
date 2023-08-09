@@ -1,9 +1,9 @@
-import { linkService } from "../../Services/link.service";
-import { Restaurant, Dish } from "../../Assets/data";
+import { Restaurant, Dish } from "../../Services/link.service";
 import { Link, useParams } from "react-router-dom";
-import { Rating } from "@mui/material";
+import { linkService } from "../../Services/link.service";
 import { toggleModal } from "../../store/actions/modal.actions";
 import { useDispatch } from "react-redux";
+import { Rating } from "@mui/material";
 
 interface DynamicCardProps {
     data: Dish | Restaurant;

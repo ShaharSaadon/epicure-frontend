@@ -10,7 +10,7 @@ import { cartReducer } from "./reducers/cart.reducer";
 import { modalReducer } from "./reducers/modal.reducer";
 import { restaurantReducer } from "./reducers/restaurant.reducer";
 import { userReducer } from "./reducers/user.reducer";
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = compose;
 
 const rootReducer = combineReducers({
     userModule: userReducer,

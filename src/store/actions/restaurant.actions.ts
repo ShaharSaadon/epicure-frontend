@@ -1,24 +1,29 @@
+import { iChef, Dish, Restaurant } from "../../Services/link.service";
 import { Dispatch } from "redux";
-import { Dish, Restaurant } from "../../Assets/data";
 import { restaurantService } from "../../Services/restaurant.service";
 import { dishService } from "../../Services/dish.service";
+import { chefService } from "../../Services/chef.service";
 
 import {
     SET_RESTAURANT,
     SET_DISH,
     SET_RESTAURANTS,
+    SET_SIGNATURE_DISH,
+    SET_CHEF,
 } from "../reducers/restaurant.reducer";
 
 export interface SetRestaurantAction {
     type: typeof SET_RESTAURANT;
     restaurant: Restaurant;
 }
-
 export interface SetDishAction {
     type: typeof SET_DISH;
     dish: Dish;
 }
-
+export interface SetChefAction {
+    type: typeof SET_CHEF;
+    chef: iChef;
+}
 export interface SetRestaurantsAction {
     type: typeof SET_RESTAURANTS;
     restaurants: Restaurant[];
@@ -55,7 +60,6 @@ export function loadRestaurants(
     };
     return async (dispatch: Dispatch) => {
         try {
-            console.log(filterBy);
             const restaurants: Restaurant[] = await restaurantService.query(
                 filterBy
             );
@@ -86,11 +90,27 @@ export function loadDish(
         }
     };
 }
+export function loadChef(
+    chefId: string
+): (dispatch: Dispatch) => Promise<void> {
+    return async (dispatch: Dispatch) => {
+        try {
+            const chef: iChef = await chefService.getById(chefId);
+            const action: SetChefAction = {
+                type: SET_CHEF,
+                chef,
+            };
+            dispatch(action);
+        } catch (error) {
+            console.log("error:", error);
+        }
+    };
+}
 
 export function loadSignatureDish(): (dispatch: Dispatch) => Promise<void> {
     return async (dispatch: Dispatch) => {
         try {
-            const signatureDish: Dish[] = await restaurantService.queryDishes();
+            const signatureDish: Dish[] = await dishService.query();
             const action: SetSignatureDishAction = {
                 type: SET_SIGNATURE_DISH,
                 signatureDish,

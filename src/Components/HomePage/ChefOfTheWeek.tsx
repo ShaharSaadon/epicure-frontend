@@ -1,34 +1,35 @@
-import ChefOfTheWeekImg from "../../Assets/Images/HomePage/chef-of-the-week.png";
 import { DynamicCarousel } from "../Dynamic/DynamicCarousel";
-import { chefOfTheWeekRestaurants } from "../../Assets/data";
+import { iChef } from "../../Services/link.service";
+import { linkService } from "../../Services/link.service";
+interface ChefOfTheWeekProps {
+    chef: iChef;
+}
 
-export const ChefOfTheWeek = () => {
+export const ChefOfTheWeek: React.FC<ChefOfTheWeekProps> = ({ chef }) => {
+    const { imageMap } = linkService;
     return (
         <div className="chef-container">
             <div className="chef-of-the-week">
                 <h1 className="chef-title">CHEF OF THE WEEK:</h1>
                 <div className="chef-box">
                     <img
-                        src={ChefOfTheWeekImg}
+                        src={imageMap[chef?.name]}
                         alt="Chef Yossi Shitrit"
                         className="chef-image"
                     />
                     <h1 className="chef-name flex justify-center">
-                        Yossi Shitrit
+                        {chef?.name}
                     </h1>
                 </div>
-                <p className="chef-description">
-                    Chef Yossi Shitrit has been living and breathing his
-                    culinary dreams for more than two decades, including running
-                    the kitchen in his first restaurant, the fondly-remembered
-                    Violet, located in Moshav Udim. Shitrit's creativity and
-                    culinary acumen born of long experience are expressed in the
-                    every detail of each and every dish.
-                </p>
+                <p className="chef-description">{chef?.description}</p>
             </div>
             <DynamicCarousel
-                title="YOSSI's RESTAURANTS"
-                data={chefOfTheWeekRestaurants}
+                title={
+                    chef?.name?.split(" ")[0].toLocaleUpperCase() +
+                    "'S RESTAURANT"
+                }
+                // title={"Yossi"}
+                data={chef?.associatedRestaurants}
             />
         </div>
     );

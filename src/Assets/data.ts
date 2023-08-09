@@ -1,45 +1,5 @@
 import { Restaurant } from "@mui/icons-material";
 
-export interface Restaurant {
-    _id: String;
-    type: "restaurant";
-    name: string;
-    chef?: string;
-    stars: number;
-    openHoures: string[];
-    dishes?: Dish[];
-    faundationDate: Date;
-}
-export interface Dish {
-    _id: String;
-    type: "dish";
-    name: string;
-    special?: string;
-    ingredients: string;
-    price?: number;
-    restaurantId: string;
-    dishType?: string;
-}
-export interface Order {
-    date: Date;
-    restaurantId: number;
-    price: number;
-}
-export interface User {
-    _Id: string;
-    email: string;
-    password: string;
-    orders: Order[];
-}
-export interface Credentials {
-    email: string;
-    password: string;
-}
-export interface LoggedInUser {
-    _Id: string;
-    email: string;
-    orders: Order[];
-}
 export const chefOfTheWeekRestaurants: Restaurant[] = [
     {
         _Id: "1",
@@ -57,59 +17,59 @@ export const chefOfTheWeekRestaurants: Restaurant[] = [
         name: "Mashya",
     },
 ];
-export const popularRestaurants: Restaurant[] = [
-    {
-        _Id: "4",
-        type: "restaurant",
-        name: "Claro",
-        chef: "Ran Shmueli",
-        stars: 4,
-    },
-    {
-        _Id: "5",
-        type: "restaurant",
-        name: "Lumina",
-        chef: "Meir Adoni",
-        stars: 3,
-    },
-    {
-        _Id: "6",
-        type: "restaurant",
-        name: "Tiger Lilly",
-        chef: "Yanir Green",
-        stars: 4,
-    },
-];
-export const bestDishes: Dish[] = [
-    {
-        _Id: "A",
-        type: "dish",
-        name: "Pad Ki Mao",
-        ingredients:
-            "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
-        special: "spicy",
-        price: 88,
-        restaurantId: "4",
-    },
-    {
-        _Id: "B",
-        type: "dish",
-        name: "Garbanzo Frito",
-        ingredients:
-            "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
-        price: 78,
-        restaurantId: "4",
-    },
-    {
-        _Id: "C",
-        type: "dish",
-        name: "Smoked Pizza",
-        ingredients: 'Basil dough, cashew "butter", demi-glace, bison & radish',
-        special: "vegan",
-        price: 98,
-        restaurantId: "4",
-    },
-];
+// export const popularRestaurants: Restaurant[] = [
+//     {
+//         _Id: "4",
+//         type: "restaurant",
+//         name: "Claro",
+//         chef: "Ran Shmueli",
+//         stars: 4,
+//     },
+//     {
+//         _Id: "5",
+//         type: "restaurant",
+//         name: "Lumina",
+//         chef: "Meir Adoni",
+//         stars: 3,
+//     },
+//     {
+//         _Id: "6",
+//         type: "restaurant",
+//         name: "Tiger Lilly",
+//         chef: "Yanir Green",
+//         stars: 4,
+//     },
+// ];
+// export const bestDishes: Dish[] = [
+//     {
+//         _Id: "A",
+//         type: "dish",
+//         name: "Pad Ki Mao",
+//         ingredients:
+//             "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+//         special: "spicy",
+//         price: 88,
+//         restaurantId: "4",
+//     },
+//     {
+//         _Id: "B",
+//         type: "dish",
+//         name: "Garbanzo Frito",
+//         ingredients:
+//             "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+//         price: 78,
+//         restaurantId: "4",
+//     },
+//     {
+//         _Id: "C",
+//         type: "dish",
+//         name: "Smoked Pizza",
+//         ingredients: 'Basil dough, cashew "butter", demi-glace, bison & radish',
+//         special: "vegan",
+//         price: 98,
+//         restaurantId: "4",
+//     },
+// ];
 // export const allrestaurants: Restaurant[] = [
 //     {
 //         _Id: "4",

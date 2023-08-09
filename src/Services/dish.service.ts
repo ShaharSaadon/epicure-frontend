@@ -1,4 +1,4 @@
-import { Dish } from "../Assets/data.js";
+import { Dish } from "./link.service.js";
 import { httpService } from "./http.service.js";
 
 const STORAGE_KEY = "dish";

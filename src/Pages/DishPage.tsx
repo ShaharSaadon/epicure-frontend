@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleModal, openModal } from "../store/actions/modal.actions";
 import { DynamicQuestion } from "../Components/Dynamic/DynamicQuestion";
+import { iDynamicQuestion } from "../Services/link.service";
 import { loadDish } from "../store/actions/restaurant.actions";
 import { DishToOrder } from "../store/actions/cart.actions";
 import { linkService } from "../Services/link.service";
@@ -13,14 +14,9 @@ import { Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import plus from "../Assets/Images/Restaurants/plus.svg";
 import menus from "../Assets/Images/Restaurants/menus.svg";
-interface DynamicQuestion {
-    title: string;
-    type: string;
-    options: string[];
-}
 
 const DishPage = () => {
-    let { dishId } = useParams();
+    let { dishId } = useParams<{ dishId: string }>();
 
     const { imageMap, dynamicQuestions } = linkService;
     const { isOpen } = useSelector(({ modalModule }) => modalModule);
@@ -42,6 +38,8 @@ const DishPage = () => {
     }, []);
 
     useEffect(() => {
+        document.title = `Epicure | ${dish?.name}`;
+
         if (dish) {
             setDishToOrder({
                 ...dish,
@@ -99,7 +97,7 @@ const DishPage = () => {
                     <h1 className="dish-title">{dish.name}</h1>
                     <p className="ingredients">{dish.ingredients}</p>
                     {dynamicQuestions.map(
-                        (question: DynamicQuestion, index: Number) => (
+                        (question: iDynamicQuestion, index: number) => (
                             <DynamicQuestion
                                 key={index}
                                 title={question.title}
