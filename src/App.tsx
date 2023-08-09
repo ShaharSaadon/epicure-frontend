@@ -4,6 +4,7 @@ import { AppHeader } from "./Components/AppHeader/AppHeader";
 import { AppFooter } from "./Components/AppFooter";
 import { HomePage } from "./Pages/HomePage";
 import { Loader } from "./Components/Dynamic/Loader";
+import { Orders } from "./Pages/Orders";
 
 const RestaurantIndex = lazy(() => import("./Pages/RestaurantIndex"));
 const RestaurantPage = lazy(() => import("./Pages/RestaurantPage"));
@@ -27,6 +28,7 @@ export const App = () => {
                     />
                     <Route path="/restaurants" element={<RestaurantIndex />} />
                     <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/orders" element={<Orders />} />
                     <Route path="/" element={<HomePage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>

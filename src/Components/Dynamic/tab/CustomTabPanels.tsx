@@ -1,5 +1,5 @@
-import { Restaurant, Dish } from "../../Assets/data";
-import { DekstopCarousel } from "./DekstopCarousel";
+import { Restaurant, Dish } from "../../../Assets/data";
+import { DekstopCarousel } from "../DekstopCarousel";
 import { CustomTabPanel } from "./CustomTablPanel";
 
 interface CustomTabPanelsProps {
