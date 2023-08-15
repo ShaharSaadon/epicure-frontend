@@ -10,7 +10,7 @@ export const MobileCarousel = ({ data }: MobileCarouselProps) => {
     return (
         <div>
             <Swiper spaceBetween={24} slidesPerView={1.5}>
-                {data.map((item, index) => (
+                {data?.map((item, index) => (
                     <SwiperSlide key={index}>
                         <DynamicCard data={item} />
                     </SwiperSlide>
