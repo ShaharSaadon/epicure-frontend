@@ -40,7 +40,7 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
                     <h1 className="card-title">{data.name}</h1>
                     {isRestaurant ? (
                         <div className="card-content flex flex-column restaurant">
-                            <p className="chef-name"> {data.chef}</p>
+                            <p className="chef-name"> {data?.chef?.name}</p>
                             {data.stars && (
                                 <Rating
                                     name="read-only"

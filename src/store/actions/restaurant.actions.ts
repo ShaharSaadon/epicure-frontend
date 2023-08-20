@@ -32,7 +32,6 @@ export interface SetSignatureDishAction {
     type: typeof SET_SIGNATURE_DISH;
     signatureDish: Dish[];
 }
-
 export function loadRestaurant(
     restaurantId: string
 ): (dispatch: Dispatch) => Promise<void> {
@@ -51,7 +50,6 @@ export function loadRestaurant(
         }
     };
 }
-
 export function loadRestaurants(
     category?: string
 ): (dispatch: Dispatch) => Promise<void> {
@@ -73,7 +71,6 @@ export function loadRestaurants(
         }
     };
 }
-
 export function loadDish(
     dishId: string
 ): (dispatch: Dispatch) => Promise<void> {
@@ -106,7 +103,6 @@ export function loadChef(
         }
     };
 }
-
 export function loadSignatureDish(): (dispatch: Dispatch) => Promise<void> {
     return async (dispatch: Dispatch) => {
         try {

@@ -46,8 +46,8 @@ const RestaurantPage = () => {
                 className="hero-image"
             />
             <div className="hero-container flex flex-column">
-                <h1 className="name">{restaurant.name}</h1>
-                <h2 className="chef">{restaurant.chef}</h2>
+                <h1 className="name">{restaurant?.name}</h1>
+                <h2 className="chef">{restaurant.chef?.name}</h2>
                 <div className="mode flex">
                     <img src={clockSvg} alt="clock" className="clock-icon" />
                     <h2 className="mode-text">

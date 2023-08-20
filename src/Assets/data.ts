@@ -1,22 +1,20 @@
-import { Restaurant } from "@mui/icons-material";
-
-export const chefOfTheWeekRestaurants: Restaurant[] = [
-    {
-        _Id: "1",
-        type: "restaurant",
-        name: "Onza",
-    },
-    {
-        _Id: "2",
-        type: "restaurant",
-        name: "Kitchen Market",
-    },
-    {
-        _Id: "3",
-        type: "restaurant",
-        name: "Mashya",
-    },
-];
+// export const chefOfTheWeekRestaurants: Restaurant[] = [
+//     {
+//         _id: "1",
+//         type: "restaurant",
+//         name: "Onza",
+//     },
+//     {
+//         _id: "2",
+//         type: "restaurant",
+//         name: "Kitchen Market",
+//     },
+//     {
+//         _id: "3",
+//         type: "restaurant",
+//         name: "Mashya",
+//     },
+// ];
 // export const popularRestaurants: Restaurant[] = [
 //     {
 //         _Id: "4",
@@ -1053,11 +1051,3 @@ export const chefOfTheWeekRestaurants: Restaurant[] = [
 //         ],
 //     },
 // ];
-export const allUsers: User[] = [
-    {
-        _Id: "1",
-        email: "1@gmail.com",
-        password: "1",
-        orders: [{ date: new Date(), restaurantId: 4, price: 60 }],
-    },
-];

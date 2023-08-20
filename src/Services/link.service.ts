@@ -120,17 +120,17 @@ export const linkService = {
 };
 
 export interface Restaurant {
-    _id: String;
+    _id: string;
     type: "restaurant";
     name: string;
-    chef?: string;
+    chef?: iChef;
     stars: number;
     openHoures: string[];
     dishes?: Dish[];
     faundationDate: Date;
 }
 export interface Dish {
-    _id: String;
+    _id: string;
     type: "dish";
     name: string;
     special?: string;
@@ -138,6 +138,7 @@ export interface Dish {
     price?: number;
     restaurantId: string;
     dishType?: string;
+    signature: boolean;
 }
 export interface Order {
     _id: string;

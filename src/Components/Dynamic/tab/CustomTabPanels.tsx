@@ -1,4 +1,4 @@
-import { Restaurant, Dish } from "../../../Assets/data";
+import { Restaurant, Dish } from "../../../Services/link.service";
 import { DekstopCarousel } from "../DekstopCarousel";
 import { CustomTabPanel } from "./CustomTablPanel";
 

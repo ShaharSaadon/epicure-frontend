@@ -7,6 +7,7 @@ interface ChefOfTheWeekProps {
 
 export const ChefOfTheWeek: React.FC<ChefOfTheWeekProps> = ({ chef }) => {
     const { imageMap } = linkService;
+
     return (
         <div className="chef-container">
             <div className="chef-of-the-week">
@@ -28,7 +29,7 @@ export const ChefOfTheWeek: React.FC<ChefOfTheWeekProps> = ({ chef }) => {
                     chef?.name?.split(" ")[0].toLocaleUpperCase() +
                     "'S RESTAURANT"
                 }
-                data={chef?.associatedRestaurants}
+                data={chef?.restaurants}
             />
         </div>
     );

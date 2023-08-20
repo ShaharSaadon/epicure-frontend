@@ -1,4 +1,4 @@
-import { storageService } from "../../services/storage.service";
+import { storageService } from "../../Services/storage.service";
 import {
     addToCart,
     removeFromCart,
@@ -32,12 +32,12 @@ export function cartReducer(
     switch (action.type) {
         case ADD_TO_CART:
             const itemInCart = state.cart.find(
-                (item) => item._Id === action.dish._Id
+                (item) => item._id === action.dish._id
             );
 
             if (itemInCart) {
                 updatedCart = state.cart.map((item) =>
-                    item._Id === action.dish._Id
+                    item._id === action.dish._id
                         ? {
                               ...item,
                               quantity: item.quantity + action.dish.quantity,
@@ -56,7 +56,7 @@ export function cartReducer(
             };
         case REMOVE_FROM_CART:
             updatedCart = state.cart.filter(
-                (item) => item._Id !== action.dish._Id
+                (item) => item._id !== action.dish._id
             );
             storageService.saveCart(updatedCart);
             return {
@@ -65,7 +65,7 @@ export function cartReducer(
             };
         case UPDATE_CART_ITEM:
             updatedCart = state.cart.map((item) =>
-                item._Id === action.dish._Id
+                item._id === action.dish._id
                     ? { ...item, quantity: action.dish.quantity }
                     : item
             );

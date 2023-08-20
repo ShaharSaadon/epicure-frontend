@@ -9,9 +9,10 @@ import {
     loadSignatureDish,
 } from "../store/actions/restaurant.actions";
 import { useDispatch, useSelector } from "react-redux";
+import { Dish } from "../Services/link.service";
 
 export const HomePage = () => {
-    const { restaurants, signatureDish, chef } = useSelector(
+    let { restaurants, signatureDish, chef } = useSelector(
         ({ restaurantModule }) => restaurantModule
     );
     const dispatch = useDispatch();
@@ -27,8 +28,11 @@ export const HomePage = () => {
     const sortedRestaurants = [...(restaurants || [])].sort(
         (a, b) => b.stars - a.stars
     );
+    signatureDish = signatureDish.filter(
+        (dish: Dish) => dish.signature === true
+    );
 
-    const popularRestaurants = sortedRestaurants.slice(0, 3);
+    const popularRestaurants = sortedRestaurants?.slice(0, 3);
 
     return (
         <div className="home-page">

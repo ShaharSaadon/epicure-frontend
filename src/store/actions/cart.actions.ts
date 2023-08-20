@@ -4,7 +4,7 @@ import {
     ADD_TO_CART,
 } from "../reducers/cart.reducer";
 
-import { Dish } from "../../Assets/data";
+import { Dish } from "../../Services/link.service";
 export interface DishToOrder extends Dish {
     quantity: number;
     changes: string[];

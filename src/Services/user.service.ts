@@ -1,11 +1,10 @@
 const STORAGE_KEY_LOGGEDIN_USER = "loggedinUser";
-import { allUsers } from "../Assets/data";
 export const userService = {
     getLoggedinUser,
     userLogin: login,
 };
 
-import { User, LoggedInUser } from "../Assets/data";
+import { User, LoggedInUser } from "../Services/link.service";
 
 function getLoggedinUser(): User | null {
     const user = sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER);
@@ -31,7 +30,7 @@ async function login(userCred: UserCred): Promise<User | null> {
 
 function saveLocalUser(user: LoggedInUser) {
     user = {
-        _Id: user._Id,
+        _id: user._id,
         email: user.email,
         orders: user.orders,
     };

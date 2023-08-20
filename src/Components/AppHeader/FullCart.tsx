@@ -22,9 +22,9 @@ export const FullCart = () => {
 
             <div className="items-list flex flex-column">
                 {cart.map((item: DishToOrder) => (
-                    <div className="cart-item flex" key={item._Id}>
+                    <div className="cart-item flex" key={item?._id}>
                         <img
-                            src={[imageMap[item.name]]}
+                            src={imageMap[item.name]}
                             alt="image-dish"
                             className="image-dish square-ratio"
                         />
