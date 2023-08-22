@@ -1,4 +1,3 @@
-import { iChef } from "./link.service.js";
 import { httpService } from "./http.service.js";
 
 const STORAGE_KEY = "chef";

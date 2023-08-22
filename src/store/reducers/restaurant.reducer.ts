@@ -16,7 +16,7 @@ interface RestaurantState {
     dish: Dish | null;
     restaurants: Restaurant[];
     signatureDish: Dish[];
-    chef: iChef;
+    chef: iChef | null;
 }
 
 const INITIAL_STATE: RestaurantState = {

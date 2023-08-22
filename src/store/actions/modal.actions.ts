@@ -5,7 +5,7 @@ interface ToggleModalAction {
     type: typeof TOGGLE_MODAL;
 }
 
-interface OpenModalAction {
+export interface OpenModalAction {
     type: typeof OPEN_MODAL;
 }
 

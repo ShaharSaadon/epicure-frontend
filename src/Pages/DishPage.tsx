@@ -14,9 +14,10 @@ import { Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import plus from "../Assets/Images/Restaurants/plus.svg";
 import menus from "../Assets/Images/Restaurants/menus.svg";
+import { AppDispatch } from "../store";
 
 const DishPage = () => {
-    let { dishId } = useParams<{ dishId: string }>();
+    const { dishId = "" } = useParams<{ dishId: string }>();
 
     const { imageMap, dynamicQuestions } = linkService;
     const { isOpen } = useSelector(({ modalModule }) => modalModule);
@@ -29,12 +30,12 @@ const DishPage = () => {
         quantity: 1,
     });
 
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(openModal());
-        dispatch(loadDish(dishId));
+        dispatch(loadDish(dishId) as any);
     }, []);
 
     useEffect(() => {
@@ -67,10 +68,10 @@ const DishPage = () => {
         }));
     };
 
-    const handleChange = (field: string, value: string) => {
+    const handleChange = (field: string, value: string | string[]) => {
         setDishToOrder((prevDishToOrder: DishToOrder) => ({
             ...prevDishToOrder,
-            [field]: value,
+            [field]: typeof value === "string" ? value : value.join(", "),
         }));
     };
 
@@ -102,7 +103,8 @@ const DishPage = () => {
                                 title={question.title}
                                 type={question.type}
                                 options={question.options}
-                                onChange={(value: string) =>
+                                idQuestion={question.idQuestion}
+                                onChange={(value: string | string[]) =>
                                     handleChange(question.idQuestion, value)
                                 }
                             />

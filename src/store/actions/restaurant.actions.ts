@@ -1,8 +1,8 @@
 import { iChef, Dish, Restaurant } from "../../Services/link.service";
-import { Dispatch } from "redux";
 import { restaurantService } from "../../Services/restaurant.service";
 import { dishService } from "../../Services/dish.service";
 import { chefService } from "../../Services/chef.service";
+import { AppThunk } from "../../Services/link.service";
 
 import {
     SET_RESTAURANT,
@@ -32,10 +32,9 @@ export interface SetSignatureDishAction {
     type: typeof SET_SIGNATURE_DISH;
     signatureDish: Dish[];
 }
-export function loadRestaurant(
-    restaurantId: string
-): (dispatch: Dispatch) => Promise<void> {
-    return async (dispatch: Dispatch) => {
+export const loadRestaurant =
+    (restaurantId: string): AppThunk =>
+    async (dispatch) => {
         try {
             const restaurant: Restaurant = await restaurantService.getById(
                 restaurantId
@@ -49,14 +48,13 @@ export function loadRestaurant(
             console.log("error:", error);
         }
     };
-}
-export function loadRestaurants(
-    category?: string
-): (dispatch: Dispatch) => Promise<void> {
-    const filterBy = {
-        category,
-    };
-    return async (dispatch: Dispatch) => {
+
+export const loadRestaurants =
+    (category?: string): AppThunk =>
+    async (dispatch) => {
+        const filterBy = {
+            category,
+        };
         try {
             const restaurants: Restaurant[] = await restaurantService.query(
                 filterBy
@@ -70,11 +68,10 @@ export function loadRestaurants(
             console.log("error:", error);
         }
     };
-}
-export function loadDish(
-    dishId: string
-): (dispatch: Dispatch) => Promise<void> {
-    return async (dispatch: Dispatch) => {
+
+export const loadDish =
+    (dishId: string): AppThunk =>
+    async (dispatch) => {
         try {
             const dish: Dish = await dishService.getById(dishId);
             const action: SetDishAction = {
@@ -86,11 +83,10 @@ export function loadDish(
             console.log("error:", error);
         }
     };
-}
-export function loadChef(
-    chefId: string
-): (dispatch: Dispatch) => Promise<void> {
-    return async (dispatch: Dispatch) => {
+
+export const loadChef =
+    (chefId: string): AppThunk =>
+    async (dispatch) => {
         try {
             const chef: iChef = await chefService.getById(chefId);
             const action: SetChefAction = {
@@ -102,18 +98,16 @@ export function loadChef(
             console.log("error:", error);
         }
     };
-}
-export function loadSignatureDish(): (dispatch: Dispatch) => Promise<void> {
-    return async (dispatch: Dispatch) => {
-        try {
-            const signatureDish: Dish[] = await dishService.query();
-            const action: SetSignatureDishAction = {
-                type: SET_SIGNATURE_DISH,
-                signatureDish,
-            };
-            dispatch(action);
-        } catch (error) {
-            console.log("error:", error);
-        }
-    };
-}
+
+export const loadSignatureDish = (): AppThunk => async (dispatch) => {
+    try {
+        const signatureDish: Dish[] = await dishService.query();
+        const action: SetSignatureDishAction = {
+            type: SET_SIGNATURE_DISH,
+            signatureDish,
+        };
+        dispatch(action);
+    } catch (error) {
+        console.log("error:", error);
+    }
+};

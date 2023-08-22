@@ -8,7 +8,7 @@ interface UseTabsReturn {
 export const useTabs = (initialValue: number = 0): UseTabsReturn => {
     const [value, setValue] = useState(initialValue);
 
-    const handleChange = (event: SyntheticEvent, newValue: number) => {
+    const handleChange = (_: SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
 

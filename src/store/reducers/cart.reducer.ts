@@ -55,7 +55,7 @@ export function cartReducer(
                 cart: updatedCart,
             };
         case REMOVE_FROM_CART:
-            updatedCart = state.cart.filter(
+            updatedCart = state?.cart?.filter(
                 (item) => item._id !== action.dish._id
             );
             storageService.saveCart(updatedCart);

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/actions/user.actions";
+import { AppDispatch } from "../../store";
 
 interface LoginProps {
     isLoginOpen: boolean;
@@ -25,10 +26,10 @@ export const Login: React.FC<LoginProps> = ({ isLoginOpen }) => {
         }));
     };
 
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        dispatch(login({ ...credentials }));
+        dispatch(login({ ...credentials }) as any);
     };
 
     const { loggedinUser } = useSelector(({ userModule }) => userModule);

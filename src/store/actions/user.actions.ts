@@ -1,8 +1,9 @@
 import { SET_LOGGEDIN_USER } from "../reducers/user.reducer";
 import { userService } from "../../Services/user.service";
-import { User } from "../../Assets/data";
+import { User } from "../../Services/link.service";
+import { AppThunk } from "../../Services/link.service";
 
-interface UserCredentials {
+export interface UserCredentials {
     email: string;
     password: string;
 }
@@ -12,10 +13,11 @@ export interface SetLoggedInUserAction {
     user: User | null;
 }
 
-export function login(userCred: UserCredentials) {
-    return async (dispatch: any) => {
+export const login =
+    (userCred: UserCredentials): AppThunk =>
+    async (dispatch) => {
         try {
-            const user = await userService.userLogin(userCred);
+            const user = await userService.login(userCred);
             const action: SetLoggedInUserAction = {
                 type: SET_LOGGEDIN_USER,
                 user,
@@ -25,4 +27,3 @@ export function login(userCred: UserCredentials) {
             console.log("error:", error);
         }
     };
-}

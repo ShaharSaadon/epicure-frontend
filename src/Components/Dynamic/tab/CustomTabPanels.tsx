@@ -15,7 +15,7 @@ export const CustomTabPanels: React.FC<CustomTabPanelsProps> = ({
 }) => {
     return (
         <>
-            {filters.map((filter, index) => (
+            {filters.map((_, index) => (
                 <CustomTabPanel value={value} index={index} key={index}>
                     <DekstopCarousel data={data} />
                 </CustomTabPanel>

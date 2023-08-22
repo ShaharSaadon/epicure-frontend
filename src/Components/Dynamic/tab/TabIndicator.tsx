@@ -1,5 +1,5 @@
 interface TabIndicatorProps {
-    style: React.CSSProperties;
+    style?: React.CSSProperties;
 }
 
 export const TabIndicator = (props: TabIndicatorProps) => {

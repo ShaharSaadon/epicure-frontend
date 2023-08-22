@@ -1,9 +1,10 @@
-import thunk from "redux-thunk";
+import thunk, { ThunkMiddleware } from "redux-thunk";
 import {
     applyMiddleware,
     combineReducers,
     compose,
     legacy_createStore as createStore,
+    Action,
 } from "redux";
 
 import { cartReducer } from "./reducers/cart.reducer";
@@ -19,9 +20,15 @@ const rootReducer = combineReducers({
     restaurantModule: restaurantReducer,
 });
 
+export type RootState = ReturnType<typeof rootReducer>;
+
+const middleware = [thunk as ThunkMiddleware<RootState, Action<string>>];
+
 export const store = createStore(
     rootReducer,
-    composeEnhancers(applyMiddleware(thunk))
+    composeEnhancers(applyMiddleware(...middleware))
 );
 
-window.gStore = store;
+export type AppDispatch = typeof store.dispatch;
+
+// window.gStore = store;

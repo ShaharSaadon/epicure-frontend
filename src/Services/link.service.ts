@@ -20,7 +20,9 @@ import spicyImg from "../Assets/Images/HomePage/icons/spicy.svg";
 import veganImg from "../Assets/Images/HomePage/icons/vegan.svg";
 import vegitarianImg from "../Assets/Images/HomePage/icons/vegitarian.svg";
 import YossiShitritImg from "../Assets/Images/HomePage/yossi-shitrit.png";
-
+import { ThunkAction } from "redux-thunk";
+import { RootState } from "../store/index";
+import { Action } from "redux";
 type ImageType = string;
 
 enum restaurantFilter {
@@ -174,3 +176,9 @@ export interface iChef {
     associatedRestaurants: Restaurant[];
     restaurants: Restaurant[];
 }
+export type AppThunk<ReturnType = void> = ThunkAction<
+    ReturnType,
+    RootState,
+    unknown,
+    Action<string>
+>;

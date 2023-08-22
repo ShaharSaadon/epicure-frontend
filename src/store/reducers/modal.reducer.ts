@@ -1,4 +1,9 @@
-import { TOGGLE_MODAL, OPEN_MODAL } from "../actions/modal.actions";
+import {
+    TOGGLE_MODAL,
+    OPEN_MODAL,
+    OpenModalAction,
+    toggleModal,
+} from "../actions/modal.actions";
 
 interface ModalState {
     isOpen: boolean;

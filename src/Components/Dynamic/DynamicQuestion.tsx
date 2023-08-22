@@ -5,7 +5,7 @@ interface DynamicQuestionProps {
     type: string;
     options: string[];
     idQuestion: string;
-    onChange: (selectedOption: string) => void;
+    onChange: (selectedOption: string | string[]) => void;
 }
 export const DynamicQuestion = ({
     title,

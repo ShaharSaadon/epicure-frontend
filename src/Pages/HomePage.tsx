@@ -10,19 +10,21 @@ import {
 } from "../store/actions/restaurant.actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Dish } from "../Services/link.service";
+import { AppDispatch } from "../store";
 
 export const HomePage = () => {
     let { restaurants, signatureDish, chef } = useSelector(
         ({ restaurantModule }) => restaurantModule
     );
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const MOST_POPULAR = "MOST_POPULAR";
     const chefId = "64d35568a7e85c2bc2989dc7";
     useEffect(() => {
         document.title = `Epicure | Home Page`;
-        dispatch(loadRestaurants(MOST_POPULAR));
-        dispatch(loadSignatureDish());
-        dispatch(loadChef(chefId));
+
+        dispatch(loadRestaurants(MOST_POPULAR) as any);
+        dispatch(loadSignatureDish() as any);
+        dispatch(loadChef(chefId) as any);
     }, []);
 
     const sortedRestaurants = [...(restaurants || [])].sort(

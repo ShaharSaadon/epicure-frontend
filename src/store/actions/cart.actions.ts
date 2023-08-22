@@ -12,34 +12,34 @@ export interface DishToOrder extends Dish {
 }
 interface AddToCartAction {
     type: typeof ADD_TO_CART;
-    dish: Dish;
+    dish: DishToOrder;
 }
 
 interface RemoveFromCartAction {
     type: typeof REMOVE_FROM_CART;
-    dish: Dish;
+    dish: DishToOrder;
 }
 
 interface UpdateCartItemAction {
     type: typeof UPDATE_CART_ITEM;
-    dish: Dish;
+    dish: DishToOrder;
 }
 
-export function addToCart(dish: Dish): AddToCartAction {
+export function addToCart(dish: DishToOrder): AddToCartAction {
     return {
         type: ADD_TO_CART,
         dish,
     };
 }
 
-export function removeFromCart(dish: Dish): RemoveFromCartAction {
+export function removeFromCart(dish: DishToOrder): RemoveFromCartAction {
     return {
         type: REMOVE_FROM_CART,
         dish,
     };
 }
 
-export function updateCartItem(dish: Dish): UpdateCartItemAction {
+export function updateCartItem(dish: DishToOrder): UpdateCartItemAction {
     return {
         type: UPDATE_CART_ITEM,
         dish,

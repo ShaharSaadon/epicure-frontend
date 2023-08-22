@@ -7,14 +7,14 @@ function saveCart(cart: DishToOrder[]): void {
 }
 
 function loadCart(): DishToOrder[] {
-    return load(CART_KEY, []);
+    return load(CART_KEY, []) || [];
 }
 
 function store(key: string, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
-function load<T>(key: string, defaultValue: T = null): T {
+function load<T = any>(key: string, defaultValue: T | null = null): T | null {
     const value = localStorage.getItem(key);
     if (!value) {
         return defaultValue;

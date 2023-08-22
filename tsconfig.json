@@ -16,7 +16,8 @@
         "noFallthroughCasesInSwitch": true,
         "allowImportingTsExtensions": true,
         "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true
     },
     "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }]

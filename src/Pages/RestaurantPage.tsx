@@ -4,6 +4,7 @@ import { restaurantService } from "../Services/restaurant.service";
 import { CustomTabPanels } from "../Components/Dynamic/tab/CustomTabPanels";
 import { loadRestaurant } from "../store/actions/restaurant.actions";
 import { linkService } from "../Services/link.service";
+import { AppDispatch } from "../store";
 import { CustomTabs } from "../Components/Dynamic/tab/CustomTabs";
 import { useParams } from "react-router-dom";
 import { useTabs } from "../customHooks/useTabs";
@@ -13,11 +14,12 @@ import clockSvg from "../Assets/Images/Restaurants/clock.svg";
 import NotFoundPage from "./NotFoundPage";
 
 const RestaurantPage = () => {
-    const { restaurantId } = useParams<{ restaurantId: string }>();
+    const { restaurantId = "" } = useParams<{ restaurantId: string }>();
     const { value, handleChange } = useTabs(0);
     const { lunchfilter, imageMap } = linkService;
     const filters = Object.values(lunchfilter);
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
+
     const OPEN_NOW = "Open now";
     const CLOSED = "Closed";
 
@@ -34,7 +36,7 @@ const RestaurantPage = () => {
 
     useEffect(() => {
         document.title = `Epicure | ${restaurant?.name}`;
-        dispatch(loadRestaurant(restaurantId));
+        dispatch(loadRestaurant(restaurantId) as any);
     }, [restaurantId]);
 
     if (!restaurant) return <NotFoundPage />;
@@ -47,7 +49,7 @@ const RestaurantPage = () => {
             />
             <div className="hero-container flex flex-column">
                 <h1 className="name">{restaurant?.name}</h1>
-                <h2 className="chef">{restaurant.chef?.name}</h2>
+                <h2 className="chef">{restaurant.chef?.name}aas</h2>
                 <div className="mode flex">
                     <img src={clockSvg} alt="clock" className="clock-icon" />
                     <h2 className="mode-text">

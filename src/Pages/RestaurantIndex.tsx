@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useTabs } from "../customHooks/useTabs";
 import Box from "@mui/material/Box";
 import React from "react";
+import { AppDispatch } from "../store";
 
 const RestaurantIndex: React.FC = () => {
     const { value, handleChange } = useTabs(0);
@@ -17,11 +18,11 @@ const RestaurantIndex: React.FC = () => {
     const { restaurants } = useSelector(
         ({ restaurantModule }) => restaurantModule
     );
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
 
     useEffect(() => {
         document.title = `Epicure | Restaurant List`;
-        dispatch(loadRestaurants(filtersKeys[value]));
+        dispatch(loadRestaurants(filtersKeys[value]) as any);
     }, [value]);
 
     return (
