@@ -7,7 +7,8 @@ function saveCart(cart: DishToOrder[]): void {
 }
 
 function loadCart(): DishToOrder[] {
-    return load(CART_KEY, []) || [];
+    const cart = load(CART_KEY, []);
+    return Array.isArray(cart) ? cart : [];
 }
 
 function store(key: string, value: any): void {

@@ -30,9 +30,11 @@ export const HomePage = () => {
     const sortedRestaurants = [...(restaurants || [])].sort(
         (a, b) => b.stars - a.stars
     );
-    signatureDish = signatureDish.filter(
-        (dish: Dish) => dish.signature === true
-    );
+    if (Array.isArray(signatureDish)) {
+        signatureDish = signatureDish.filter(
+            (dish: Dish) => dish.signature === true
+        );
+    }
 
     const popularRestaurants = sortedRestaurants?.slice(0, 3);
 
