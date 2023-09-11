@@ -24,7 +24,7 @@ export const CustomTabs: React.FC<CustomTabsProps> = ({
             variant="scrollable"
             scrollButtons="auto"
         >
-            {filters.map((filter, index) => (
+            {filters?.map((filter, index) => (
                 <Tab
                     label={filter}
                     key={index}

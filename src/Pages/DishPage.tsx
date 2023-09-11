@@ -71,7 +71,7 @@ const DishPage = () => {
     const handleChange = (field: string, value: string | string[]) => {
         setDishToOrder((prevDishToOrder: DishToOrder) => ({
             ...prevDishToOrder,
-            [field]: typeof value === "string" ? value : value.join(", "),
+            [field]: typeof value === "string" ? value : value?.join(", "),
         }));
     };
 
@@ -96,7 +96,7 @@ const DishPage = () => {
                 <div className="dish-info">
                     <h1 className="dish-title">{dish.name}</h1>
                     <p className="ingredients">{dish.ingredients}</p>
-                    {dynamicQuestions.map(
+                    {dynamicQuestions?.map(
                         (question: iDynamicQuestion, index: number) => (
                             <DynamicQuestion
                                 key={index}

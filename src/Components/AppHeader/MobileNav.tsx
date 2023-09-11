@@ -19,14 +19,14 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             onClick={toggleHeader}
         >
             <Wrapper />
-            {upperMobileNavLinks.map((link, index) => (
+            {upperMobileNavLinks?.map((link, index) => (
                 <NavLink key={index} to={link.path} className="nav-link">
                     {link.text}
                 </NavLink>
             ))}
             {/* <br className="border"></br> */}
             <div className="nav-link border"></div>
-            {lowerMobileNavLinks.map((link, index) => (
+            {lowerMobileNavLinks?.map((link, index) => (
                 <NavLink key={index} to={link.path} className="nav-link">
                     {link.text}
                 </NavLink>

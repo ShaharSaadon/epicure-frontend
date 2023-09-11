@@ -21,25 +21,28 @@ export const FullCart = () => {
             <h1 className="cart-title">MY ORDER</h1>
 
             <div className="items-list flex flex-column">
-                {cart.map((item: DishToOrder) => (
-                    <div className="cart-item flex" key={item?._id}>
-                        <img
-                            src={imageMap[item.name]}
-                            alt="image-dish"
-                            className="image-dish square-ratio"
-                        />
-                        <div className="dish-info flex flex-column justify-center items-start">
-                            <h1 className="dish-name">
-                                <span> {item.quantity} x </span>
-                                {item.name}
-                            </h1>
-                            <p className="details">
-                                {item.side} | {item?.changes?.join(" | ")}
-                            </p>
-                            <p className="price">₪{item.price}</p>
+                {Array.isArray(cart) &&
+                    cart.map((item: DishToOrder) => (
+                        <div className="cart-item flex" key={item?._id}>
+                            <img
+                                src={imageMap[item.name]}
+                                alt="image-dish"
+                                className="image-dish square-ratio"
+                            />
+                            <div className="dish-info flex flex-column justify-center items-start">
+                                <h1 className="dish-name">
+                                    <span> {item.quantity} x </span>
+                                    {item.name}
+                                </h1>
+                                <p className="details">
+                                    {item.side} |{" "}
+                                    {Array.isArray(item.changes) &&
+                                        item?.changes?.join(" | ")}
+                                </p>
+                                <p className="price">₪{item.price}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
 
             <h1 className="cart-title">Total - ₪{calculateTotalPrice()}</h1>

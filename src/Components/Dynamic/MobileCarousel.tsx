@@ -6,11 +6,14 @@ interface MobileCarouselProps {
     data: (Dish | Restaurant)[];
 }
 
-export const MobileCarousel = ({ data }: MobileCarouselProps) => {
+export const MobileCarousel = ({ data = [] }: MobileCarouselProps) => {
+    // Ensure data is always an array
+    const dataArray = Array.isArray(data) ? data : [];
+
     return (
         <div>
             <Swiper spaceBetween={24} slidesPerView={1.5}>
-                {data?.map((item, index) => (
+                {dataArray.map((item, index) => (
                     <SwiperSlide key={index}>
                         <DynamicCard data={item} />
                     </SwiperSlide>

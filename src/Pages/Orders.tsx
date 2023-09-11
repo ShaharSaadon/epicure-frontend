@@ -14,7 +14,7 @@ export const Orders = () => {
                 </tr>
             </thead>
             <tbody>
-                {orders.map((order: Order, index: number) => (
+                {orders?.map((order: Order, index: number) => (
                     <tr key={index}>
                         <td>{new Date(order.date).toLocaleDateString()}</td>
                         <td>{order.restaurantId}</td>

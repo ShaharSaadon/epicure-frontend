@@ -10,6 +10,7 @@ interface DynamicCardProps {
 }
 
 export const DynamicCard = ({ data }: DynamicCardProps) => {
+    console.log(data);
     const { imageMap } = linkService;
     const isRestaurant = data.type !== "dish";
     const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
             dispatch(toggleModal()); // Open the modal
         }
     };
+    console.log(data);
 
     return (
         <Link

@@ -6,9 +6,12 @@ interface DekstopCarouselProps {
 }
 
 export const DekstopCarousel = ({ data = [] }: DekstopCarouselProps) => {
+    // Ensure data is always an array
+    const dataArray = Array.isArray(data) ? data : [];
+
     return (
         <div className="dekstop-carousel ">
-            {data.map((item, index) => (
+            {dataArray.map((item, index) => (
                 <div key={index} className="carousel-item">
                     <DynamicCard data={item} />
                 </div>

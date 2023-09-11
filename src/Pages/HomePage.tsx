@@ -13,7 +13,7 @@ import { Dish } from "../Services/link.service";
 import { AppDispatch } from "../store";
 
 export const HomePage = () => {
-    let { restaurants, signatureDish, chef } = useSelector(
+    let { signatureDish, chef, restaurants } = useSelector(
         ({ restaurantModule }) => restaurantModule
     );
     const dispatch: AppDispatch = useDispatch();

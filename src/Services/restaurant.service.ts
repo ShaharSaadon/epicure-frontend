@@ -4,7 +4,6 @@ import { httpService } from "./http.service.js";
 const STORAGE_KEY = "restaurant";
 
 const filterDishes = (value: number, dishes: Dish[], filters: string[]) => {
-    console.log(filters);
     switch (value) {
         case 0: //Breakfast
             return dishes.filter((dish) => dish.dishType === "Breakfast");

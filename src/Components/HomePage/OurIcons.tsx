@@ -6,7 +6,7 @@ export const OurIcons = () => {
         <div className="icons-container flex  flex-column text-center">
             <h1 className="icon-title">THE MEANING OF OUR ICONS:</h1>
             <div className="our-icons flex flex-column items-center ">
-                {ourIconsData.map(
+                {ourIconsData?.map(
                     (item: { type: string; icon: string }, index) => (
                         <div className="icon-type flex flex-column" key={index}>
                             <img

@@ -5,7 +5,7 @@ export const RestaurantFilter = () => {
     return (
         <div className="restaurant-filter flex justify-center">
             <ul className="flex clean-list">
-                {filterTypes.map((filter) => (
+                {filterTypes?.map((filter) => (
                     <li
                         key={filter.type}
                         className={`filter-type ${filter.type} flex items-center`}

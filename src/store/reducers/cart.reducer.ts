@@ -15,7 +15,9 @@ interface CartState {
 }
 
 const INITIAL_STATE: CartState = {
-    cart: storageService.loadCart(),
+    cart: Array.isArray(storageService.loadCart())
+        ? storageService.loadCart()
+        : [],
 };
 
 type CartActions =
@@ -31,12 +33,12 @@ export function cartReducer(
 
     switch (action.type) {
         case ADD_TO_CART:
-            const itemInCart = state.cart.find(
+            const itemInCart = state?.cart?.find(
                 (item) => item._id === action.dish._id
             );
 
             if (itemInCart) {
-                updatedCart = state.cart.map((item) =>
+                updatedCart = state?.cart?.map((item) =>
                     item._id === action.dish._id
                         ? {
                               ...item,

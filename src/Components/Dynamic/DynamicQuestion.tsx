@@ -41,7 +41,7 @@ export const DynamicQuestion = ({
     return (
         <div className="questions ">
             <h1 className="question-title">{title}</h1>
-            {options.map((option, index) => (
+            {options?.map((option, index) => (
                 <div className="options flex" key={index}>
                     <input
                         type={type}

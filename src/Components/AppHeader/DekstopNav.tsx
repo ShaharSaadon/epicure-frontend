@@ -6,7 +6,7 @@ export const DekstopNav = () => {
 
     return (
         <nav className={`dekstop-nav flex`}>
-            {dekstopNavLinks.map((link, index) => (
+            {dekstopNavLinks?.map((link, index) => (
                 <NavLink key={index} to={link.path} className="nav-link">
                     {link.text}
                 </NavLink>
