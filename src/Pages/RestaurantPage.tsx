@@ -40,6 +40,11 @@ const RestaurantPage = () => {
     }, [restaurantId]);
 
     if (!restaurant) return <NotFoundPage />;
+
+    if (Array.isArray(restaurant.chef) && restaurant.chef.length) {
+        restaurant.chef = restaurant.chef[0];
+    }
+
     return (
         <Box sx={{ width: "100%" }} className="restaurant-page">
             <img

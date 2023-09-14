@@ -23,6 +23,12 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
     };
     console.log(data);
 
+    if (data.type === "restaurant") {
+        if (Array.isArray(data.chef) && data.chef.length) {
+            data.chef = data.chef[0];
+        }
+    }
+
     return (
         <Link
             to={
@@ -38,6 +44,7 @@ export const DynamicCard = ({ data }: DynamicCardProps) => {
                     alt={data.name}
                     className="card-image"
                 />
+
                 <div className="card-info flex flex-column">
                     <h1 className="card-title">{data.name}</h1>
                     {isRestaurant ? (

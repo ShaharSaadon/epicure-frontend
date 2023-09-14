@@ -18,7 +18,7 @@ export const HomePage = () => {
     );
     const dispatch: AppDispatch = useDispatch();
     const MOST_POPULAR = "MOST_POPULAR";
-    const chefId = "64d35568a7e85c2bc2989dc7";
+    const chefId = "650179146ceead4a3b865a2d";
     useEffect(() => {
         document.title = `Epicure | Home Page`;
 
