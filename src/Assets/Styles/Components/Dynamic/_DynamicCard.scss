@@ -1,0 +1,61 @@
+.dynamic-card {
+    max-width: 380px;
+    margin-block-end: 24px;
+    .card-info {
+        background-color: $secondary-color1;
+        padding: $large-space;
+        gap: $medium-space;
+        position: relative;
+        .card-content {
+            gap: $min-space;
+            width: 200px;
+            .ingredients {
+                letter-spacing: 2px;
+                line-height: $xLarge-space;
+                margin-block-end: 16px;
+            }
+            .shekel {
+                font-weight: 100;
+                font-family: Helvetica;
+            }
+            .price {
+                font-weight: 900;
+                position: absolute;
+                bottom: $large-space;
+            }
+            .rating {
+                display: none;
+            }
+            .icon-special {
+                width: 30px;
+                position: absolute;
+                bottom: 46px;
+            }
+        }
+        .card-title {
+            @include h3Mobile();
+            font-weight: 700;
+        }
+    }
+    .dish {
+        height: $dynamic-card-height;
+    }
+
+    @include mq(mobile-breakpoint) {
+        .card-info {
+            align-items: center;
+            .card-content {
+                .rating {
+                    display: flex;
+                }
+            }
+            .card-title {
+                @include h1Dekstop();
+                font-weight: 900;
+            }
+            .chef-name {
+                font-size: 24px;
+            }
+        }
+    }
+}

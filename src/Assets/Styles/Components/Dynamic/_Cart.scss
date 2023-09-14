@@ -1,0 +1,53 @@
+.full-cart {
+    gap: 20px;
+    .cart-title {
+        @include h1Mobile();
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .image-dish {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .dish-info {
+        position: relative;
+        width: 244px;
+        padding: 12px 12px 12px 24px;
+        background-color: $secondary-color1;
+    }
+    .dish-name {
+        @include h3Mobile();
+        font-weight: 900;
+        span {
+            font-size: 14px;
+            margin-inline-end: 8px;
+        }
+        margin-block-end: 8px;
+    }
+    .details {
+        font-size: 12px;
+    }
+    .price {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        font-weight: 900;
+    }
+    .icon {
+        width: 20px;
+    }
+
+    .items-list {
+        gap: 20px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 300px;
+    }
+    .checkout-btn {
+        @include common-btn();
+        width: 100%;
+        gap: 10px;
+        letter-spacing: 2.5px;
+    }
+}

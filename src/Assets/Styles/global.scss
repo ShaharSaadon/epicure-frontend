@@ -1,14 +1,8 @@
 // SETUP
 
-<<<<<<< HEAD
 @import "Setup/variables";
 @import "Setup/mixins";
 @import "Setup/functions";
-=======
-@import "Setup/mixins";
-@import "Setup/functions";
-@import "Setup/variables";
->>>>>>> main
 
 // BASE
 
@@ -21,23 +15,32 @@
 >>>>>>> main
 
 // COMPONENTS
-@import "Components/AppHeader";
+@import "Components/AppHeader/MobileNav";
+@import "Components/AppHeader/Hamburger";
+@import "Components/AppHeader/Search";
+@import "Components/AppHeader/Cart";
+@import "Components/AppHeader/DekstopNav";
+@import "Components/AppHeader/Login";
+@import "Components/AppHeader/AppHeader";
 @import "Components/AppFooter";
-@import "Components/HomePage/HeroSection";
-<<<<<<< HEAD
-@import "Components/HomePage/DynamicCard";
-@import "Components/HomePage/DynamicCarousel";
-@import "Components/HomePage/OurIcons";
+
+@import "Components/Dynamic/DynamicCarousel";
+@import "Components/Dynamic/DynamicCard";
+@import "Components/Dynamic/DynamicQestion";
+@import "Components/Dynamic/Search";
+@import "Components/Dynamic/Cart";
 @import "Components/HomePage/ChefOfTheWeek";
-=======
-
-// COMPONENTS
-@import "Components/AppHeader";
-@import "Components/AppFooter";
 @import "Components/HomePage/HeroSection";
+@import "Components/HomePage/OurIcons";
 
-// COMPONENTS
-@import "Components/AppHeader";
-@import "Components/AppFooter";
-@import "Components/HomePage/HeroSection";
->>>>>>> main
+@import "Components/RestaurantFilter";
+
+// VIEWS
+
+@import "Views/RestaurantPage";
+@import "Views/RestaurnatIndex";
+@import "Views/DishPage";
+@import "Views/HomePage.scss";
+@import "Views/RestaurantIndex.scss";
+@import "Views/Checkout.scss";
+@import "Views/NotFoundPage.scss";

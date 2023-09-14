@@ -1,0 +1,13 @@
+.app-header {
+    .dekstop-nav {
+        display: none;
+        .nav-link {
+            margin-inline-start: 32px;
+        }
+    }
+    @include mq(mobile-breakpoint) {
+        .dekstop-nav {
+            display: flex;
+        }
+    }
+}

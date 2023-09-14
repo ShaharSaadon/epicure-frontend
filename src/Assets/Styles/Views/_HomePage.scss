@@ -1,0 +1,28 @@
+.home-page {
+    .dynamic-carousel {
+        .dekstop-carousel {
+            text-align: center;
+            align-items: center;
+            .carousel-item {
+                .dynamic-card {
+                    .card-info {
+                        max-height: 244px;
+                    }
+                }
+            }
+        }
+    }
+    .chef-container {
+        .dynamic-carousel {
+            .dekstop-carousel {
+                .carousel-item {
+                    .dynamic-card {
+                        .card-info {
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

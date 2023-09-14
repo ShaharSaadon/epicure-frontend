@@ -1,11 +1,13 @@
 .chef-of-the-week {
     margin-block-start: 48px;
     margin-inline: $mobile-padding;
+
     .chef-title {
         @include h3Mobile();
         margin-block-end: $large-space;
         grid-area: title;
     }
+
     .chef-box {
         grid-area: box;
         position: relative;
@@ -19,6 +21,7 @@
             background-color: rgba($color: $secondary-color3, $alpha: 0.8);
             bottom: 0;
         }
+        margin-block-end: 24px;
     }
     .chef-description {
         font-size: 18px;
@@ -37,10 +40,6 @@
             "carousel carousel";
     }
 
-    .chef-title {
-        text-align: center;
-    }
-
     @include mq(mobile-breakpoint) {
         margin-inline: $normal-padding;
         .chef-description {
@@ -52,6 +51,9 @@
         .dynamic-carousel {
             text-align: start;
             background-color: gray;
+        }
+        .chef-title {
+            text-align: center;
         }
     }
 }

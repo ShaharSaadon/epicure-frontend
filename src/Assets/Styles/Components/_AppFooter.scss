@@ -1,45 +1,21 @@
 footer {
-    .main-footer {
-        background-color: $secondary-color3;
-        padding: $xxLarge-space $xLarge-space 48px $xLarge-space;
-        .logo {
-            width: $logo-width;
-            margin-block-end: 32px;
-        }
-        .download-box {
-            width: 180px;
-            padding: $small-space $medium-space;
-            margin-block-end: $large-space;
-            border-radius: 10px;
-            gap: $small-space;
-            border: 1px $primary-color1 solid;
-            .icon {
-                width: $xLarge-space;
-            }
-            .text {
-                font-weight: 900;
-                font-family: HelveticaR;
-            }
-        }
-        .about {
-            margin-block-start: 48px;
-            .about-title {
-                @include h3Mobile();
-                margin-block-end: $large-space;
-            }
-            .about-text {
-                @include h3Mobile();
-                margin-block-end: $large-space;
-                line-height: 28px;
-                letter-spacing: 2px;
-            }
-        }
+    padding: 32px 0 24px 20px;
+    .clean-list {
+        // @include H2DMobile();
+        gap: 40px;
+        flex-direction: column;
     }
 
-    .clean-list {
-        @include h3Mobile();
-        padding: 32px 0 $xxLarge-space $xLarge-space;
-        background-color: #fff;
-        gap: 40px;
+    @include mq(mobile-breakpoint) {
+        .main-footer {
+            grid-template-areas:
+                "about" "logo"
+                "downloads" "logo";
+        }
+        .footer-nav {
+            border-top: 1px solid rgba($color: $primary-color1, $alpha: 0.1);
+            flex-direction: row;
+            justify-content: center;
+        }
     }
 }

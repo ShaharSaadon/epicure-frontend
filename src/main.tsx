@@ -1,5 +1,14 @@
+import { Provider } from "react-redux";
+import { App } from "./App.tsx";
+import { store } from "./store";
+
 import ReactDOM from "react-dom";
-import App from "./App.tsx";
+
 import "../src/Assets/Styles/global.scss";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById("root")
+);

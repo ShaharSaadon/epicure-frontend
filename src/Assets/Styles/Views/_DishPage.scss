@@ -1,0 +1,61 @@
+.modal {
+    overflow-y: auto;
+    background-color: $primary-color3;
+    .dish-page {
+        .close-container {
+            width: 100%;
+            display: flex;
+            padding: 12px;
+            justify-content: start;
+        }
+        .dish-image {
+            max-height: 270px;
+            object-fit: cover;
+        }
+        .dish-info {
+            padding: 32px 20px;
+            .question-title {
+                margin-block: 16px;
+            }
+            .add-bug-btn {
+                margin-block: 48px;
+                @include common-btn();
+            }
+            .dish-title {
+                @include h3Mobile();
+                font-weight: 900;
+                margin-block-end: 16px;
+            }
+
+            .ingredients {
+                line-height: 18px;
+                letter-spacing: 1.97px;
+            }
+
+            .question-title {
+                @include h3Mobile();
+                display: inline-block;
+                border-bottom: 2px solid currentColor;
+                border-bottom-color: $underline-color;
+            }
+            .options {
+                margin-block-end: 16px;
+            }
+
+            .quantity {
+                .quantity-box {
+                    gap: 32px;
+                    .icon {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mq(mobile-breakpoint) {
+        width: 500px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+}

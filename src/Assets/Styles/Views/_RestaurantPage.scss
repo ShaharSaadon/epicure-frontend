@@ -1,0 +1,58 @@
+.restaurant-page {
+    .hero-image {
+        max-height: 425px;
+        object-fit: cover;
+    }
+    .hero-container {
+        padding: 24px 0 16px 20px;
+        gap: 16px;
+
+        .name {
+            @include h3Mobile();
+            font-weight: 700;
+        }
+        .chef {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .mode {
+            gap: 8px;
+            .clock-icon {
+                width: 18px;
+            }
+            .mode-text {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    @include mq(mobile-breakpoint) {
+        .hero-container {
+            text-align: center;
+            align-items: center;
+        }
+        .lunch-type {
+            align-items: center;
+            margin: 0 auto;
+        }
+        .dekstop-carousel {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            .carousel-item {
+                width: 272px;
+                margin: 10px;
+                max-height: 413px;
+
+                .dynamic-card {
+                    .card-image {
+                        height: 170px;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.app-header {
+    height: $app-header-height;
+    padding: 0 20px;
+    z-index: 10;
+    background-color: white;
+    .right-nav {
+        right: $xLarge-space;
+        gap: $xLarge-space;
+
+        .search-icon {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .cart-icon {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .logo {
+        width: 32px;
+        margin-inline-start: 76px;
+    }
+    .header-wrapper {
+        padding: 12px;
+        .icon {
+            width: 20px;
+        }
+    }
+    .dekstop-logo {
+        display: none;
+        font-weight: 400;
+        margin-inline-start: 16px;
+    }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 4;
+    }
+    @include mq(mobile-breakpoint) {
+        margin-inline: 100px;
+        position: relative;
+        .dekstop-logo {
+            display: flex;
+        }
+        .logo {
+            margin-inline-start: 0;
+        }
+    }
+}
